@@ -44,26 +44,32 @@
                 </ul>
             </li>
 
-            <li class="relative">
-                <button type="button"
-                    class="flex items-center hover:text-blue-600 transition-colors duration-200 dropdown-trigger"
-                    data-dropdown="galeri">
+            <li class="relative group">
+                <a href="{{ url('/galeri') }}"
+                    class="flex items-center hover:text-blue-600 transition-colors duration-200">
                     GALERI
                     <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
-                </button>
-                <ul id="galeri"
-                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Foto</a>
+                </a>
+                <ul
+                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 group-hover:opacity-100 invisible group-hover:visible transform -translate-y-2 group-hover:translate-y-0 transition-all duration-200 z-50">
+                    <li>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">
+                            Foto
+                        </a>
                     </li>
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
+                    <li>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">
+                            Video
+                        </a>
                     </li>
                 </ul>
             </li>
+
 
             <li class="relative">
                 <button type="button"
