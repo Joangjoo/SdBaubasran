@@ -107,76 +107,40 @@
     </nav>
 
     <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
-        <!-- Sidebar Kiri -->
         <aside class="space-y-6 md:col-span-1">
-            <!-- Kontak -->
-            <div class="text-sm space-y-1">
-                <h2 class="text-lg font-semibold border-b pb-1">KONTAK</h2>
-                <p>Alamat:</p>
-                <p>Jl. Bausasran No.48, Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
-                <p>Telp: (0274) 555555</p>
-                <p>Email: sdmuhbausasran@email.sch.id</p>
-                <div>
-                    <p>Media Sosial:</p>
-                    <ul class="list-disc pl-5 text-blue-600">
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">YouTube</a></li>
-                    </ul>
-                </div>
+            <div class="bg-gray-100 p-4 rounded shadow">
+                <h2 class="text-lg font-semibold mb-2">KONTAK</h2>
+                <p><strong> <i class="ri-home-3-fill"></i> Alamat :</strong>
+                    <br>Jl. Ronodigdayan No.60, Bausasran, Kec. Danurejan, Kota Yogyakarta, 55211
+                </p>
+                <p class="mt-2"><strong><i class="ri-mail-fill"></i> Email :</strong>
+                    <br>123@gmail.com
+                </p>
+                <p class="mt-2">
+                    <strong><i class="ri-global-line"></i> Website :</strong>
+                    <br>123.sch.id
+                </p>
+                <p class="mt-2"><strong>Media Sosial :</strong></p>
+                <ul class="text-sm list-none">
+                    <li> <i class="ri-facebook-fill"></i> Facebook</li>
+                    <li> <i class="ri-instagram-fill"></i> Instagram</li>
+                    <li> <i class="ri-youtube-fill"></i> Youtube</li>
+                </ul>
             </div>
+            <div class="bg-gray-100 p-4 rounded shadow">
+                <h2 class="text-lg font-semibold mb-2 text-center">KALENDER</h2>
+                <p id="calendar-title" class="text-center font-semibold text-lg mb-2">April 2025</p>
 
-            <!-- Kalender -->
-            <div>
-                <h2 class="text-lg font-semibold border-b pb-1 mb-2">KALENDER</h2>
-                <div class="text-sm text-center">
-                    <p class="font-semibold">April 2025</p>
-                    <div class="grid grid-cols-7 gap-1 mt-2 text-xs">
-                        <div>Sen</div>
-                        <div>Sel</div>
-                        <div>Rab</div>
-                        <div>Kam</div>
-                        <div>Jum</div>
-                        <div>Sab</div>
-                        <div>Min</div>
-                        <!-- Hari: tanda hari aktif dengan bg-green-200 -->
-                        <div class="text-gray-400">31</div>
-                        <div>1</div>
-                        <div>2</div>
-                        <div class="bg-green-200 rounded">3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
-                        <div>7</div>
-                        <div>8</div>
-                        <div>9</div>
-                        <div>10</div>
-                        <div>11</div>
-                        <div>12</div>
-                        <div>13</div>
-                        <div>14</div>
-                        <div>15</div>
-                        <div>16</div>
-                        <div>17</div>
-                        <div>18</div>
-                        <div>19</div>
-                        <div>20</div>
-                        <div>21</div>
-                        <div>22</div>
-                        <div>23</div>
-                        <div>24</div>
-                        <div>25</div>
-                        <div>26</div>
-                        <div>27</div>
-                        <div>28</div>
-                        <div>29</div>
-                        <div>30</div>
-                        <div class="text-gray-400">1</div>
-                        <div class="text-gray-400">2</div>
-                        <div class="text-gray-400">3</div>
-                        <div class="text-gray-400">4</div>
-                    </div>
+                <div class="grid grid-cols-7 text-sm text-center font-medium">
+                    <div class="bg-green-200 py-1">Mg</div>
+                    <div class="bg-green-200 py-1">Sn</div>
+                    <div class="bg-green-200 py-1">Sl</div>
+                    <div class="bg-green-200 py-1">Rb</div>
+                    <div class="bg-green-200 py-1">Km</div>
+                    <div class="bg-green-200 py-1">Jm</div>
+                    <div class="bg-green-200 py-1">Sb</div>
                 </div>
+                <div id="calendar-body" class="grid grid-cols-7 text-sm text-center mt-1"></div>
             </div>
         </aside>
 
@@ -203,32 +167,115 @@
         </main>
 
 
-        <aside class="space-y-4 md:col-span-1">
-            <div>
-                <h2 class="text-lg font-semibold border-b pb-1">BERITA TERPOPULER</h2>
-                <ul class="space-y-2 text-sm mt-2">
-                    <li>
-                        <a href="#" class="block text-blue-600 hover:underline">Kegiatan Outbond</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block text-blue-600 hover:underline">JAMBORE</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block text-blue-600 hover:underline">Peringatan HUT RI</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block text-blue-600 hover:underline">Hari Guru</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block text-blue-600 hover:underline">KARNAVAL PAHLAWAN</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block text-blue-600 hover:underline">Tari Tradisional</a>
-                    </li>
-                </ul>
+        <aside class="order-3 lg:col-span-1 bg-gray-100 p-4 rounded shadow max-h-[700px] overflow-y-auto">
+            <h2 class="text-lg font-semibold mb-2">BERITA TERPOPULER</h2>
+            <div class="space-y-4 text-sm ">
+                @foreach ($berita as $item)
+                    <div>
+                        <p class="font-medium mb-2 text-center">{{ $item->judul }}</p>
+                        <div class="flex justify-center items-center">
+                            <img src="{{ asset('storage/' . $item->gambar) }}" alt="" class="w-1/2">
+                        </div>
+                        <p class="text-gray-500 text-xs mt-2 text-center">
+                            Tanggal {{ \Carbon\Carbon::parse($item->tanggal)->format('d-m-Y \p\u\k\u\l H:i') }}
+                        </p>
+                    </div>
+                @endforeach
             </div>
         </aside>
     </div>
+
+    <footer class="bg-gradient-to-br from-[#ECFAE5] via-[#DDF6D2] to-[#CAE8BD] text-[#537D5D]">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-[#DDEB9D] rounded-lg flex items-center justify-center">
+                            <svg class="w-8 h-8 text-green-700" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">SD Muhammadiyah Baubasran</h3>
+                            <p class="text-sm opacity-90">Sekolah Dasar Unggulan</p>
+                        </div>
+                    </div>
+                    <p class="opacity-90 leading-relaxed">
+                        Mencerdaskan generasi bangsa dengan pendidikan berkualitas, berkarakter, dan berakhlak mulia
+                        untuk masa depan yang gemilang.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold border-b border-green-800 pb-2">Tautan Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#"
+                                class="opacity-90 hover:text-[#638C6D] flex items-center transition duration-200"><span
+                                    class="w-2 h-2 bg-green-700 rounded-full mr-3"></span>Beranda</a></li>
+                        <li><a href="#"
+                                class="opacity-90 hover:text-[#638C6D] flex items-center transition duration-200"><span
+                                    class="w-2 h-2 bg-green-700 rounded-full mr-3"></span>Profil Sekolah</a></li>
+                        <li><a href="#"
+                                class="opacity-90 hover:text-[#638C6D] flex items-center transition duration-200"><span
+                                    class="w-2 h-2 bg-green-700 rounded-full mr-3"></span>Fasilitas</a></li>
+                        <li><a href="#"
+                                class="opacity-90 hover:text-[#638C6D] flex items-center transition duration-200"><span
+                                    class="w-2 h-2 bg-green-700 rounded-full mr-3"></span>Kegiatan</a></li>
+                        <li><a href="#"
+                                class="opacity-90 hover:text-[#638C6D] flex items-center transition duration-200"><span
+                                    class="w-2 h-2 bg-green-700 rounded-full mr-3"></span>PPDB</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold border-b border-green-800 pb-2">Kontak Kami</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-green-700 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-1.1 0-2-.9-2-2h4c0 1.1-.9 2-2 2zm6.36-6.64C16.8 10.8 14.53 10 12 10s-4.8.8-6.36 2.36C4.21 14.21 4 15.1 4 16v1h16v-1c0-.9-.21-1.79-.64-2.64z" />
+                            </svg>
+                            <span>Jl. Baubasran</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-green-700" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79a15.91 15.91 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.36 11.36 0 003.58.57 1 1 0 011 1v3.58a1 1 0 01-1 1C10.29 21 3 13.71 3 4a1 1 0 011-1h3.58a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.24 1.05l-2.2 2.2z" />
+                            </svg>
+                            <span>(021) 1234-5678</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-green-700" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            <span>info@sdbaubasran.sch.id</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold border-b border-green-800 pb-2">Jam Operasional</h4>
+                    <div class="grid gap-4">
+                        <div class="bg-white/60 rounded-xl shadow-md p-4">
+                            <p class="text-sm">Senin - Jumat</p>
+                            <p class="font-semibold text-green-800 text-lg">07.00 - 15.00 WIB</p>
+                            <div class="mt-2 text-xs text-[#537D5D]">Aktif selama jam sekolah</div>
+                        </div>
+                        <div class="bg-white/60 rounded-xl shadow-md p-4">
+                            <p class="text-sm">Sabtu</p>
+                            <p class="font-semibold text-green-800 text-lg">07.00 - 12.00 WIB</p>
+                            <div class="mt-2 text-xs text-[#537D5D]">Aktivitas terbatas (ekstrakurikuler)</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="border-t border-green-200 mt-12 pt-6 text-center text-sm opacity-80">
+                © 2025 SD Muhammadiyah Baubasran. Seluruh hak cipta dilindungi.
+            </div>
+        </div>
+    </footer>
 
     <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
     <script src="js/kalender.js"></script>

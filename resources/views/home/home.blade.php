@@ -1,11 +1,16 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>Home</title>
+    <link rel="stylesheet" href="css/slider.css">
+
 </head>
 
 <body>
@@ -24,6 +29,7 @@
             <li><a href="#" class="hover:text-blue-600 transition-colors duration-200">HOME</a></li>
 
             <li class="relative">
+                
                 <button type="button"
                     class="flex items-center hover:text-blue-600 transition-colors duration-200 dropdown-trigger"
                     data-dropdown="profil">
@@ -44,32 +50,26 @@
                 </ul>
             </li>
 
-            <li class="relative group">
-                <a href="{{ url('/galeri') }}"
-                    class="flex items-center hover:text-blue-600 transition-colors duration-200">
+            <li class="relative">
+                <button type="button"
+                    class="flex items-center hover:text-blue-600 transition-colors duration-200 dropdown-trigger"
+                    data-dropdown="galeri">
                     GALERI
                     <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
-                </a>
-                <ul
-                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 group-hover:opacity-100 invisible group-hover:visible transform -translate-y-2 group-hover:translate-y-0 transition-all duration-200 z-50">
-                    <li>
-                        <a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">
-                            Foto
-                        </a>
+                </button>
+                <ul id="galeri"
+                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    <li><a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Foto</a>
                     </li>
-                    <li>
-                        <a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">
-                            Video
-                        </a>
+                    <li><a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
                     </li>
                 </ul>
             </li>
-
 
             <li class="relative">
                 <button type="button"
@@ -100,7 +100,7 @@
             </div>
         </div>
 
-        <div class="md:hidden flex justify-end w-full">
+        <div class="md:hidden flex justify-end w-full ">
             <button id="menu-toggle" class="text-gray-700 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -110,176 +110,129 @@
         </div>
     </nav>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-100 w-[90%] mx-auto rounded-lg shadow-md mt-2">
-        <ul class="flex flex-col space-y-2 p-4 text-sm font-medium text-gray-700">
-            <li><a href="#"
-                    class="block px-4 py-2 hover:bg-gray-200 rounded transition-colors duration-200">HOME</a></li>
+    <main class="py-10 space-y-20 bg-gray-50">
 
-            <li class="relative">
-                <button type="button"
-                    class="flex justify-between items-center w-full px-4 py-2 dropdown-trigger-mobile hover:bg-gray-200 rounded transition-colors duration-200"
-                    data-dropdown="mobile-profil">
-                    PROFIL
-                    <svg class="w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <ul id="mobile-profil" class="hidden flex-col ml-4 space-y-1 text-sm mt-2">
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Visi
-                            & Misi</a></li>
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Sejarah</a>
-                    </li>
-                </ul>
-            </li>
+        <!-- Section Selamat Datang - tetap tanpa background -->
+        <section class="text-center px-4 md:px-8 lg:px-16">
+            <h1 class="text-3xl md:text-5xl font-bold text-green-700 mb-4">Selamat Datang di SD Muhammadiyah Bausasran
+            </h1>
+            <p class="text-gray-700 max-w-2xl mx-auto text-lg">Sekolah unggulan dengan pendidikan berbasis akhlak mulia,
+                prestasi, dan teknologi.</p>
+            <img src="assets/gedung.png" alt="Gedung Sekolah"
+                class="mt-8 rounded-xl shadow-md w-full max-w-4xl mx-auto object-cover h-64 md:h-96">
+        </section>
 
-            <li class="relative">
-                <button type="button"
-                    class="flex justify-between items-center w-full px-4 py-2 dropdown-trigger-mobile hover:bg-gray-200 rounded transition-colors duration-200"
-                    data-dropdown="mobile-galeri">
-                    GALERI
-                    <svg class="w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <ul id="mobile-galeri" class="hidden flex-col ml-4 space-y-1 text-sm mt-2">
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Foto</a>
-                    </li>
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Video</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="relative">
-                <button type="button"
-                    class="flex justify-between items-center w-full px-4 py-2 dropdown-trigger-mobile hover:bg-gray-200 rounded transition-colors duration-200"
-                    data-dropdown="mobile-informasi">
-                    INFORMASI
-                    <svg class="w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <ul id="mobile-informasi" class="hidden flex-col ml-4 space-y-1 text-sm mt-2">
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Berita</a>
-                    </li>
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Pengumuman</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li><a href="#"
-                    class="block px-4 py-2 hover:bg-gray-200 rounded transition-colors duration-200">PPDB SD</a></li>
-        </ul>
-    </div>
-
-
-    <div class="flex justify-center items-center mt-8">
-        <div class="bg-gradient-to-r from-green-400 to-[#83C331] px-12 py-4">
-            <span class="text-white text-2xl ">PROFIL SEKOLAH</span>
-        </div>
-    </div>
-
-    <div class="flex flex-col lg:grid lg:grid-cols-4 gap-4 px-4 py-6">
-
-        <main class="order-1 lg:order-2 lg:col-span-2">
-            <h1 class="text-2xl font-bold mb-4">Profil Sekolah</h1>
-            <div class="mb-4">
-                <iframe class="w-full aspect-video rounded" src="https://www.youtube.com/embed/insd7oa41iM"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="text-sm space-y-1">
-                <p><strong>Nama Sekolah</strong> : SD Muhammadiyah Bausasran</p>
-                <p><strong>Jenis Sekolah</strong> : NEGERI</p>
-                <p><strong>NSS</strong> : xxxxxx</p>
-                <p><strong>NPSN</strong> : 20403418</p>
-                <p><strong>Tanggal Berdiri</strong> : 1977-09-01</p>
-                <p><strong>Akreditasi</strong> : A</p>
-                <p><strong>Izin Operasional</strong> : 2877/1.1828/DIY-16/77</p>
-                <p><strong>Luas Tanah</strong> : 14.000 meter persegi</p>
-                <p><strong>Kurikulum</strong> : KURIKULUM MERDEKA</p>
-                <p><strong>Jumlah Guru & Staf</strong> : x</p>
-                <p><strong>Jumlah Siswa</strong> : x</p>
-                <p><strong>Jumlah Rombel</strong> : x</p>
-                <p><strong>Jumlah Prestasi</strong> : 0</p>
-                <p><strong>Slogan Sekolah</strong> : -</p>
-                <p><strong>Kepsek</strong> : xxxxx</p>
-                <p><strong>NIP</strong> : xxxxx</p>
-                <p><strong>Status Kepegawaian</strong> : PNS</p>
-                <p><strong>Pendidikan Terakhir</strong> : S1</p>
-            </div>
-
-            <div class="mt-6">
-                <h1 class="text-2xl opacity-80 mb-2">Deskripsi Sekolah</h1>
-                <span class="opacity-80">SD Muhammadiyah Baubasran terletak sangat strategis berada dipusat kecamatan
-                    sehingga mudah dijangkau oleh alat transportasi, minat para siswa untuk sekolah di di SD
-                    Muhammadiyah Baubasran sangatlah banyak, karena mutu kualitas pendidikannya yang mumpuni, disamping
-                    itu juga didukung oleh sarana dan prasarana yang memadai</span>
-            </div>
-        </main>
-
-        <aside class="order-2 lg:order-1 lg:col-span-1 space-y-4">
-            <div class="bg-gray-100 p-4 rounded shadow">
-                <h2 class="text-lg font-semibold mb-2">KONTAK</h2>
-                <p><strong> <i class="ri-home-3-fill"></i> Alamat :</strong>
-                    <br>Jl. Ronodigdayan No.60, Bausasran, Kec. Danurejan, Kota Yogyakarta, 55211
-                </p>
-                <p class="mt-2"><strong><i class="ri-mail-fill"></i> Email :</strong>
-                    <br>123@gmail.com
-                </p>
-                <p class="mt-2">
-                    <strong><i class="ri-global-line"></i> Website :</strong>
-                    <br>123.sch.id
-                </p>
-                <p class="mt-2"><strong>Media Sosial :</strong></p>
-                <ul class="text-sm list-none">
-                    <li> <i class="ri-facebook-fill"></i> Facebook</li>
-                    <li> <i class="ri-instagram-fill"></i> Instagram</li>
-                    <li> <i class="ri-youtube-fill"></i> Youtube</li>
-                </ul>
-            </div>
-
-            <div class="bg-gray-100 p-4 rounded shadow">
-                <h2 class="text-lg font-semibold mb-2 text-center">KALENDER</h2>
-                <p id="calendar-title" class="text-center font-semibold text-lg mb-2">April 2025</p>
-
-                <div class="grid grid-cols-7 text-sm text-center font-medium">
-                    <div class="bg-green-200 py-1">Mg</div>
-                    <div class="bg-green-200 py-1">Sn</div>
-                    <div class="bg-green-200 py-1">Sl</div>
-                    <div class="bg-green-200 py-1">Rb</div>
-                    <div class="bg-green-200 py-1">Km</div>
-                    <div class="bg-green-200 py-1">Jm</div>
-                    <div class="bg-green-200 py-1">Sb</div>
-                </div>
-                <div id="calendar-body" class="grid grid-cols-7 text-sm text-center mt-1"></div>
-            </div>
-        </aside>
-
-        <aside class="order-3 lg:col-span-1 bg-gray-100 p-4 rounded shadow max-h-[700px] overflow-y-auto">
-            <h2 class="text-lg font-semibold mb-2">BERITA TERPOPULER</h2>
-            <div class="space-y-4 text-sm ">
-                @foreach ($beritaTerbaru as $item)
+        <!-- Section Tentang Kami - background hijau muda full width -->
+        <section class="bg-green-50 w-full py-12">
+            <div class="px-4 md:px-8 lg:px-16">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <img src="assets/tentang.png" alt="Tentang Sekolah"
+                        class="rounded-lg shadow-md w-full object-cover h-64">
                     <div>
-                        <p class="font-medium mb-2 text-center">{{ $item->judul }}</p>
-                        <div class="flex justify-center items-center">
-                            <img src="{{ asset('storage/' . $item->gambar) }}" alt="" class="w-1/2">
-                        </div>
-                        <p class="text-gray-500 text-xs mt-2 text-center">
-                            Tanggal {{ \Carbon\Carbon::parse($item->tanggal)->format('d-m-Y \p\u\k\u\l H:i') }}
+                        <h2 class="text-2xl font-semibold text-green-700 mb-4">Sekilas Tentang Kami</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            SD Muhammadiyah Bausasran adalah sekolah dasar berbasis nilai-nilai Islam, berlokasi di
+                            pusat kota Yogyakarta.
+                            Kami berkomitmen memberikan pendidikan berkualitas yang mencetak generasi cerdas, berakhlak,
+                            dan berdaya saing tinggi.
                         </p>
                     </div>
-                @endforeach
+                </div>
             </div>
-        </aside>
-    </div>
+        </section>
+
+        <!-- Section Ekstrakurikuler - background putih full width -->
+        <section class="bg-white w-full py-12 shadow-sm">
+            <div class="px-4 md:px-8 lg:px-16">
+                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Ekstrakurikuler Unggulan</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    @foreach ($ekstra as $ekskul)
+                        <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition">
+                            <img src="{{ asset('storage/' . $ekskul->gambar) }}" alt="{{ $ekskul->nama }}"
+                                class="h-36 w-full object-cover rounded-md mb-2">
+                            <p class="font-medium">{{ $ekskul->nama }}</p>
+                            <p class="font-normal">{{ $ekskul->deskripsi }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Galeri - background hijau muda full width -->
+        <section class="bg-green-50 w-full py-12">
+            <div class="px-4 md:px-8 lg:px-16 w-3/4 mx-auto">
+                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Galeri Terbaru</h2>
+
+                <div class="swiper-container galeri-swiper relative">
+                    <div class="swiper-wrapper">
+                        @foreach ($galeriTerbaru as $galeri)
+                            <div class="swiper-slide">
+                                <div
+                                    class="rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                                    <img src="{{ asset('storage/' . $galeri->gambar) }}" alt="{{ $galeri->judul }}"
+                                        class="w-full h-64 object-cover">
+                                    <div class="p-4 text-center text-sm font-medium text-gray-700 bg-white">
+                                        {{ $galeri->judul }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <div class="swiper-pagination mt-4"></div>
+
+                </div>
+
+                <div class="flex justify-center items-center mt-8 space-x-4">
+                    <div class="swiper-button-prev custom-swiper-button-prev static"></div>
+                    <a href="#"
+                        class="text-green-700 font-medium hover:underline inline-flex items-center space-x-2">
+                        Lihat Semua Galeri &rarr;
+                    </a>
+                    <div class="swiper-button-next custom-swiper-button-next static"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Berita - background putih full width -->
+        <section class="bg-white w-full py-12 shadow-sm">
+            <div class="px-4 md:px-8 lg:px-16">
+                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Berita Terbaru</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    @foreach ($beritaTerbaru as $berita)
+                        <div class="bg-gray-50 rounded-lg shadow hover:shadow-md transition overflow-hidden">
+                            <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}"
+                                class="h-40 w-full object-cover">
+                            <div class="p-4">
+                                <h3 class="text-lg font-bold text-gray-800">{{ $berita->judul }}</h3>
+                                <p class="text-sm text-gray-600 mt-1 line-clamp-3">{{ $berita->konten }}</p>
+                                <a href=""
+                                    class="text-green-600 text-sm font-medium mt-2 inline-block hover:underline">Baca
+                                    selengkapnya</a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Testimoni - background hijau muda full width -->
+        <section class="bg-green-50 w-full py-12">
+            <div class="px-4 md:px-8 lg:px-16">
+                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Apa Kata Wali Murid</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    @foreach ($testimoni as $testi)
+                        <div class="bg-white rounded-lg shadow p-4">
+                            <p class="italic text-gray-700">"{{ $testi->pesan }}"</p>
+                            <div class="mt-2 text-sm font-medium text-green-700">— {{ $testi->nama }}</div>
+                            <p class="italic text-gray-700">"{{ $testi->status }}"</p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="bg-gradient-to-br from-[#ECFAE5] via-[#DDF6D2] to-[#CAE8BD] text-[#537D5D]">
         <div class="max-w-7xl mx-auto px-6 py-12">
@@ -373,11 +326,11 @@
         </div>
     </footer>
 
-
-
     <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
-    <script src="js/kalender.js"></script>
     <script src="js/nav.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/slider.js"></script>
+
 
 </body>
 
