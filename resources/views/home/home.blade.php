@@ -33,7 +33,7 @@
                 <button type="button"
                     class="flex items-center hover:text-blue-600 transition-colors duration-200 dropdown-trigger"
                     data-dropdown="profil">
-                    PROFIL
+                    TENTANG KAMI
                     <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -41,6 +41,8 @@
                 </button>
                 <ul id="profil"
                     class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    <li><a href="{{ route('profile.index') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Profile</a></li>
                     <li><a href="#"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi &
                             Misi</a></li>
@@ -54,7 +56,7 @@
                 <button type="button"
                     class="flex items-center hover:text-blue-600 transition-colors duration-200 dropdown-trigger"
                     data-dropdown="galeri">
-                    GALERI
+                    DOKUMENTASI
                     <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -62,8 +64,8 @@
                 </button>
                 <ul id="galeri"
                     class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Foto</a>
+                    <li><a href="{{ route('galeri.index') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Galeri</a>
                     </li>
                     <li><a href="#"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
@@ -131,10 +133,7 @@
                     <div>
                         <h2 class="text-2xl font-semibold text-green-700 mb-4">Sekilas Tentang Kami</h2>
                         <p class="text-gray-700 leading-relaxed">
-                            SD Muhammadiyah Bausasran adalah sekolah dasar berbasis nilai-nilai Islam, berlokasi di
-                            pusat kota Yogyakarta.
-                            Kami berkomitmen memberikan pendidikan berkualitas yang mencetak generasi cerdas, berakhlak,
-                            dan berdaya saing tinggi.
+                            {{ $info->judul ?? 'SD Muhammadiyah Bausasran adalah lembaga pendidikan yang berkomitmen untuk menciptakan generasi yang cerdas, berakhlak mulia, dan siap menghadapi tantangan global. Dengan fasilitas modern dan kurikulum yang inovatif, kami menyediakan lingkungan belajar yang inspiratif bagi siswa-siswi kami.' }}
                         </p>
                     </div>
                 </div>

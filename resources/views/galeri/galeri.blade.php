@@ -23,13 +23,14 @@
 
     <nav class="flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4">
         <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
-            <li><a href="#" class="hover:text-blue-600 transition-colors duration-200">HOME</a></li>
+            <li><a href="{{ route('home') }}" class="hover:text-blue-600 transition-colors duration-200">HOME</a></li>
 
             <li class="relative">
+                
                 <button type="button"
                     class="flex items-center hover:text-blue-600 transition-colors duration-200 dropdown-trigger"
                     data-dropdown="profil">
-                    PROFIL
+                    TENTANG KAMI
                     <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -37,6 +38,8 @@
                 </button>
                 <ul id="profil"
                     class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    <li><a href="{{ route('profile.index') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Profile</a></li>
                     <li><a href="#"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi &
                             Misi</a></li>
@@ -50,7 +53,7 @@
                 <button type="button"
                     class="flex items-center hover:text-blue-600 transition-colors duration-200 dropdown-trigger"
                     data-dropdown="galeri">
-                    GALERI
+                    DOKUMENTASI
                     <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -59,7 +62,7 @@
                 <ul id="galeri"
                     class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
                     <li><a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Foto</a>
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Galeri</a>
                     </li>
                     <li><a href="#"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
@@ -96,7 +99,7 @@
             </div>
         </div>
 
-        <div class="md:hidden flex justify-end w-full">
+        <div class="md:hidden flex justify-end w-full ">
             <button id="menu-toggle" class="text-gray-700 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
                     stroke-linecap="round" stroke-linejoin="round">

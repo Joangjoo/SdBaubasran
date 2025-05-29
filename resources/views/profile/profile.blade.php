@@ -24,10 +24,11 @@
             <li><a href="#" class="hover:text-blue-600 transition-colors duration-200">HOME</a></li>
 
             <li class="relative">
+
                 <button type="button"
                     class="flex items-center hover:text-blue-600 transition-colors duration-200 dropdown-trigger"
                     data-dropdown="profil">
-                    PROFIL
+                    TENTANG KAMI
                     <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -35,6 +36,9 @@
                 </button>
                 <ul id="profil"
                     class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    <li><a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Profile</a>
+                    </li>
                     <li><a href="#"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi &
                             Misi</a></li>
@@ -44,32 +48,26 @@
                 </ul>
             </li>
 
-            <li class="relative group">
-                <a href="{{ url('/galeri') }}"
-                    class="flex items-center hover:text-blue-600 transition-colors duration-200">
-                    GALERI
+            <li class="relative">
+                <button type="button"
+                    class="flex items-center hover:text-blue-600 transition-colors duration-200 dropdown-trigger"
+                    data-dropdown="galeri">
+                    DOKUMENTASI
                     <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
-                </a>
-                <ul
-                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 group-hover:opacity-100 invisible group-hover:visible transform -translate-y-2 group-hover:translate-y-0 transition-all duration-200 z-50">
-                    <li>
-                        <a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">
-                            Foto
-                        </a>
+                </button>
+                <ul id="galeri"
+                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    <li><a href="{{ route('galeri.index') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Galeri</a>
                     </li>
-                    <li>
-                        <a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">
-                            Video
-                        </a>
+                    <li><a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
                     </li>
                 </ul>
             </li>
-
 
             <li class="relative">
                 <button type="button"
@@ -100,7 +98,7 @@
             </div>
         </div>
 
-        <div class="md:hidden flex justify-end w-full">
+        <div class="md:hidden flex justify-end w-full ">
             <button id="menu-toggle" class="text-gray-700 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -112,7 +110,7 @@
 
     <div id="mobile-menu" class="hidden md:hidden bg-gray-100 w-[90%] mx-auto rounded-lg shadow-md mt-2">
         <ul class="flex flex-col space-y-2 p-4 text-sm font-medium text-gray-700">
-            <li><a href="#"
+            <li><a href="{{ route('home') }}"
                     class="block px-4 py-2 hover:bg-gray-200 rounded transition-colors duration-200">HOME</a></li>
 
             <li class="relative">
@@ -266,7 +264,7 @@
         <aside class="order-3 lg:col-span-1 bg-gray-100 p-4 rounded shadow max-h-[700px] overflow-y-auto">
             <h2 class="text-lg font-semibold mb-2">BERITA TERPOPULER</h2>
             <div class="space-y-4 text-sm ">
-                @foreach ($beritaTerbaru as $item)
+                @foreach ($berita as $item)
                     <div>
                         <p class="font-medium mb-2 text-center">{{ $item->judul }}</p>
                         <div class="flex justify-center items-center">
