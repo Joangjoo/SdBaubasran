@@ -11,6 +11,12 @@ class ProfilController extends Controller
      public function index()
     {
          $berita = Berita::orderBy('tanggal', 'desc')->limit(5)->get();
-        return view('profile.profile', compact('berita')); 
+        return view('tentangkami.profile', compact('berita')); 
+    }
+
+    public function visiMisi()
+    {
+        $berita = Berita::orderBy('tanggal', 'desc')->limit(5)->get();
+        return view('tentangkami.visimisi', compact('berita'));
     }
 }

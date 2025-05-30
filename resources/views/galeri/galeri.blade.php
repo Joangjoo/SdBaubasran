@@ -109,6 +109,54 @@
         </div>
     </nav>
 
+    <div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden">
+        <ul class="space-y-2 text-gray-700 text-sm font-medium">
+            <li><a href="{{ route('home') }}" class="block hover:text-blue-600">HOME</a></li>
+
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                    TENTANG KAMI
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="{{ route('profile.index') }}" class="block hover:text-blue-600">Profile</a></li>
+                    <li><a href="#" class="block hover:text-blue-600">Visi & Misi</a></li>
+                    <li><a href="#" class="block hover:text-blue-600">Sejarah</a></li>
+                </ul>
+            </li>
+
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                    DOKUMENTASI
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="#" class="block hover:text-blue-600">Galeri</a></li>
+                    <li><a href="#" class="block hover:text-blue-600">Video</a></li>
+                </ul>
+            </li>
+
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                    INFORMASI
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="#" class="block hover:text-blue-600">Berita</a></li>
+                    <li><a href="#" class="block hover:text-blue-600">Pengumuman</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#" class="block hover:text-blue-600">PPDB SD</a></li>
+        </ul>
+    </div>
+
     <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
         <aside class="space-y-6 md:col-span-1">
             <div class="bg-gray-100 p-4 rounded shadow">

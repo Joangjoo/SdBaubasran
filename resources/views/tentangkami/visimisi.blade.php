@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visi & Misi - SD Muhammadiyah Bausasran</title>
     @vite('resources/css/app.css')
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <title>Home</title>
-    <link rel="stylesheet" href="css/slider.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body class="font-sans antialiased overflow-x-hidden bg-green-50">
     <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
         <div class="ml-2">
-            <img src="assets/sd.png" alt="Logo SD" class="w-16 h-16" />
+            <img src="../assets/sd.png" alt="Logo SD" class="w-16 h-16" />
         </div>
         <div>
             <h1 class="text-xl font-semibold text-gray-800">SD MUHAMMADIYAH BAUSASRAN</h1>
@@ -99,7 +98,7 @@
         </ul>
         <div class="hidden md:block">
             <div>
-                <img src="assets/bgsearch.png" alt="" class="mt-1 h-12">
+                <img src="../assets/bgsearch.png" alt="" class="mt-1 h-12">
             </div>
         </div>
 
@@ -162,154 +161,69 @@
         </ul>
     </div>
 
-
-
-    <main class="py-10 space-y-20 bg-gray-50">
-
-        <!-- Section Selamat Datang - tetap tanpa background -->
-        <section class="text-center px-4 md:px-8 lg:px-16">
-            <h1 class="text-3xl md:text-5xl font-bold text-green-700 mb-4">Selamat Datang di SD Muhammadiyah Bausasran
+    <section class="bg-gradient-to-r from-green-50 to-green-100 py-16 md:py-20 text-center shadow-inner">
+        <div class="container mx-auto px-4 md:px-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-green-800 mb-4 animate-fade-in-down">
+                Visi dan Misi Sekolah
             </h1>
-            <p class="text-gray-700 max-w-2xl mx-auto text-lg">Sekolah unggulan dengan pendidikan berbasis akhlak
-                mulia,
-                prestasi, dan teknologi.</p>
-            <img src="assets/gedung.png" alt="Gedung Sekolah"
-                class="mt-8 rounded-xl shadow-md w-full max-w-4xl mx-auto object-cover h-64 md:h-96">
-        </section>
+            <p class="text-xl md:text-2xl text-green-700 max-w-2xl mx-auto animate-fade-in-up">
+                Fondasi kami dalam membentuk generasi unggul, berakhlak mulia, dan berwawasan masa depan.
+            </p>
+        </div>
+    </section>
 
-        <!-- Section Tentang Kami - background hijau muda full width -->
-        <section class="bg-green-50 w-full py-12">
-            <div class="px-4 md:px-8 lg:px-16">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <img src="assets/tentang.png" alt="Tentang Sekolah"
-                        class="rounded-lg shadow-md w-full object-cover h-64">
-                    <div>
-                        <h2 class="text-2xl font-semibold text-green-700 mb-4">Sekilas Tentang Kami</h2>
-                        <p class="text-gray-700 leading-relaxed">
-                            {{ $info->judul ?? 'SD Muhammadiyah Bausasran adalah lembaga pendidikan yang berkomitmen untuk menciptakan generasi yang cerdas, berakhlak mulia, dan siap menghadapi tantangan global. Dengan fasilitas modern dan kurikulum yang inovatif, kami menyediakan lingkungan belajar yang inspiratif bagi siswa-siswi kami.' }}
-                        </p>
-                    </div>
+
+    <main class="container mx-auto px-4 md:px-8 lg:px-16 py-12">
+        <div class="grid md:grid-cols-2 gap-10">
+            <div
+                class="bg-white p-8 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                <h2 class="text-3xl font-bold text-green-700 mb-4 text-center">
+                    <i class="fas fa-eye mr-2"></i> Visi Sekolah
+                </h2>
+                <div class="block w-20 h-1 bg-green-500 mx-auto my-3 mb-10 rounded-sm"></div>
+                <p class="text-lg leading-relaxed text-gray-700 text-center">
+                    "Terwujudnya Generasi Muslim Berkarakter Qur'ani, Cerdas, Berprestasi, dan Berwawasan Global."
+                </p>
+                <div class="mt-6 text-sm text-gray-500 text-center">
+                    Sebuah pandangan jauh ke depan yang menginspirasi langkah kami.
                 </div>
             </div>
-        </section>
-
-        <!-- Section: Guru & Tenaga Kependidikan -->
-        <section id="guru" class="py-16 bg-gray-50">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Guru & Tenaga Kependidikan</h2>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    @foreach ($guru as $gurus)
-                        <div class="bg-white shadow rounded-2xl p-4 text-center">
-                            <img src="{{ asset('storage/' . $gurus->foto) }}" alt="Foto {{ $gurus->nama }}"
-                                class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-                            <h3 class="text-lg font-semibold text-gray-800">{{ $gurus->nama }}</h3>
-                            <p class="text-gray-600 text-sm">{{ $gurus->jabatan }}</p>
-                        </div>
-                    @endforeach
-                </div>
-
-                <div class="text-center mt-10">
-                    <a href=""
-                        class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">
-                        Lihat Semua Guru
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Section Ekstrakurikuler - background putih full width -->
-        <section class="bg-white w-full py-12 shadow-sm">
-            <div class="px-4 md:px-8 lg:px-16">
-                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Ekstrakurikuler Unggulan</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    @foreach ($ekstra as $ekskul)
-                        <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition">
-                            <img src="{{ asset('storage/' . $ekskul->gambar) }}" alt="{{ $ekskul->nama }}"
-                                class="h-36 w-full object-cover rounded-md mb-2">
-                            <p class="font-medium">{{ $ekskul->nama }}</p>
-                            <p class="font-normal">{{ $ekskul->deskripsi }}</p>
-                        </div>
-                    @endforeach
+            <div
+                class="bg-white p-8 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                <h2 class="text-3xl font-bold text-green-700 mb-4 text-center">
+                    <i class="fas fa-rocket mr-2"></i> Misi Sekolah
+                </h2>
+                <div class="block w-20 h-1 bg-green-500 mx-auto my-3 mb-10 rounded-sm"></div>
+                <ul class="list-none p-0 text-lg leading-relaxed space-y-3">
+                    <li class="relative pl-7 mb-3 text-gray-700">
+                        <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
+                        Menanamkan nilai-nilai keislaman dan akhlak mulia melalui pembiasaan dan keteladanan.
+                    </li>
+                    <li class="relative pl-7 mb-3 text-gray-700">
+                        <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
+                        Mewujudkan pembelajaran yang inovatif, kreatif, dan menyenangkan untuk mengembangkan potensi
+                        peserta didik.
+                    </li>
+                    <li class="relative pl-7 mb-3 text-gray-700">
+                        <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
+                        Meningkatkan prestasi akademik dan non-akademik peserta didik melalui program-program unggulan.
+                    </li>
+                    <li class="relative pl-7 mb-3 text-gray-700">
+                        <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
+                        Membangun kemitraan strategis dengan orang tua, masyarakat, dan lembaga terkait untuk mendukung
+                        pendidikan yang berkualitas.
+                    </li>
+                    <li class="relative pl-7 mb-3 text-gray-700">
+                        <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
+                        Mengembangkan wawasan global peserta didik melalui penguasaan teknologi informasi dan komunikasi
+                        serta bahasa asing.
+                    </li>
+                </ul>
+                <div class="mt-6 text-sm text-gray-500 text-center">
+                    Langkah-langkah konkret kami untuk mencapai visi tersebut.
                 </div>
             </div>
-        </section>
-
-        <!-- Section Galeri - background hijau muda full width -->
-        <section class="bg-green-50 w-full py-12">
-            <div class="px-4 md:px-8 lg:px-16 w-3/4 mx-auto">
-                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Galeri Terbaru</h2>
-
-                <div class="swiper-container galeri-swiper relative">
-                    <div class="swiper-wrapper">
-                        @foreach ($galeriTerbaru as $galeri)
-                            <div class="swiper-slide">
-                                <div
-                                    class="rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
-                                    <img src="{{ asset('storage/' . $galeri->gambar) }}" alt="{{ $galeri->judul }}"
-                                        class="w-full h-64 object-cover">
-                                    <div class="p-4 text-center text-sm font-medium text-gray-700 bg-white">
-                                        {{ $galeri->judul }}
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-
-                    <div class="swiper-pagination mt-4"></div>
-
-                </div>
-
-                <div class="flex justify-center items-center mt-8 space-x-4">
-                    <div class="swiper-button-prev custom-swiper-button-prev static"></div>
-                    <a href="{{ route('galeri.index') }}"
-                        class="text-green-700 font-medium hover:underline inline-flex items-center space-x-2">
-                        Lihat Semua Galeri &rarr;
-                    </a>
-                    <div class="swiper-button-next custom-swiper-button-next static"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Berita - background putih full width -->
-        <section class="bg-white w-full py-12 shadow-sm">
-            <div class="px-4 md:px-8 lg:px-16">
-                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Berita Terbaru</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    @foreach ($beritaTerbaru as $berita)
-                        <div class="bg-gray-50 rounded-lg shadow hover:shadow-md transition overflow-hidden">
-                            <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}"
-                                class="h-40 w-full object-cover">
-                            <div class="p-4">
-                                <h3 class="text-lg font-bold text-gray-800">{{ $berita->judul }}</h3>
-                                <p class="text-sm text-gray-600 mt-1 line-clamp-3">{{ $berita->konten }}</p>
-                                <a href=""
-                                    class="text-green-600 text-sm font-medium mt-2 inline-block hover:underline">Baca
-                                    selengkapnya</a>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Testimoni - background hijau muda full width -->
-        <section class="bg-green-50 w-full py-12">
-            <div class="px-4 md:px-8 lg:px-16">
-                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Apa Kata Wali Murid</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    @foreach ($testimoni as $testi)
-                        <div class="bg-white rounded-lg shadow p-4">
-                            <p class="italic text-gray-700">"{{ $testi->pesan }}"</p>
-                            <div class="mt-2 text-sm font-medium text-green-700">— {{ $testi->nama }}</div>
-                            <p class="italic text-gray-700">"{{ $testi->status }}"</p>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-
+        </div>
     </main>
 
     <footer class="bg-gradient-to-br from-[#ECFAE5] via-[#DDF6D2] to-[#CAE8BD] text-[#537D5D]">
@@ -404,12 +318,8 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+
     <script src="js/nav.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/slider.js"></script>
-
-
 </body>
 
 </html>

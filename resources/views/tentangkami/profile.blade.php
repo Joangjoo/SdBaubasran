@@ -21,7 +21,7 @@
 
     <nav class="flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4">
         <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
-            <li><a href="#" class="hover:text-blue-600 transition-colors duration-200">HOME</a></li>
+            <li><a href="{{ route('home') }}" class="hover:text-blue-600 transition-colors duration-200">HOME</a></li>
 
             <li class="relative">
 
@@ -108,73 +108,51 @@
         </div>
     </nav>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-100 w-[90%] mx-auto rounded-lg shadow-md mt-2">
-        <ul class="flex flex-col space-y-2 p-4 text-sm font-medium text-gray-700">
-            <li><a href="{{ route('home') }}"
-                    class="block px-4 py-2 hover:bg-gray-200 rounded transition-colors duration-200">HOME</a></li>
+    <div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden">
+        <ul class="space-y-2 text-gray-700 text-sm font-medium">
+            <li><a href="{{ route('home') }}" class="block hover:text-blue-600">HOME</a></li>
 
-            <li class="relative">
-                <button type="button"
-                    class="flex justify-between items-center w-full px-4 py-2 dropdown-trigger-mobile hover:bg-gray-200 rounded transition-colors duration-200"
-                    data-dropdown="mobile-profil">
-                    PROFIL
-                    <svg class="w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                    TENTANG KAMI
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
-                <ul id="mobile-profil" class="hidden flex-col ml-4 space-y-1 text-sm mt-2">
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Visi
-                            & Misi</a></li>
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Sejarah</a>
-                    </li>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="#" class="block hover:text-blue-600">Profile</a></li>
+                    <li><a href="#" class="block hover:text-blue-600">Visi & Misi</a></li>
+                    <li><a href="#" class="block hover:text-blue-600">Sejarah</a></li>
                 </ul>
             </li>
 
-            <li class="relative">
-                <button type="button"
-                    class="flex justify-between items-center w-full px-4 py-2 dropdown-trigger-mobile hover:bg-gray-200 rounded transition-colors duration-200"
-                    data-dropdown="mobile-galeri">
-                    GALERI
-                    <svg class="w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                    DOKUMENTASI
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
-                <ul id="mobile-galeri" class="hidden flex-col ml-4 space-y-1 text-sm mt-2">
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Foto</a>
-                    </li>
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Video</a>
-                    </li>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="{{ route('galeri.index') }}" class="block hover:text-blue-600">Galeri</a></li>
+                    <li><a href="#" class="block hover:text-blue-600">Video</a></li>
                 </ul>
             </li>
 
-            <li class="relative">
-                <button type="button"
-                    class="flex justify-between items-center w-full px-4 py-2 dropdown-trigger-mobile hover:bg-gray-200 rounded transition-colors duration-200"
-                    data-dropdown="mobile-informasi">
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
                     INFORMASI
-                    <svg class="w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
-                <ul id="mobile-informasi" class="hidden flex-col ml-4 space-y-1 text-sm mt-2">
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Berita</a>
-                    </li>
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:text-blue-600 hover:bg-gray-200 rounded transition-colors duration-200">Pengumuman</a>
-                    </li>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="#" class="block hover:text-blue-600">Berita</a></li>
+                    <li><a href="#" class="block hover:text-blue-600">Pengumuman</a></li>
                 </ul>
             </li>
 
-            <li><a href="#"
-                    class="block px-4 py-2 hover:bg-gray-200 rounded transition-colors duration-200">PPDB SD</a></li>
+            <li><a href="#" class="block hover:text-blue-600">PPDB SD</a></li>
         </ul>
     </div>
 
