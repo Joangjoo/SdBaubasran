@@ -13,6 +13,7 @@
 </head>
 
 <body class="font-sans antialiased overflow-x-hidden bg-green-50">
+
     <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
         <div class="ml-2">
             <img src="../assets/sd.png" alt="Logo SD" class="w-16 h-16" />
@@ -25,10 +26,11 @@
 
     <nav class="flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4">
         <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
-            <li><a href="#" class="hover:text-green-600 transition-colors duration-200">HOME</a></li>
+            {{-- HOME --}}
+            <li><a href="{{ route('home') }}" class="hover:text-green-600 transition-colors duration-200">HOME</a></li>
 
+            {{-- TENTANG KAMI Dropdown --}}
             <li class="relative">
-
                 <button type="button"
                     class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
                     data-dropdown="profil">
@@ -40,18 +42,19 @@
                 </button>
                 <ul id="profil"
                     class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                    <li><a href="{{ route('profile.index') }}"
+                    <li><a href="{{ route('tentangkami.index') }}"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Profile</a>
                     </li>
-                    <li><a href="#"
+                    <li><a href="{{ route('tentangkami.visiMisi') }}"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi &
                             Misi</a></li>
-                    <li><a href="#"
+                    <li><a href="{{ route('tentangkami.sejarah') }}"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Sejarah</a>
                     </li>
                 </ul>
             </li>
 
+            {{-- DOKUMENTASI Dropdown --}}
             <li class="relative">
                 <button type="button"
                     class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
@@ -67,12 +70,14 @@
                     <li><a href="{{ route('galeri.index') }}"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Galeri</a>
                     </li>
+                    {{-- PERHATIKAN: Link Video --}}
                     <li><a href="#"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
                     </li>
                 </ul>
             </li>
 
+            {{-- INFORMASI Dropdown --}}
             <li class="relative">
                 <button type="button"
                     class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
@@ -85,15 +90,18 @@
                 </button>
                 <ul id="informasi"
                     class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    {{-- PERHATIKAN: Link Berita --}}
                     <li><a href="#"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Berita</a>
                     </li>
+                    {{-- PERHATIKAN: Link Pengumuman --}}
                     <li><a href="#"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Pengumuman</a>
                     </li>
                 </ul>
             </li>
 
+            {{-- PPDB SD --}}
             <li><a href="#" class="hover:text-green-600 transition-colors duration-200">PPDB SD</a></li>
         </ul>
         <div class="hidden md:block">
@@ -112,11 +120,12 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden">
         <ul class="space-y-2 text-gray-700 text-sm font-medium">
-            <li><a href="#" class="block hover:text-green-600">HOME</a></li>
+            {{-- HOME Mobile --}}
+            <li><a href="{{ route('home') }}" class="block hover:text-green-600">HOME</a></li>
 
+            {{-- TENTANG KAMI Dropdown Mobile --}}
             <li class="space-y-1">
                 <button class="w-full flex justify-between items-center dropdown-mobile-btn">
                     TENTANG KAMI
@@ -125,12 +134,15 @@
                     </svg>
                 </button>
                 <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
-                    <li><a href="{{ route('profile.index') }}" class="block hover:text-green-600">Profile</a></li>
-                    <li><a href="#" class="block hover:text-green-600">Visi & Misi</a></li>
-                    <li><a href="#" class="block hover:text-green-600">Sejarah</a></li>
+                    <li><a href="{{ route('tentangkami.index') }}" class="block hover:text-green-600">Profile</a></li>
+                    <li><a href="{{ route('tentangkami.visiMisi') }}" class="block hover:text-green-600">Visi &
+                            Misi</a></li>
+                    <li><a href="{{ route('tentangkami.sejarah') }}" class="block hover:text-green-600">Sejarah</a>
+                    </li>
                 </ul>
             </li>
 
+            {{-- DOKUMENTASI Dropdown Mobile --}}
             <li class="space-y-1">
                 <button class="w-full flex justify-between items-center dropdown-mobile-btn">
                     DOKUMENTASI
@@ -144,6 +156,7 @@
                 </ul>
             </li>
 
+            {{-- INFORMASI Dropdown Mobile --}}
             <li class="space-y-1">
                 <button class="w-full flex justify-between items-center dropdown-mobile-btn">
                     INFORMASI
@@ -157,6 +170,7 @@
                 </ul>
             </li>
 
+            {{-- PPDB SD Mobile --}}
             <li><a href="#" class="block hover:text-green-600">PPDB SD</a></li>
         </ul>
     </div>
@@ -181,8 +195,9 @@
                     <i class="fas fa-eye mr-2"></i> Visi Sekolah
                 </h2>
                 <div class="block w-20 h-1 bg-green-500 mx-auto my-3 mb-10 rounded-sm"></div>
-                <p class="text-lg leading-relaxed text-gray-700 text-center">
-                    "Terwujudnya Generasi Muslim Berkarakter Qur'ani, Cerdas, Berprestasi, dan Berwawasan Global."
+
+                <p class="text-lg leading-relaxed text-gray-700 text-center mb-4">
+                    {{ '"' . ($visi->visi ?? 'Belum ada Visi yang ditetapkan.') . '"' }}
                 </p>
                 <div class="mt-6 text-sm text-gray-500 text-center">
                     Sebuah pandangan jauh ke depan yang menginspirasi langkah kami.
@@ -196,28 +211,19 @@
                 <div class="block w-20 h-1 bg-green-500 mx-auto my-3 mb-10 rounded-sm"></div>
                 <ul class="list-none p-0 text-lg leading-relaxed space-y-3">
                     <li class="relative pl-7 mb-3 text-gray-700">
-                        <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
-                        Menanamkan nilai-nilai keislaman dan akhlak mulia melalui pembiasaan dan keteladanan.
-                    </li>
+                        @forelse ($misis as $itemMisi)
                     <li class="relative pl-7 mb-3 text-gray-700">
                         <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
-                        Mewujudkan pembelajaran yang inovatif, kreatif, dan menyenangkan untuk mengembangkan potensi
-                        peserta didik.
+                        {{ $itemMisi->misi }}
                     </li>
+                @empty
                     <li class="relative pl-7 mb-3 text-gray-700">
                         <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
-                        Meningkatkan prestasi akademik dan non-akademik peserta didik melalui program-program unggulan.
+                        Belum ada poin misi yang ditetapkan.
                     </li>
-                    <li class="relative pl-7 mb-3 text-gray-700">
-                        <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
-                        Membangun kemitraan strategis dengan orang tua, masyarakat, dan lembaga terkait untuk mendukung
-                        pendidikan yang berkualitas.
+                    @endforelse
                     </li>
-                    <li class="relative pl-7 mb-3 text-gray-700">
-                        <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
-                        Mengembangkan wawasan global peserta didik melalui penguasaan teknologi informasi dan komunikasi
-                        serta bahasa asing.
-                    </li>
+
                 </ul>
                 <div class="mt-6 text-sm text-gray-500 text-center">
                     Langkah-langkah konkret kami untuk mencapai visi tersebut.
@@ -318,8 +324,7 @@
         </div>
     </footer>
 
-
-    <script src="js/nav.js"></script>
+    <script src="../js/nav.js"></script>
 </body>
 
 </html>

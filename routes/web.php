@@ -5,9 +5,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\SejarahController;
+use App\Http\Controllers\VisiMisiController;
 
-Route::get('/berita', [BeritaController::class, 'index']);
-Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
-Route::get('/profil', [ProfilController::class, 'index'])->name('profile.index');
-Route::get('/profil/visimisi', [ProfilController::class, 'visiMisi'])->name('profile.visiMisi');
+// --- HOME ---
 Route::get('/', [HomeController::class,'home'])->name('home');
+
+// --- TENTANG KAMI ---
+Route::get('/tentangkami', [ProfilController::class, 'index'])->name('tentangkami.index');
+Route::get('/tentangkami/visimisi', [VisiMisiController::class, 'index'])->name('tentangkami.visiMisi'); // Menggunakan VisiMisiController
+Route::get('/tentangkami/sejarah', [SejarahController::class, 'index'])->name('tentangkami.sejarah');
+
+// --- DOKUMENTASI ---
+Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
+
+

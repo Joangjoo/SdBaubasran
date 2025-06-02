@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     @vite('resources/css/app.css')
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Sejarah</title>
 </head>
 
 <body>
+
     <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
         <div class="ml-2">
-            <img src="assets/sd.png" alt="Logo SD" class="w-16 h-16" />
+            <img src="../assets/sd.png" alt="Logo SD" class="w-16 h-16" />
         </div>
         <div>
             <h1 class="text-xl font-semibold text-gray-800">SD MUHAMMADIYAH BAUSASRAN</h1>
@@ -21,7 +22,7 @@
         </div>
     </div>
 
-    <nav class="flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4">
+   <nav class="flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4">
     <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
         {{-- HOME --}}
         <li><a href="{{ route('home') }}" class="hover:text-green-600 transition-colors duration-200">HOME</a></li>
@@ -103,7 +104,7 @@
     </ul>
     <div class="hidden md:block">
         <div>
-            <img src="assets/bgsearch.png" alt="" class="mt-1 h-12">
+            <img src="../assets/bgsearch.png" alt="" class="mt-1 h-12">
         </div>
     </div>
 
@@ -172,84 +173,96 @@
     </ul>
 </div>
 
-    <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
-        <aside class="space-y-6 md:col-span-1">
-            <div class="bg-gray-100 p-4 rounded shadow">
-                <h2 class="text-lg font-semibold mb-2">KONTAK</h2>
-                <p><strong> <i class="ri-home-3-fill"></i> Alamat :</strong>
-                    <br>Jl. Ronodigdayan No.60, Bausasran, Kec. Danurejan, Kota Yogyakarta, 55211
-                </p>
-                <p class="mt-2"><strong><i class="ri-mail-fill"></i> Email :</strong>
-                    <br>123@gmail.com
-                </p>
-                <p class="mt-2">
-                    <strong><i class="ri-global-line"></i> Website :</strong>
-                    <br>123.sch.id
-                </p>
-                <p class="mt-2"><strong>Media Sosial :</strong></p>
-                <ul class="text-sm list-none">
-                    <li> <i class="ri-facebook-fill"></i> Facebook</li>
-                    <li> <i class="ri-instagram-fill"></i> Instagram</li>
-                    <li> <i class="ri-youtube-fill"></i> Youtube</li>
-                </ul>
-            </div>
-            <div class="bg-gray-100 p-4 rounded shadow">
-                <h2 class="text-lg font-semibold mb-2 text-center">KALENDER</h2>
-                <p id="calendar-title" class="text-center font-semibold text-lg mb-2">April 2025</p>
+    <section class="py-16 bg-gradient-to-br from-green-50 to-indigo-100">
+        <div class="max-w-5xl mx-auto px-4">
+            <h1 class="text-5xl font-extrabold text-center text-blue-900 mb-16 relative" data-aos="fade-down">
+                <span class="block text-2xl font-semibold text-blue-600 mb-2">Jejak Langkah</span>
+                Sejarah & Kepemimpinan SD Baubasran
+                <span
+                    class="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-24 h-1.5 bg-blue-500 rounded-full"></span>
+            </h1>
 
-                <div class="grid grid-cols-7 text-sm text-center font-medium">
-                    <div class="bg-green-200 py-1">Mg</div>
-                    <div class="bg-green-200 py-1">Sn</div>
-                    <div class="bg-green-200 py-1">Sl</div>
-                    <div class="bg-green-200 py-1">Rb</div>
-                    <div class="bg-green-200 py-1">Km</div>
-                    <div class="bg-green-200 py-1">Jm</div>
-                    <div class="bg-green-200 py-1">Sb</div>
+            {{-- Bagian Sambutan Kepala Sekolah - Desain Kartu dengan Hover --}}
+            <div class="bg-white p-10 rounded-3xl shadow-2xl mb-20 flex flex-col md:flex-row items-center gap-10 border border-blue-200 transform transition-transform duration-500 hover:scale-[1.01] hover:shadow-3xl"
+                data-aos="fade-up" data-aos-delay="200">
+
+                {{-- Bagian Foto Kepala Sekolah --}}
+                <div class="flex-shrink-0 w-full md:w-1/3 max-w-xs md:max-w-none">
+                    <img src="{{ asset('storage/' . $sambutan->foto) }}" alt="Foto Kepala Sekolah SD Baubasran"
+                        class="w-full h-auto rounded-xl shadow-lg object-cover border-4 border-blue-100 ring-4 ring-blue-50 ring-offset-2">
+                    <p class="text-center text-xl font-bold text-blue-800 mt-4">{{ $sambutan->nama }}</p>
+                    <p class="text-center text-blue-600 text-sm">{{ $sambutan->jabatan }}</p>
                 </div>
-                <div id="calendar-body" class="grid grid-cols-7 text-sm text-center mt-1"></div>
+
+                {{-- Bagian Teks Sambutan --}}
+                <div class="flex-grow md:w-2/3 text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6 relative">
+                        Sambutan Kepala Sekolah
+                        <span
+                            class="block w-16 h-1 bg-blue-500 absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 bottom-[-8px] rounded-full"></span>
+                    </h2>
+                    <p class="text-gray-700 leading-relaxed text-base mb-4 italic">
+                        {{ $sambutan->motivasi }}
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-base mb-4">
+                        Assalamualaikum Warahmatullahi Wabarakatuh,
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-base mb-4">
+                        {{ $sambutan->sambutan }}
+                    </p>
+
+                    <p class="text-gray-700 leading-relaxed text-base font-semibold mt-6">
+                        Wassalamualaikum Warahmatullahi Wabarakatuh.
+                    </p>
+                </div>
             </div>
-        </aside>
 
-        <!-- Konten Galeri -->
-        <main class="col-span-2 px-4 md:px-8">
-            <h1 class="text-3xl font-bold text-center text-green-600 mb-6 border-b pb-2">GALERI</h1>
+            ---
 
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                @foreach ($galeri as $galeriItem)
-                    <div
-                        class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-                        <img src="{{ asset('storage/' . $galeriItem->gambar) }}" alt="{{ $galeriItem->judul }}"
-                            class="w-full h-56 object-cover object-center rounded-t-xl" />
-                        <div class="p-3 text-center">
-                            <p class="text-sm font-medium text-gray-800 truncate">{{ $galeriItem->judul }}</p>
+            {{-- Bagian Sejarah Sekolah - Desain Timeline --}}
+            <h2 class="text-4xl font-extrabold text-center text-green-800 mb-12 relative" data-aos="fade-down"
+                data-aos-delay="400">
+                <span class="block text-2xl font-semibold text-green-600 mb-2">Linimasa Perjalanan</span>
+                Tonggak Sejarah SD Baubasran
+                <span
+                    class="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-24 h-1.5 bg-green-500 rounded-full"></span>
+            </h2>
+
+            <div class="relative wrap overflow-hidden p-10 h-full">
+                <div class="border-2-2 absolute border-opacity-20 border-green-700 h-full border" style="left: 50%;"
+                    data-aos="zoom-in" data-aos-delay="500"></div>
+
+                @forelse ($linimasa as $index => $item)
+                    <div class="mb-8 flex justify-between items-center w-full {{ $index % 2 == 0 ? 'right-timeline' : 'left-timeline flex-row-reverse' }}"
+                        data-aos="{{ $index % 2 == 0 ? 'fade-right' : 'fade-left' }}"
+                        data-aos-delay="{{ 600 + $index * 200 }}">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-green-500 shadow-xl w-10 h-10 rounded-full">
+                            <h1 class="mx-auto font-semibold text-lg text-white">{{ $index + 1 }}</h1>
+                        </div>
+                        <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 border border-green-200">
+                            <h3 class="mb-3 font-bold text-gray-800 text-xl">{{ $item->judul }}</h3>
+                            <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->judul }}"
+                                class="w-full h-48 object-cover rounded-lg mb-4 shadow-sm">
+                            <p class="text-sm leading-snug text-gray-700">
+                                {{ $item->deskripsi }}
+                            </p>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <p>Tidak ada data linimasa.</p>
+                @endforelse
             </div>
-            
-            <div class="mt-8 flex justify-center space-x-2 text-sm">
-                {{ $galeri->links('pagination::tailwind') }}
-            </div>
-        </main>
 
-
-        <aside class="order-3 lg:col-span-1 bg-gray-100 p-4 rounded shadow max-h-[700px] overflow-y-auto">
-            <h2 class="text-lg font-semibold mb-2">BERITA TERPOPULER</h2>
-            <div class="space-y-4 text-sm ">
-                @foreach ($berita as $item)
-                    <div>
-                        <p class="font-medium mb-2 text-center">{{ $item->judul }}</p>
-                        <div class="flex justify-center items-center">
-                            <img src="{{ asset('storage/' . $item->gambar) }}" alt="" class="w-1/2">
-                        </div>
-                        <p class="text-gray-500 text-xs mt-2 text-center">
-                            Tanggal {{ \Carbon\Carbon::parse($item->tanggal)->format('d-m-Y \p\u\k\u\l H:i') }}
-                        </p>
-                    </div>
-                @endforeach
+            <div class="text-center mt-12">
+                <a href="{{ url('/') }}"
+                    class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full 
+                          hover:bg-blue-700 transition duration-300 ease-in-out">
+                    Kembali ke Beranda
+                </a>
             </div>
-        </aside>
-    </div>
+        </div>
+    </section>
 
     <footer class="bg-gradient-to-br from-[#ECFAE5] via-[#DDF6D2] to-[#CAE8BD] text-[#537D5D]">
         <div class="max-w-7xl mx-auto px-6 py-12">
@@ -343,9 +356,15 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
-    <script src="js/kalender.js"></script>
-    <script src="js/nav.js"></script>
+    <script src="../js/nav.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 
 </html>

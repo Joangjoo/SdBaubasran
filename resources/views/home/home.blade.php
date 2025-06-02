@@ -8,6 +8,7 @@
     @vite('resources/css/app.css')
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Home</title>
     <link rel="stylesheet" href="css/slider.css">
 
@@ -25,142 +26,155 @@
     </div>
 
     <nav class="flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4">
-        <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
-            <li><a href="#" class="hover:text-green-600 transition-colors duration-200">HOME</a></li>
+    <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
+        {{-- HOME --}}
+        <li><a href="{{ route('home') }}" class="hover:text-green-600 transition-colors duration-200">HOME</a></li>
 
-            <li class="relative">
-
-                <button type="button"
-                    class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
-                    data-dropdown="profil">
-                    TENTANG KAMI
-                    <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <ul id="profil"
-                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                    <li><a href="{{ route('profile.index') }}"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Profile</a>
-                    </li>
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi &
-                            Misi</a></li>
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Sejarah</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="relative">
-                <button type="button"
-                    class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
-                    data-dropdown="galeri">
-                    DOKUMENTASI
-                    <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <ul id="galeri"
-                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                    <li><a href="{{ route('galeri.index') }}"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Galeri</a>
-                    </li>
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="relative">
-                <button type="button"
-                    class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
-                    data-dropdown="informasi">
-                    INFORMASI
-                    <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <ul id="informasi"
-                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Berita</a>
-                    </li>
-                    <li><a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Pengumuman</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li><a href="#" class="hover:text-green-600 transition-colors duration-200">PPDB SD</a></li>
-        </ul>
-        <div class="hidden md:block">
-            <div>
-                <img src="assets/bgsearch.png" alt="" class="mt-1 h-12">
-            </div>
-        </div>
-
-        <div class="md:hidden flex justify-end w-full ">
-            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 6h16M4 12h16M4 18h16" />
+        {{-- TENTANG KAMI Dropdown --}}
+        <li class="relative">
+            <button type="button"
+                class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
+                data-dropdown="profil">
+                TENTANG KAMI
+                <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
             </button>
+            <ul id="profil"
+                class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                <li><a href="{{ route('tentangkami.index') }}"
+                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Profile</a>
+                </li>
+                <li><a href="{{ route('tentangkami.visiMisi') }}"
+                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi &
+                        Misi</a></li>
+                <li><a href="{{ route('tentangkami.sejarah') }}"
+                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Sejarah</a>
+                </li>
+            </ul>
+        </li>
+
+        {{-- DOKUMENTASI Dropdown --}}
+        <li class="relative">
+            <button type="button"
+                class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
+                data-dropdown="galeri">
+                DOKUMENTASI
+                <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <ul id="galeri"
+                class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                <li><a href="{{ route('galeri.index') }}"
+                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Galeri</a>
+                </li>
+                {{-- PERHATIKAN: Link Video --}}
+                <li><a href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
+                </li>
+            </ul>
+        </li>
+
+        {{-- INFORMASI Dropdown --}}
+        <li class="relative">
+            <button type="button"
+                class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
+                data-dropdown="informasi">
+                INFORMASI
+                <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <ul id="informasi"
+                class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                {{-- PERHATIKAN: Link Berita --}}
+                <li><a href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Berita</a>
+                </li>
+                {{-- PERHATIKAN: Link Pengumuman --}}
+                <li><a href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Pengumuman</a>
+                </li>
+            </ul>
+        </li>
+
+        {{-- PPDB SD --}}
+        <li><a href="#" class="hover:text-green-600 transition-colors duration-200">PPDB SD</a></li>
+    </ul>
+    <div class="hidden md:block">
+        <div>
+            <img src="assets/bgsearch.png" alt="" class="mt-1 h-12">
         </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden">
-        <ul class="space-y-2 text-gray-700 text-sm font-medium">
-            <li><a href="#" class="block hover:text-green-600">HOME</a></li>
-
-            <li class="space-y-1">
-                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
-                    TENTANG KAMI
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
-                    <li><a href="{{ route('profile.index') }}" class="block hover:text-green-600">Profile</a></li>
-                    <li><a href="#" class="block hover:text-green-600">Visi & Misi</a></li>
-                    <li><a href="#" class="block hover:text-green-600">Sejarah</a></li>
-                </ul>
-            </li>
-
-            <li class="space-y-1">
-                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
-                    DOKUMENTASI
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
-                    <li><a href="{{ route('galeri.index') }}" class="block hover:text-green-600">Galeri</a></li>
-                    <li><a href="#" class="block hover:text-green-600">Video</a></li>
-                </ul>
-            </li>
-
-            <li class="space-y-1">
-                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
-                    INFORMASI
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
-                    <li><a href="#" class="block hover:text-green-600">Berita</a></li>
-                    <li><a href="#" class="block hover:text-green-600">Pengumuman</a></li>
-                </ul>
-            </li>
-
-            <li><a href="#" class="block hover:text-green-600">PPDB SD</a></li>
-        </ul>
     </div>
+
+    <div class="md:hidden flex justify-end w-full ">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+</nav>
+
+<div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden">
+    <ul class="space-y-2 text-gray-700 text-sm font-medium">
+        {{-- HOME Mobile --}}
+        <li><a href="{{ route('home') }}" class="block hover:text-green-600">HOME</a></li>
+
+        {{-- TENTANG KAMI Dropdown Mobile --}}
+        <li class="space-y-1">
+            <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                TENTANG KAMI
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                <li><a href="{{ route('tentangkami.index') }}" class="block hover:text-green-600">Profile</a></li>
+                <li><a href="{{ route('tentangkami.visiMisi') }}" class="block hover:text-green-600">Visi &
+                        Misi</a></li>
+                <li><a href="{{ route('tentangkami.sejarah') }}" class="block hover:text-green-600">Sejarah</a>
+                </li>
+            </ul>
+        </li>
+
+        {{-- DOKUMENTASI Dropdown Mobile --}}
+        <li class="space-y-1">
+            <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                DOKUMENTASI
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                <li><a href="{{ route('galeri.index') }}" class="block hover:text-green-600">Galeri</a></li>
+                <li><a href="#" class="block hover:text-green-600">Video</a></li>
+            </ul>
+        </li>
+
+        {{-- INFORMASI Dropdown Mobile --}}
+        <li class="space-y-1">
+            <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                INFORMASI
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                <li><a href="#" class="block hover:text-green-600">Berita</a></li>
+                <li><a href="#" class="block hover:text-green-600">Pengumuman</a></li>
+            </ul>
+        </li>
+
+        {{-- PPDB SD Mobile --}}
+        <li><a href="#" class="block hover:text-green-600">PPDB SD</a></li>
+    </ul>
+</div>
 
 
 
@@ -196,11 +210,13 @@
         <!-- Section: Guru & Tenaga Kependidikan -->
         <section id="guru" class="py-16 bg-gray-50">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Guru & Tenaga Kependidikan</h2>
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-10" data-aos="fade-down">Guru & Tenaga
+                    Kependidikan</h2>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    @foreach ($guru as $gurus)
-                        <div class="bg-white shadow rounded-2xl p-4 text-center">
+                    @foreach ($guru as $index => $gurus)
+                        <div class="bg-white shadow rounded-2xl p-4 text-center transform hover:scale-105 transition duration-300 ease-in-out"
+                            data-aos="fade-up" data-aos-delay="{{ $index * 100 }}"> {{-- Menambahkan delay untuk efek staggered --}}
                             <img src="{{ asset('storage/' . $gurus->foto) }}" alt="Foto {{ $gurus->nama }}"
                                 class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
                             <h3 class="text-lg font-semibold text-gray-800">{{ $gurus->nama }}</h3>
@@ -211,7 +227,8 @@
 
                 <div class="text-center mt-10">
                     <a href=""
-                        class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">
+                        class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
+                        data-aos="zoom-in" data-aos-delay="500"> {{-- Animasi untuk tombol --}}
                         Lihat Semua Guru
                     </a>
                 </div>
@@ -408,6 +425,13 @@
     <script src="js/nav.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/slider.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Durasi animasi dalam ms
+            once: true // Animasi hanya dijalankan sekali saat elemen masuk viewport
+        });
+    </script>
 
 
 </body>
