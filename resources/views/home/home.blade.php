@@ -12,9 +12,12 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/slider.css">
 
+
+
 </head>
 
-<body>
+<body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50">
+    {{-- Header Start --}}
     <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
         <div class="ml-2">
             <img src="assets/sd.png" alt="Logo SD" class="w-16 h-16" />
@@ -24,311 +27,444 @@
             <p class="text-sm text-gray-600">Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
         </div>
     </div>
+    {{-- Header End --}}
 
+
+    {{-- Nav Start --}}
     <nav class="flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4">
-    <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
-        {{-- HOME --}}
-        <li><a href="{{ route('home') }}" class="hover:text-green-600 transition-colors duration-200">HOME</a></li>
+        <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
+            <li><a href="{{ route('home') }}" class="hover:text-green-600 transition-colors duration-200">HOME</a></li>
+            <li class="relative">
+                <button type="button"
+                    class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
+                    data-dropdown="profil">
+                    TENTANG KAMI
+                    <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul id="profil"
+                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    <li><a href="{{ route('tentangkami.index') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Profile</a>
+                    </li>
+                    <li><a href="{{ route('tentangkami.visiMisi') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi &
+                            Misi</a></li>
+                    <li><a href="{{ route('tentangkami.sejarah') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Sejarah</a>
+                    </li>
+                </ul>
+            </li>
 
-        {{-- TENTANG KAMI Dropdown --}}
-        <li class="relative">
-            <button type="button"
-                class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
-                data-dropdown="profil">
-                TENTANG KAMI
-                <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul id="profil"
-                class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                <li><a href="{{ route('tentangkami.index') }}"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Profile</a>
-                </li>
-                <li><a href="{{ route('tentangkami.visiMisi') }}"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi &
-                        Misi</a></li>
-                <li><a href="{{ route('tentangkami.sejarah') }}"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Sejarah</a>
-                </li>
-            </ul>
-        </li>
+            <li class="relative">
+                <button type="button"
+                    class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
+                    data-dropdown="galeri">
+                    DOKUMENTASI
+                    <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul id="galeri"
+                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    <li><a href="{{ route('galeri.index') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Galeri</a>
+                    </li>
+                    <li><a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
+                    </li>
+                </ul>
+            </li>
 
-        {{-- DOKUMENTASI Dropdown --}}
-        <li class="relative">
-            <button type="button"
-                class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
-                data-dropdown="galeri">
-                DOKUMENTASI
-                <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul id="galeri"
-                class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                <li><a href="{{ route('galeri.index') }}"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Galeri</a>
-                </li>
-                {{-- PERHATIKAN: Link Video --}}
-                <li><a href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
-                </li>
-            </ul>
-        </li>
-
-        {{-- INFORMASI Dropdown --}}
-        <li class="relative">
-            <button type="button"
-                class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
-                data-dropdown="informasi">
-                INFORMASI
-                <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul id="informasi"
-                class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                {{-- PERHATIKAN: Link Berita --}}
-                <li><a href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Berita</a>
-                </li>
-                {{-- PERHATIKAN: Link Pengumuman --}}
-                <li><a href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Pengumuman</a>
-                </li>
-            </ul>
-        </li>
-
-        {{-- PPDB SD --}}
-        <li><a href="#" class="hover:text-green-600 transition-colors duration-200">PPDB SD</a></li>
-    </ul>
-    <div class="hidden md:block">
-        <div>
-            <img src="assets/bgsearch.png" alt="" class="mt-1 h-12">
+            <li class="relative">
+                <button type="button"
+                    class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
+                    data-dropdown="informasi">
+                    INFORMASI
+                    <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul id="informasi"
+                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    <li><a href="{{ route('informasi.berita') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Berita</a>
+                    </li>
+                    <li><a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Pengumuman</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#" class="hover:text-green-600 transition-colors duration-200">PPDB SD</a></li>
+        </ul>
+        <div class="hidden md:block">
+            <div>
+                <img src="assets/bgsearch.png" alt="" class="mt-1 h-12">
+            </div>
         </div>
+
+        <div class="md:hidden flex justify-end w-full ">
+            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+    {{-- Nav End --}}
+
+
+    {{-- Nav Mobile Start --}}
+    <div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden">
+        <ul class="space-y-2 text-gray-700 text-sm font-medium">
+            <li><a href="{{ route('home') }}" class="block hover:text-green-600">HOME</a></li>
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                    TENTANG KAMI
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="{{ route('tentangkami.index') }}" class="block hover:text-green-600">Profile</a></li>
+                    <li><a href="{{ route('tentangkami.visiMisi') }}" class="block hover:text-green-600">Visi &
+                            Misi</a></li>
+                    <li><a href="{{ route('tentangkami.sejarah') }}" class="block hover:text-green-600">Sejarah</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                    DOKUMENTASI
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="{{ route('galeri.index') }}" class="block hover:text-green-600">Galeri</a></li>
+                    <li><a href="#" class="block hover:text-green-600">Video</a></li>
+                </ul>
+            </li>
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                    INFORMASI
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="{{ route('informasi.berita') }}" class="block hover:text-green-600">Berita</a></li>
+                    <li><a href="#" class="block hover:text-green-600">Pengumuman</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="block hover:text-green-600">PPDB SD</a></li>
+        </ul>
     </div>
-
-    <div class="md:hidden flex justify-end w-full ">
-        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-    </div>
-</nav>
-
-<div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden">
-    <ul class="space-y-2 text-gray-700 text-sm font-medium">
-        {{-- HOME Mobile --}}
-        <li><a href="{{ route('home') }}" class="block hover:text-green-600">HOME</a></li>
-
-        {{-- TENTANG KAMI Dropdown Mobile --}}
-        <li class="space-y-1">
-            <button class="w-full flex justify-between items-center dropdown-mobile-btn">
-                TENTANG KAMI
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
-                <li><a href="{{ route('tentangkami.index') }}" class="block hover:text-green-600">Profile</a></li>
-                <li><a href="{{ route('tentangkami.visiMisi') }}" class="block hover:text-green-600">Visi &
-                        Misi</a></li>
-                <li><a href="{{ route('tentangkami.sejarah') }}" class="block hover:text-green-600">Sejarah</a>
-                </li>
-            </ul>
-        </li>
-
-        {{-- DOKUMENTASI Dropdown Mobile --}}
-        <li class="space-y-1">
-            <button class="w-full flex justify-between items-center dropdown-mobile-btn">
-                DOKUMENTASI
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
-                <li><a href="{{ route('galeri.index') }}" class="block hover:text-green-600">Galeri</a></li>
-                <li><a href="#" class="block hover:text-green-600">Video</a></li>
-            </ul>
-        </li>
-
-        {{-- INFORMASI Dropdown Mobile --}}
-        <li class="space-y-1">
-            <button class="w-full flex justify-between items-center dropdown-mobile-btn">
-                INFORMASI
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
-                <li><a href="#" class="block hover:text-green-600">Berita</a></li>
-                <li><a href="#" class="block hover:text-green-600">Pengumuman</a></li>
-            </ul>
-        </li>
-
-        {{-- PPDB SD Mobile --}}
-        <li><a href="#" class="block hover:text-green-600">PPDB SD</a></li>
-    </ul>
-</div>
+    {{-- Nav Mobile End --}}
 
 
-
-    <main class="py-10 space-y-20 bg-gray-50">
-
-        <!-- Section Selamat Datang - tetap tanpa background -->
+    {{-- Main Start --}}
+    <main class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 min-h-screen mt-10">
+        {{-- Section Selamat Datang Start --}}
         <section class="text-center px-4 md:px-8 lg:px-16">
             <h1 class="text-3xl md:text-5xl font-bold text-green-700 mb-4">Selamat Datang di SD Muhammadiyah Bausasran
             </h1>
-            <p class="text-gray-700 max-w-2xl mx-auto text-lg">Sekolah unggulan dengan pendidikan berbasis akhlak
-                mulia,
-                prestasi, dan teknologi.</p>
+            <p class="text-gray-700 max-w-2xl mx-auto text-lg">Sekolah unggulan dengan pendidikan berbasis akhlak mulia,prestasi, dan teknologi.</p>
             <img src="assets/gedung.png" alt="Gedung Sekolah"
                 class="mt-8 rounded-xl shadow-md w-full max-w-4xl mx-auto object-cover h-64 md:h-96">
         </section>
+        {{-- Section Selamat Datang End --}}
 
-        <!-- Section Tentang Kami - background hijau muda full width -->
-        <section class="bg-green-50 w-full py-12">
-            <div class="px-4 md:px-8 lg:px-16">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <img src="assets/tentang.png" alt="Tentang Sekolah"
-                        class="rounded-lg shadow-md w-full object-cover h-64">
-                    <div>
-                        <h2 class="text-2xl font-semibold text-green-700 mb-4">Sekilas Tentang Kami</h2>
-                        <p class="text-gray-700 leading-relaxed">
-                            {{ $info->judul ?? 'SD Muhammadiyah Bausasran adalah lembaga pendidikan yang berkomitmen untuk menciptakan generasi yang cerdas, berakhlak mulia, dan siap menghadapi tantangan global. Dengan fasilitas modern dan kurikulum yang inovatif, kami menyediakan lingkungan belajar yang inspiratif bagi siswa-siswi kami.' }}
-                        </p>
+        {{-- Section Sekilas Tentang Kami Start --}}
+        <section class="relative py-20 overflow-hidden mt-10">
+            <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="relative">
+                            <img src="assets/tentang.png" alt="Tentang Sekolah"
+                                class="relative rounded-2xl shadow-2xl w-full object-cover h-80 lg:h-96 transform hover:scale-105 transition-all duration-500">
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2" data-aos="fade-left" data-aos-duration="1000"
+                        data-aos-delay="200">
+                        <div class="space-y-6 fix-text-clipping">
+                            <h2 class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                                Sekilas Tentang Kami
+                            </h2>
+                            <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></div>
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                {{ $info->judul ?? 'SD Muhammadiyah Bausasran adalah sekolah dasar unggulan yang berkomitmen untuk memberikan pendidikan berkualitas tinggi dengan pendekatan berbasis akhlak mulia, prestasi, dan teknologi.' }}
+                            </p>
+                            <div class="flex items-center space-x-4 pt-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-600 font-medium">Pendidikan Berkualitas Tinggi</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        {{-- Section Sekilas Tentang Kami End --}}
 
-        <!-- Section: Guru & Tenaga Kependidikan -->
-        <section id="guru" class="py-16 bg-gray-50">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-10" data-aos="fade-down">Guru & Tenaga
-                    Kependidikan</h2>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {{-- Section Guru Start --}}
+        <section id="guru" class="py-20 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/50 to-emerald-50/50"></div>
+            <div class="relative max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+                    <h2
+                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+                        Guru & Tenaga Kependidikan
+                    </h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-6">
+                    </div>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Tim pengajar berpengalaman dan berdedikasi
+                        tinggi untuk masa depan siswa</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     @foreach ($guru as $index => $gurus)
-                        <div class="bg-white shadow rounded-2xl p-4 text-center transform hover:scale-105 transition duration-300 ease-in-out"
-                            data-aos="fade-up" data-aos-delay="{{ $index * 100 }}"> {{-- Menambahkan delay untuk efek staggered --}}
-                            <img src="{{ asset('storage/' . $gurus->foto) }}" alt="Foto {{ $gurus->nama }}"
-                                class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-                            <h3 class="text-lg font-semibold text-gray-800">{{ $gurus->nama }}</h3>
-                            <p class="text-gray-600 text-sm">{{ $gurus->jabatan }}</p>
-                        </div>
-                    @endforeach
-                </div>
-
-                <div class="text-center mt-10">
-                    <a href=""
-                        class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
-                        data-aos="zoom-in" data-aos-delay="500"> {{-- Animasi untuk tombol --}}
-                        Lihat Semua Guru
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Section Ekstrakurikuler - background putih full width -->
-        <section class="bg-white w-full py-12 shadow-sm">
-            <div class="px-4 md:px-8 lg:px-16">
-                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Ekstrakurikuler Unggulan</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    @foreach ($ekstra as $ekskul)
-                        <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition">
-                            <img src="{{ asset('storage/' . $ekskul->gambar) }}" alt="{{ $ekskul->nama }}"
-                                class="h-36 w-full object-cover rounded-md mb-2">
-                            <p class="font-medium">{{ $ekskul->nama }}</p>
-                            <p class="font-normal">{{ $ekskul->deskripsi }}</p>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Galeri - background hijau muda full width -->
-        <section class="bg-green-50 w-full py-12">
-            <div class="px-4 md:px-8 lg:px-16 w-3/4 mx-auto">
-                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Galeri Terbaru</h2>
-
-                <div class="swiper-container galeri-swiper relative">
-                    <div class="swiper-wrapper">
-                        @foreach ($galeriTerbaru as $galeri)
-                            <div class="swiper-slide">
-                                <div
-                                    class="rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
-                                    <img src="{{ asset('storage/' . $galeri->gambar) }}" alt="{{ $galeri->judul }}"
-                                        class="w-full h-64 object-cover">
-                                    <div class="p-4 text-center text-sm font-medium text-gray-700 bg-white">
-                                        {{ $galeri->judul }}
+                        <div class="group" data-aos="fade-up" data-aos-duration="800"
+                            data-aos-delay="{{ $index * 100 }}">
+                            <div class="glass-effect rounded-3xl p-6 text-center transform group-hover:scale-105 transition-all duration-500 hover:shadow-2xl">
+                                <div class="relative mb-6">
+                                    <img src="{{ asset('storage/' . $gurus->foto) }}" alt="Foto {{ $gurus->nama }}"
+                                        class="relative w-24 h-24 mx-auto rounded-full object-cover border-4 border-white shadow-lg">
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">{{ $gurus->nama }}</h3>
+                                <p class="text-emerald-600 text-sm font-medium">{{ $gurus->jabatan }}</p>
+                                <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="w-full h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full">
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
-
-                    <div class="swiper-pagination mt-4"></div>
-
+                        </div>
+                    @endforeach
                 </div>
 
-                <div class="flex justify-center items-center mt-8 space-x-4">
-                    <div class="swiper-button-prev custom-swiper-button-prev static"></div>
-                    <a href="{{ route('galeri.index') }}"
-                        class="text-green-700 font-medium hover:underline inline-flex items-center space-x-2">
-                        Lihat Semua Galeri &rarr;
+                <div class="text-center mt-12" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
+                    <a href="#"
+                        class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <span>Lihat Semua Guru</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
                     </a>
-                    <div class="swiper-button-next custom-swiper-button-next static"></div>
                 </div>
             </div>
         </section>
+        {{-- Section Guru End --}}
 
-        <!-- Section Berita - background putih full width -->
-        <section class="bg-white w-full py-12 shadow-sm">
-            <div class="px-4 md:px-8 lg:px-16">
-                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Berita Terbaru</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    @foreach ($beritaTerbaru as $berita)
-                        <div class="bg-gray-50 rounded-lg shadow hover:shadow-md transition overflow-hidden">
-                            <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}"
-                                class="h-40 w-full object-cover">
-                            <div class="p-4">
-                                <h3 class="text-lg font-bold text-gray-800">{{ $berita->judul }}</h3>
-                                <p class="text-sm text-gray-600 mt-1 line-clamp-3">{{ $berita->konten }}</p>
-                                <a href=""
-                                    class="text-green-600 text-sm font-medium mt-2 inline-block hover:underline">Baca
-                                    selengkapnya</a>
+
+        {{-- Section Ekstra Start --}}
+        <section class="py-20 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-50/80 to-teal-50/80"></div>
+            <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
+                <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+                    <h2
+                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+                        Ekstrakurikuler Unggulan
+                    </h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-6">
+                    </div>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Berbagai kegiatan untuk mengembangkan bakat dan
+                        minat siswa</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    @foreach ($ekstra as $index => $ekskul)
+                        <div class="group" data-aos="fade-up" data-aos-duration="800"
+                            data-aos-delay="{{ $index * 100 }}">
+                            <div
+                                class="glass-effect rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transform group-hover:scale-105 transition-all duration-500">
+                                <div class="relative overflow-hidden">
+                                    <img src="{{ asset('storage/' . $ekskul->gambar) }}" alt="{{ $ekskul->nama }}"
+                                        class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold text-lg text-gray-800 mb-2">{{ $ekskul->nama }}</h3>
+                                    <p class="text-gray-600 text-sm">{{ $ekskul->deskripsi }}</p>
+                                </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
             </div>
         </section>
+        {{-- Section Ekstra End --}}
 
-        <!-- Section Testimoni - background hijau muda full width -->
-        <section class="bg-green-50 w-full py-12">
-            <div class="px-4 md:px-8 lg:px-16">
-                <h2 class="text-2xl font-semibold text-center text-green-700 mb-6">Apa Kata Wali Murid</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    @foreach ($testimoni as $testi)
-                        <div class="bg-white rounded-lg shadow p-4">
-                            <p class="italic text-gray-700">"{{ $testi->pesan }}"</p>
-                            <div class="mt-2 text-sm font-medium text-green-700">— {{ $testi->nama }}</div>
-                            <p class="italic text-gray-700">"{{ $testi->status }}"</p>
+
+        {{-- Section Galeri Start --}}
+        <section class="py-20 relative">
+            <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
+                <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+                    <h2
+                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+                        Galeri Terbaru
+                    </h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-6">
+                    </div>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Dokumentasi kegiatan dan fasilitas sekolah</p>
+                </div>
+
+                <div class="max-w-5xl mx-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="swiper-container galeri-swiper relative">
+                        <div class="swiper-wrapper">
+                            @foreach ($galeriTerbaru as $index => $galeri)
+                                <div class="swiper-slide">
+                                    <div
+                                        class="rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-300 hover:scale-105">
+                                        <div class="relative">
+                                            <img src="{{ asset('storage/' . $galeri->gambar) }}"
+                                                alt="{{ $galeri->judul }}" class="w-full h-72 object-cover">
+                                            <div
+                                                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent">
+                                            </div>
+                                        </div>
+                                        <div class="glass-effect p-6 text-center">
+                                            <h3 class="text-lg font-bold text-gray-800">{{ $galeri->judul }}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center mt-12 space-x-6" data-aos="fade-up"
+                        data-aos-delay="400">
+                        <div class="swiper-button-prev"></div>
+                        <a href="{{ route('galeri.index') }}"
+                            class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                            <span>Lihat Semua Galeri</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{-- Section Galeri End --}}
+
+
+        {{-- Section Berita Start --}}
+        <section class="py-20 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-50/80 to-teal-50/80"></div>
+            <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
+                <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+                    <h2
+                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+                        Berita Terbaru
+                    </h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-6">
+                    </div>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Informasi dan kegiatan terkini dari sekolah</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @foreach ($beritaTerbaru as $index => $berita)
+                        <div class="group" data-aos="fade-up" data-aos-duration="800"
+                            data-aos-delay="{{ $index * 100 }}">
+                            <div
+                                class="glass-effect rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transform group-hover:scale-105 transition-all duration-500">
+                                <div class="relative overflow-hidden">
+                                    <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}"
+                                        class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute top-4 left-4">
+                                        <span
+                                            class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-3 py-1 rounded-full text-xs font-semibold">TERBARU</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3
+                                        class="text-lg font-bold text-gray-800 mb-3 group-hover:text-emerald-600 transition-colors">
+                                        {{ $berita->judul }}</h3>
+                                    <p class="text-gray-600 text-sm line-clamp-3 mb-4">{{ $berita->konten }}</p>
+                                    <a href="#"
+                                        class="inline-flex items-center text-emerald-600 font-semibold text-sm hover:text-emerald-700 transition-colors">
+                                        <span>Baca selengkapnya</span>
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     @endforeach
                 </div>
             </div>
         </section>
+        {{-- Section Berita End --}}
+
+
+        {{-- Section Testimoni Start --}}
+        <section class="py-20 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/50 to-emerald-50/50"></div>
+            <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
+                <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+                    <h2
+                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+                        Apa Kata Wali Murid
+                    </h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-6">
+                    </div>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Testimoni dari para wali murid tentang
+                        pengalaman pendidikan di sekolah kami</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @foreach ($testimoni as $index => $testi)
+                        <div class="group" data-aos="fade-up" data-aos-duration="800"
+                            data-aos-delay="{{ $index * 100 }}">
+                            <div
+                                class="glass-effect rounded-2xl p-8 shadow-lg group-hover:shadow-2xl transform group-hover:scale-105 transition-all duration-500 relative">
+                                <div class="absolute -top-4 left-8">
+                                    <div
+                                        class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path
+                                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="italic text-gray-700 mb-6 leading-relaxed">"{{ $testi->pesan }}"</p>
+                                <div class="border-t border-gray-200 pt-4">
+                                    <div class="font-bold text-emerald-700 mb-1">— {{ $testi->nama }}</div>
+                                    <p class="text-gray-600 text-sm italic">{{ $testi->status }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        {{-- Section Testimoni End --}}
 
     </main>
+    {{-- Main End --}}
 
+
+    {{-- Footer Start --}}
     <footer class="bg-gradient-to-br from-[#ECFAE5] via-[#DDF6D2] to-[#CAE8BD] text-[#537D5D]">
         <div class="max-w-7xl mx-auto px-6 py-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -420,18 +556,14 @@
             </div>
         </div>
     </footer>
+    {{-- Footer End --}}
 
     <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
     <script src="js/nav.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000, // Durasi animasi dalam ms
-            once: true // Animasi hanya dijalankan sekali saat elemen masuk viewport
-        });
-    </script>
+    
 
 
 </body>
