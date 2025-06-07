@@ -20,5 +20,5 @@ Route::get('/tentangkami/sejarah', [SejarahController::class, 'index'])->name('t
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
 
 // --- BERITA ---
-Route::get('/dokumentasi/berita', [BeritaController::class, 'index'])->name('informasi.berita');
+Route::get('/informasi/berita', [BeritaController::class, 'index'])->name('informasi.berita');
 

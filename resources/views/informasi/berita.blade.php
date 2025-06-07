@@ -10,11 +10,11 @@
     <title>Berita</title>
 </head>
 
-<body>
+<body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-x-hidden">
 
     <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
         <div class="ml-2">
-            <img src="assets/sd.png" alt="Logo SD" class="w-16 h-16" />
+            <img src="../assets/sd.png" alt="Logo SD" class="w-16 h-16" />
         </div>
         <div>
             <h1 class="text-xl font-semibold text-gray-800">SD MUHAMMADIYAH BAUSASRAN</h1>
@@ -252,14 +252,14 @@
                                                     <path fill-rule="evenodd"
                                                         d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" />
                                                 </svg>
-                                                {{ rand(500, 2000) }} views
+                                                {{-- {{ rand(500, 2000) }} views --}}
                                             </div>
                                             <div class="flex items-center text-sm text-gray-500">
                                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fill-rule="evenodd"
                                                         d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
                                                 </svg>
-                                                {{ rand(20, 150) }} likes
+                                                {{-- {{ rand(20, 150) }} likes --}}
                                             </div>
                                         </div>
                                         <a href="#"

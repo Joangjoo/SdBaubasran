@@ -16,8 +16,7 @@
 
 </head>
 
-<body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50">
-    {{-- Header Start --}}
+<body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-x-hidden">
     <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
         <div class="ml-2">
             <img src="assets/sd.png" alt="Logo SD" class="w-16 h-16" />
@@ -120,7 +119,7 @@
 
 
     {{-- Nav Mobile Start --}}
-    <div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden">
+    <div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden ">
         <ul class="space-y-2 text-gray-700 text-sm font-medium">
             <li><a href="{{ route('home') }}" class="block hover:text-green-600">HOME</a></li>
             <li class="space-y-1">
@@ -563,7 +562,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
 
 
 </body>

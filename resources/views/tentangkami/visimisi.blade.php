@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
-<body class="font-sans antialiased overflow-x-hidden bg-green-50">
+<body class="font-sans antialiased overflow-x-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 ">
 
     <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
         <div class="ml-2">
@@ -26,10 +27,7 @@
 
     <nav class="flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4">
         <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
-            {{-- HOME --}}
             <li><a href="{{ route('home') }}" class="hover:text-green-600 transition-colors duration-200">HOME</a></li>
-
-            {{-- TENTANG KAMI Dropdown --}}
             <li class="relative">
                 <button type="button"
                     class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
@@ -53,8 +51,6 @@
                     </li>
                 </ul>
             </li>
-
-            {{-- DOKUMENTASI Dropdown --}}
             <li class="relative">
                 <button type="button"
                     class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
@@ -70,14 +66,11 @@
                     <li><a href="{{ route('galeri.index') }}"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Galeri</a>
                     </li>
-                    {{-- PERHATIKAN: Link Video --}}
                     <li><a href="#"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
                     </li>
                 </ul>
             </li>
-
-            {{-- INFORMASI Dropdown --}}
             <li class="relative">
                 <button type="button"
                     class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
@@ -90,18 +83,14 @@
                 </button>
                 <ul id="informasi"
                     class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                    {{-- PERHATIKAN: Link Berita --}}
-                    <li><a href="#"
+                    <li><a href="{{ route('informasi.berita') }}"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Berita</a>
                     </li>
-                    {{-- PERHATIKAN: Link Pengumuman --}}
                     <li><a href="#"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Pengumuman</a>
                     </li>
                 </ul>
             </li>
-
-            {{-- PPDB SD --}}
             <li><a href="#" class="hover:text-green-600 transition-colors duration-200">PPDB SD</a></li>
         </ul>
         <div class="hidden md:block">
@@ -122,10 +111,7 @@
 
     <div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden">
         <ul class="space-y-2 text-gray-700 text-sm font-medium">
-            {{-- HOME Mobile --}}
             <li><a href="{{ route('home') }}" class="block hover:text-green-600">HOME</a></li>
-
-            {{-- TENTANG KAMI Dropdown Mobile --}}
             <li class="space-y-1">
                 <button class="w-full flex justify-between items-center dropdown-mobile-btn">
                     TENTANG KAMI
@@ -141,8 +127,6 @@
                     </li>
                 </ul>
             </li>
-
-            {{-- DOKUMENTASI Dropdown Mobile --}}
             <li class="space-y-1">
                 <button class="w-full flex justify-between items-center dropdown-mobile-btn">
                     DOKUMENTASI
@@ -155,8 +139,6 @@
                     <li><a href="#" class="block hover:text-green-600">Video</a></li>
                 </ul>
             </li>
-
-            {{-- INFORMASI Dropdown Mobile --}}
             <li class="space-y-1">
                 <button class="w-full flex justify-between items-center dropdown-mobile-btn">
                     INFORMASI
@@ -165,32 +147,29 @@
                     </svg>
                 </button>
                 <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
-                    <li><a href="#" class="block hover:text-green-600">Berita</a></li>
+                    <li><a href="{{ route('informasi.berita') }}" class="block hover:text-green-600">Berita</a></li>
                     <li><a href="#" class="block hover:text-green-600">Pengumuman</a></li>
                 </ul>
             </li>
-
-            {{-- PPDB SD Mobile --}}
             <li><a href="#" class="block hover:text-green-600">PPDB SD</a></li>
         </ul>
     </div>
 
     <section class="bg-gradient-to-r from-green-50 to-green-100 py-16 md:py-20 text-center shadow-inner">
         <div class="container mx-auto px-4 md:px-8">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-green-800 mb-4 animate-fade-in-down">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-green-800 mb-4" data-aos="fade-down">
                 Visi dan Misi Sekolah
             </h1>
-            <p class="text-xl md:text-2xl text-green-700 max-w-2xl mx-auto animate-fade-in-up">
+            <p class="text-xl md:text-2xl text-green-700 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                 Fondasi kami dalam membentuk generasi unggul, berakhlak mulia, dan berwawasan masa depan.
             </p>
         </div>
     </section>
 
-
     <main class="container mx-auto px-4 md:px-8 lg:px-16 py-12">
         <div class="grid md:grid-cols-2 gap-10">
-            <div
-                class="bg-white p-8 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+            <div class="bg-white p-8 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                data-aos="zoom-in-right" data-aos-delay="200">
                 <h2 class="text-3xl font-bold text-green-700 mb-4 text-center">
                     <i class="fas fa-eye mr-2"></i> Visi Sekolah
                 </h2>
@@ -203,34 +182,33 @@
                     Sebuah pandangan jauh ke depan yang menginspirasi langkah kami.
                 </div>
             </div>
-            <div
-                class="bg-white p-8 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+
+            <div class="bg-white p-8 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                data-aos="zoom-in-left" data-aos-delay="300">
                 <h2 class="text-3xl font-bold text-green-700 mb-4 text-center">
                     <i class="fas fa-rocket mr-2"></i> Misi Sekolah
                 </h2>
                 <div class="block w-20 h-1 bg-green-500 mx-auto my-3 mb-10 rounded-sm"></div>
                 <ul class="list-none p-0 text-lg leading-relaxed space-y-3">
-                    <li class="relative pl-7 mb-3 text-gray-700">
-                        @forelse ($misis as $itemMisi)
-                    <li class="relative pl-7 mb-3 text-gray-700">
-                        <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
-                        {{ $itemMisi->misi }}
-                    </li>
-                @empty
-                    <li class="relative pl-7 mb-3 text-gray-700">
-                        <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
-                        Belum ada poin misi yang ditetapkan.
-                    </li>
+                    @forelse ($misis as $itemMisi)
+                        <li class="relative pl-7 mb-3 text-gray-700" data-aos="fade-up" data-aos-delay="400">
+                            <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
+                            {{ $itemMisi->misi }}
+                        </li>
+                    @empty
+                        <li class="relative pl-7 mb-3 text-gray-700" data-aos="fade-up" data-aos-delay="400">
+                            <span class="absolute left-0 top-0.5 text-green-500 font-bold text-xl">•</span>
+                            Belum ada poin misi yang ditetapkan.
+                        </li>
                     @endforelse
-                    </li>
-
                 </ul>
-                <div class="mt-6 text-sm text-gray-500 text-center">
+                <div class="mt-6 text-sm text-gray-500 text-center" data-aos="fade-up" data-aos-delay="500">
                     Langkah-langkah konkret kami untuk mencapai visi tersebut.
                 </div>
             </div>
         </div>
     </main>
+
 
     <footer class="bg-gradient-to-br from-[#ECFAE5] via-[#DDF6D2] to-[#CAE8BD] text-[#537D5D]">
         <div class="max-w-7xl mx-auto px-6 py-12">
@@ -325,6 +303,10 @@
     </footer>
 
     <script src="../js/nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

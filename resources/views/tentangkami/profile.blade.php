@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite('resources/css/app.css')
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-x-hidden">
     <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
         <div class="ml-2">
             <img src="assets/sd.png" alt="Logo SD" class="w-16 h-16" />
@@ -19,156 +20,137 @@
         </div>
     </div>
 
-   <nav class="flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4">
-    <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
-        {{-- HOME --}}
-        <li><a href="{{ route('home') }}" class="hover:text-green-600 transition-colors duration-200">HOME</a></li>
+    <nav class="flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4">
+        <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
+            <li><a href="{{ route('home') }}" class="hover:text-green-600 transition-colors duration-200">HOME</a></li>
+            <li class="relative">
+                <button type="button"
+                    class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
+                    data-dropdown="profil">
+                    TENTANG KAMI
+                    <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul id="profil"
+                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    <li><a href="{{ route('tentangkami.index') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Profile</a>
+                    </li>
+                    <li><a href="{{ route('tentangkami.visiMisi') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi &
+                            Misi</a></li>
+                    <li><a href="{{ route('tentangkami.sejarah') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Sejarah</a>
+                    </li>
+                </ul>
+            </li>
 
-        {{-- TENTANG KAMI Dropdown --}}
-        <li class="relative">
-            <button type="button"
-                class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
-                data-dropdown="profil">
-                TENTANG KAMI
-                <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul id="profil"
-                class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                <li><a href="{{ route('tentangkami.index') }}"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Profile</a>
-                </li>
-                <li><a href="{{ route('tentangkami.visiMisi') }}"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi &
-                        Misi</a></li>
-                <li><a href="{{ route('tentangkami.sejarah') }}"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Sejarah</a>
-                </li>
-            </ul>
-        </li>
+            <li class="relative">
+                <button type="button"
+                    class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
+                    data-dropdown="galeri">
+                    DOKUMENTASI
+                    <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul id="galeri"
+                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    <li><a href="{{ route('galeri.index') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Galeri</a>
+                    </li>
+                    <li><a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
+                    </li>
+                </ul>
+            </li>
 
-        {{-- DOKUMENTASI Dropdown --}}
-        <li class="relative">
-            <button type="button"
-                class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
-                data-dropdown="galeri">
-                DOKUMENTASI
-                <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul id="galeri"
-                class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                <li><a href="{{ route('galeri.index') }}"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Galeri</a>
-                </li>
-                {{-- PERHATIKAN: Link Video --}}
-                <li><a href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Video</a>
-                </li>
-            </ul>
-        </li>
-
-        {{-- INFORMASI Dropdown --}}
-        <li class="relative">
-            <button type="button"
-                class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
-                data-dropdown="informasi">
-                INFORMASI
-                <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul id="informasi"
-                class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
-                {{-- PERHATIKAN: Link Berita --}}
-                <li><a href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Berita</a>
-                </li>
-                {{-- PERHATIKAN: Link Pengumuman --}}
-                <li><a href="#"
-                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Pengumuman</a>
-                </li>
-            </ul>
-        </li>
-
-        {{-- PPDB SD --}}
-        <li><a href="#" class="hover:text-green-600 transition-colors duration-200">PPDB SD</a></li>
-    </ul>
-    <div class="hidden md:block">
-        <div>
-            <img src="assets/bgsearch.png" alt="" class="mt-1 h-12">
+            <li class="relative">
+                <button type="button"
+                    class="flex items-center hover:text-green-600 transition-colors duration-200 dropdown-trigger"
+                    data-dropdown="informasi">
+                    INFORMASI
+                    <svg class="ml-1 w-3 h-3 transform transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul id="informasi"
+                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md border opacity-0 invisible transform -translate-y-2 transition-all duration-200 z-50">
+                    <li><a href="{{ route('informasi.berita') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Berita</a>
+                    </li>
+                    <li><a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Pengumuman</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#" class="hover:text-green-600 transition-colors duration-200">PPDB SD</a></li>
+        </ul>
+        <div class="hidden md:block">
+            <div>
+                <img src="assets/bgsearch.png" alt="" class="mt-1 h-12">
+            </div>
         </div>
+
+        <div class="md:hidden flex justify-end w-full ">
+            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden">
+        <ul class="space-y-2 text-gray-700 text-sm font-medium">
+            <li><a href="{{ route('home') }}" class="block hover:text-green-600">HOME</a></li>
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                    TENTANG KAMI
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="{{ route('tentangkami.index') }}" class="block hover:text-green-600">Profile</a></li>
+                    <li><a href="{{ route('tentangkami.visiMisi') }}" class="block hover:text-green-600">Visi &
+                            Misi</a></li>
+                    <li><a href="{{ route('tentangkami.sejarah') }}" class="block hover:text-green-600">Sejarah</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                    DOKUMENTASI
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="{{ route('galeri.index') }}" class="block hover:text-green-600">Galeri</a></li>
+                    <li><a href="#" class="block hover:text-green-600">Video</a></li>
+                </ul>
+            </li>
+            <li class="space-y-1">
+                <button class="w-full flex justify-between items-center dropdown-mobile-btn">
+                    INFORMASI
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
+                    <li><a href="{{ route('informasi.berita') }}" class="block hover:text-green-600">Berita</a></li>
+                    <li><a href="#" class="block hover:text-green-600">Pengumuman</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="block hover:text-green-600">PPDB SD</a></li>
+        </ul>
     </div>
-
-    <div class="md:hidden flex justify-end w-full ">
-        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-    </div>
-</nav>
-
-<div id="mobile-menu" class="md:hidden px-6 pt-4 pb-6 space-y-4 hidden">
-    <ul class="space-y-2 text-gray-700 text-sm font-medium">
-        {{-- HOME Mobile --}}
-        <li><a href="{{ route('home') }}" class="block hover:text-green-600">HOME</a></li>
-
-        {{-- TENTANG KAMI Dropdown Mobile --}}
-        <li class="space-y-1">
-            <button class="w-full flex justify-between items-center dropdown-mobile-btn">
-                TENTANG KAMI
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
-                <li><a href="{{ route('tentangkami.index') }}" class="block hover:text-green-600">Profile</a></li>
-                <li><a href="{{ route('tentangkami.visiMisi') }}" class="block hover:text-green-600">Visi &
-                        Misi</a></li>
-                <li><a href="{{ route('tentangkami.sejarah') }}" class="block hover:text-green-600">Sejarah</a>
-                </li>
-            </ul>
-        </li>
-
-        {{-- DOKUMENTASI Dropdown Mobile --}}
-        <li class="space-y-1">
-            <button class="w-full flex justify-between items-center dropdown-mobile-btn">
-                DOKUMENTASI
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
-                <li><a href="{{ route('galeri.index') }}" class="block hover:text-green-600">Galeri</a></li>
-                <li><a href="#" class="block hover:text-green-600">Video</a></li>
-            </ul>
-        </li>
-
-        {{-- INFORMASI Dropdown Mobile --}}
-        <li class="space-y-1">
-            <button class="w-full flex justify-between items-center dropdown-mobile-btn">
-                INFORMASI
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <ul class="pl-4 mt-1 space-y-1 hidden dropdown-mobile-menu">
-                <li><a href="#" class="block hover:text-green-600">Berita</a></li>
-                <li><a href="#" class="block hover:text-green-600">Pengumuman</a></li>
-            </ul>
-        </li>
-
-        {{-- PPDB SD Mobile --}}
-        <li><a href="#" class="block hover:text-green-600">PPDB SD</a></li>
-    </ul>
-</div>
 
 
     <div class="flex justify-center items-center mt-8">
@@ -177,94 +159,150 @@
         </div>
     </div>
 
-    <div class="flex flex-col lg:grid lg:grid-cols-4 gap-4 px-4 py-6">
-
-        <main class="order-1 lg:order-2 lg:col-span-2">
-            <h1 class="text-2xl font-bold mb-4">Profil Sekolah</h1>
-            <div class="mb-4">
+    <div class="flex flex-col lg:grid lg:grid-cols-4 gap-4 px-4 py-6" data-aos="fade-up" data-aos-delay="100">
+        <main class="order-1 lg:order-2 lg:col-span-2" data-aos="fade-up" data-aos-delay="200">
+            <h1 class="text-2xl font-bold mb-4" data-aos="fade-up" data-aos-delay="250">Profil Sekolah</h1>
+            <div class="mb-4" data-aos="zoom-in" data-aos-delay="300">
                 <iframe class="w-full aspect-video rounded" src="https://www.youtube.com/embed/insd7oa41iM"
                     allowfullscreen></iframe>
             </div>
-            <div class="text-sm space-y-1">
-                <p><strong>Nama Sekolah</strong> : SD Muhammadiyah Bausasran</p>
-                <p><strong>Jenis Sekolah</strong> : NEGERI</p>
-                <p><strong>NSS</strong> : xxxxxx</p>
-                <p><strong>NPSN</strong> : 20403418</p>
-                <p><strong>Tanggal Berdiri</strong> : 1977-09-01</p>
-                <p><strong>Akreditasi</strong> : A</p>
-                <p><strong>Izin Operasional</strong> : 2877/1.1828/DIY-16/77</p>
-                <p><strong>Luas Tanah</strong> : 14.000 meter persegi</p>
-                <p><strong>Kurikulum</strong> : KURIKULUM MERDEKA</p>
-                <p><strong>Jumlah Guru & Staf</strong> : x</p>
-                <p><strong>Jumlah Siswa</strong> : x</p>
-                <p><strong>Jumlah Rombel</strong> : x</p>
-                <p><strong>Jumlah Prestasi</strong> : 0</p>
-                <p><strong>Slogan Sekolah</strong> : -</p>
-                <p><strong>Kepsek</strong> : xxxxx</p>
-                <p><strong>NIP</strong> : xxxxx</p>
-                <p><strong>Status Kepegawaian</strong> : PNS</p>
-                <p><strong>Pendidikan Terakhir</strong> : S1</p>
+            <div class="text-sm space-y-1" data-aos="fade-up" data-aos-delay="350">
+                @php $delay = 400; @endphp
+                @foreach ([
+        'Nama Sekolah' => 'SD Muhammadiyah Bausasran',
+        'Jenis Sekolah' => 'NEGERI',
+        'NSS' => 'xxxxxx',
+        'NPSN' => '20403418',
+        'Tanggal Berdiri' => '1977-09-01',
+        'Akreditasi' => 'A',
+        'Izin Operasional' => '2877/1.1828/DIY-16/77',
+        'Luas Tanah' => '14.000 meter persegi',
+        'Kurikulum' => 'KURIKULUM MERDEKA',
+        'Jumlah Guru & Staf' => 'x',
+        'Jumlah Siswa' => 'x',
+        'Jumlah Rombel' => 'x',
+        'Jumlah Prestasi' => '0',
+        'Slogan Sekolah' => '-',
+        'Kepsek' => 'xxxxx',
+        'NIP' => 'xxxxx',
+        'Status Kepegawaian' => 'PNS',
+        'Pendidikan Terakhir' => 'S1',
+    ] as $label => $value)
+                    <p data-aos="fade-up" data-aos-delay="{{ $delay += 30 }}"><strong>{{ $label }}</strong>
+                        : {{ $value }}</p>
+                @endforeach
             </div>
 
-            <div class="mt-6">
+            <div class="mt-6" data-aos="fade-up" data-aos-delay="{{ $delay += 50 }}">
                 <h1 class="text-2xl opacity-80 mb-2">Deskripsi Sekolah</h1>
-                <span class="opacity-80">SD Muhammadiyah Baubasran terletak sangat strategis berada dipusat kecamatan
-                    sehingga mudah dijangkau oleh alat transportasi, minat para siswa untuk sekolah di di SD
-                    Muhammadiyah Baubasran sangatlah banyak, karena mutu kualitas pendidikannya yang mumpuni, disamping
-                    itu juga didukung oleh sarana dan prasarana yang memadai</span>
+                <span class="opacity-80">
+                    SD Muhammadiyah Baubasran terletak sangat strategis berada di pusat kecamatan sehingga mudah
+                    dijangkau oleh alat transportasi. Minat para siswa untuk sekolah di SD Muhammadiyah Baubasran
+                    sangatlah banyak, karena mutu kualitas pendidikannya yang mumpuni. Disamping itu juga didukung oleh
+                    sarana dan prasarana yang memadai.
+                </span>
             </div>
         </main>
 
-        <aside class="order-2 lg:order-1 lg:col-span-1 space-y-4">
-            <div class="bg-gray-100 p-4 rounded shadow">
-                <h2 class="text-lg font-semibold mb-2">KONTAK</h2>
-                <p><strong> <i class="ri-home-3-fill"></i> Alamat :</strong>
-                    <br>Jl. Ronodigdayan No.60, Bausasran, Kec. Danurejan, Kota Yogyakarta, 55211
-                </p>
-                <p class="mt-2"><strong><i class="ri-mail-fill"></i> Email :</strong>
-                    <br>123@gmail.com
-                </p>
-                <p class="mt-2">
-                    <strong><i class="ri-global-line"></i> Website :</strong>
-                    <br>123.sch.id
-                </p>
-                <p class="mt-2"><strong>Media Sosial :</strong></p>
-                <ul class="text-sm list-none">
-                    <li> <i class="ri-facebook-fill"></i> Facebook</li>
-                    <li> <i class="ri-instagram-fill"></i> Instagram</li>
-                    <li> <i class="ri-youtube-fill"></i> Youtube</li>
-                </ul>
-            </div>
-
-            <div class="bg-gray-100 p-4 rounded shadow">
-                <h2 class="text-lg font-semibold mb-2 text-center">KALENDER</h2>
-                <p id="calendar-title" class="text-center font-semibold text-lg mb-2">April 2025</p>
-
-                <div class="grid grid-cols-7 text-sm text-center font-medium">
-                    <div class="bg-green-200 py-1">Mg</div>
-                    <div class="bg-green-200 py-1">Sn</div>
-                    <div class="bg-green-200 py-1">Sl</div>
-                    <div class="bg-green-200 py-1">Rb</div>
-                    <div class="bg-green-200 py-1">Km</div>
-                    <div class="bg-green-200 py-1">Jm</div>
-                    <div class="bg-green-200 py-1">Sb</div>
+        <aside class="space-y-6 md:col-span-1">
+            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100" data-aos="fade-right"
+                data-aos-delay="100">
+                <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                    <i class="ri-contacts-line mr-2 text-green-600"></i>
+                    KONTAK
+                </h2>
+                <div class="space-y-4 text-sm text-gray-600">
+                    <div class="flex items-start space-x-3">
+                        <i class="ri-home-3-fill text-green-600 mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-gray-700">Alamat:</p>
+                            <p>Jl. Ronodigdayan No.60, Bausasran, Kec. Danurejan, Kota Yogyakarta, 55211</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="ri-mail-fill text-green-600 mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-gray-700">Email:</p>
+                            <p>123@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="ri-global-line text-green-600 mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-gray-700">Website:</p>
+                            <p>123.sch.id</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-700 mb-2">Media Sosial:</p>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="ri-facebook-fill text-xl"></i>
+                            </a>
+                            <a href="#" class="text-pink-600 hover:text-pink-800 transition-colors">
+                                <i class="ri-instagram-fill text-xl"></i>
+                            </a>
+                            <a href="#" class="text-red-600 hover:text-red-800 transition-colors">
+                                <i class="ri-youtube-fill text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div id="calendar-body" class="grid grid-cols-7 text-sm text-center mt-1"></div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100" data-aos="fade-right"
+                data-aos-delay="200">
+                <h2 class="text-xl font-bold mb-4 text-center text-gray-800 flex items-center justify-center">
+                    <i class="ri-calendar-line mr-2 text-green-600"></i>
+                    KALENDER
+                </h2>
+                <p id="calendar-title" class="text-center font-semibold text-lg mb-4 text-green-600">Juni 2025</p>
+
+                <div class="grid grid-cols-7 text-xs text-center font-bold mb-2">
+                    <div class="bg-green-100 text-green-800 py-2 rounded-tl-lg">Min</div>
+                    <div class="bg-green-100 text-green-800 py-2">Sen</div>
+                    <div class="bg-green-100 text-green-800 py-2">Sel</div>
+                    <div class="bg-green-100 text-green-800 py-2">Rab</div>
+                    <div class="bg-green-100 text-green-800 py-2">Kam</div>
+                    <div class="bg-green-100 text-green-800 py-2">Jum</div>
+                    <div class="bg-green-100 text-green-800 py-2 rounded-tr-lg">Sab</div>
+                </div>
+                <div id="calendar-body"
+                    class="grid grid-cols-7 text-xs text-center border border-gray-200 rounded-lg overflow-hidden">
+                </div>
             </div>
         </aside>
 
-        <aside class="order-3 lg:col-span-1 bg-gray-100 p-4 rounded shadow max-h-[700px] overflow-y-auto">
-            <h2 class="text-lg font-semibold mb-2">BERITA TERPOPULER</h2>
-            <div class="space-y-4 text-sm ">
-                @foreach ($berita as $item)
-                    <div>
-                        <p class="font-medium mb-2 text-center">{{ $item->judul }}</p>
-                        <div class="flex justify-center items-center">
-                            <img src="{{ asset('storage/' . $item->gambar) }}" alt="" class="w-1/2">
+        <aside
+            class="order-3 lg:col-span-1 bg-white p-6 rounded-xl shadow-lg border border-gray-100 max-h-[700px] overflow-y-auto"
+            data-aos="fade-left" data-aos-delay="300">
+            <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                <i class="ri-newspaper-line mr-2 text-green-600"></i>
+                BERITA TERPOPULER
+            </h2>
+            <div class="space-y-6">
+                @foreach ($berita as $index => $item)
+                    <div class="group cursor-pointer" data-aos="fade-left"
+                        data-aos-delay="{{ $index * 100 + 400 }}">
+                        <div
+                            class="bg-gray-50 rounded-xl p-4 hover:bg-green-50 transition-all duration-300 border hover:border-green-200">
+                            <h3
+                                class="font-semibold text-gray-800 mb-3 group-hover:text-green-600 transition-colors duration-300 text-center leading-relaxed">
+                                {{ $item->judul }}
+                            </h3>
+                            <div class="flex justify-center mb-3">
+                                <div class="relative overflow-hidden rounded-lg shadow-md">
+                                    <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}"
+                                        class="w-24 h-24 object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center text-xs text-gray-500 space-x-2">
+                                <i class="ri-calendar-line text-green-600"></i>
+                                <span>{{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</span>
+                                <span>•</span>
+                                <i class="ri-time-line text-green-600"></i>
+                                <span>{{ \Carbon\Carbon::parse($item->tanggal)->format('H:i') }}</span>
+                            </div>
                         </div>
-                        <p class="text-gray-500 text-xs mt-2 text-center">
-                            Tanggal {{ \Carbon\Carbon::parse($item->tanggal)->format('d-m-Y \p\u\k\u\l H:i') }}
-                        </p>
                     </div>
                 @endforeach
             </div>
@@ -368,6 +406,15 @@
     <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
     <script src="js/kalender.js"></script>
     <script src="js/nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 50
+        });
+    </script>
 
 </body>
 
