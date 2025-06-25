@@ -19,6 +19,7 @@ class MisiResource extends Resource
     protected static ?string $model = Misi::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Profil Sekolah';
 
     public static function form(Form $form): Form
     {

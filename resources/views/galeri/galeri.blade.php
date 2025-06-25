@@ -14,7 +14,7 @@
 <body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-x-hidden">
     <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
         <div class="ml-2">
-            <img src="assets/sd.png" alt="Logo SD" class="w-16 h-16" />
+            <img src="assets/logoBaru.png" alt="Logo SD" class="w-16 h-16" />
         </div>
         <div>
             <h1 class="text-xl font-semibold text-gray-800">SD MUHAMMADIYAH BAUSASRAN</h1>

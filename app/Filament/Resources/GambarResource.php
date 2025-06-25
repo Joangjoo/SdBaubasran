@@ -2,43 +2,37 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\GaleriResource\Pages;
-use App\Filament\Resources\GaleriResource\RelationManagers;
-use App\Models\Galeri;
+use App\Filament\Resources\GambarResource\Pages;
+use App\Filament\Resources\GambarResource\RelationManagers;
+use App\Models\Gambar;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class GaleriResource extends Resource
+class GambarResource extends Resource
 {
-    protected static ?string $model = Galeri::class;
+    protected static ?string $model = Gambar::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Galeri & Media';
+    protected static ?string $navigationGroup = 'Galeri dan Media';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('judul')
-                    ->label('Judul Gambar')
-                    ->required()
-                    ->maxLength(255),
-
                 FileUpload::make('gambar')
                     ->label('File Gambar')
                     ->image()
                     ->disk('public')
-                    ->directory('galeri')
+                    ->directory('gambar')
                     ->visibility('public')
                     ->required(),
-
             ]);
     }
 
@@ -46,12 +40,7 @@ class GaleriResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('judul')
-                    ->label('Judul Gambar')
-                    ->sortable()
-                    ->searchable(),
-
-                Tables\Columns\ImageColumn::make('gambar')
+                ImageColumn::make('gambar')
                     ->label('File Gambar')
                     ->visibility('public')
                     ->size(100)
@@ -80,29 +69,9 @@ class GaleriResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListGaleris::route('/'),
-            'create' => Pages\CreateGaleri::route('/create'),
-            'edit' => Pages\EditGaleri::route('/{record}/edit'),
+            'index' => Pages\ListGambars::route('/'),
+            'create' => Pages\CreateGambar::route('/create'),
+            'edit' => Pages\EditGambar::route('/{record}/edit'),
         ];
-    }
-
-    public static function getModelLabel(): string
-    {
-        return 'Galeri';
-    }
-
-    public static function getPluralModelLabel(): string
-    {
-        return 'Galeri';
-    }
-
-    public static function getNavigationLabel(): string
-    {
-        return 'Galeri';
-    }
-
-    public static function getNavigationIcon(): ?string
-    {
-        return 'heroicon-o-photo';
     }
 }

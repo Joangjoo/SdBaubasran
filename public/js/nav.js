@@ -75,3 +75,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+        const navbar = document.getElementById('navbar');
+        const scrollThreshold = 100; // scroll Y > 100px akan ubah posisi top
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > scrollThreshold) {
+                navbar.classList.remove('top-24');
+                navbar.classList.add('top-5');
+            } else {
+                navbar.classList.remove('top-5');
+                navbar.classList.add('top-24');
+            }
+        });
+    });

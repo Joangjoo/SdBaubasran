@@ -10,6 +10,7 @@ class Prestasi extends Model
         'judul',
         'deskripsi',
         'tahun',
+        'lingkup',
         'foto',
     ];
 

@@ -7,6 +7,7 @@ use App\Filament\Resources\PrestasiResource\RelationManagers;
 use App\Models\Prestasi;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -21,6 +22,7 @@ class PrestasiResource extends Resource
     protected static ?string $model = Prestasi::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Manajemen Konten';
 
     public static function form(Form $form): Form
     {
@@ -38,6 +40,17 @@ class PrestasiResource extends Resource
                 TextInput::make('tahun')
                     ->label('Tahun')
                     ->numeric()
+                    ->required(),
+
+                Select::make('lingkup')
+                    ->label('Lingkup Prestasi')
+                    ->options([
+                        'Internasional' => 'Internasional',
+                        'Nasional' => 'Nasional',
+                        'Provinsi' => 'Provinsi',
+                        'Kota/Kabupaten' => 'Kota/Kabupaten',
+                        'Sekolah' => 'Sekolah',
+                    ])
                     ->required(),
 
                 FileUpload::make('foto')
@@ -67,6 +80,19 @@ class PrestasiResource extends Resource
 
                 Tables\Columns\TextColumn::make('tahun')
                     ->label('Tahun')
+                    ->sortable()
+                    ->searchable(),
+
+                Tables\Columns\TextColumn::make('lingkup')
+                    ->label('Lingkup')
+                    ->badge() // Mengubah tampilan menjadi lencana/badge
+                    ->color(fn(string $state): string => match ($state) {
+                        'Internasional' => 'danger',
+                        'Nasional' => 'warning',
+                        'Provinsi' => 'success',
+                        'Kota/Kabupaten' => 'primary',
+                        'Sekolah' => 'gray',
+                    })
                     ->sortable()
                     ->searchable(),
 

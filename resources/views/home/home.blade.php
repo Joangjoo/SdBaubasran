@@ -9,28 +9,104 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Home</title>
     <link rel="stylesheet" href="css/slider.css">
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js"></script>
 
 </head>
 
 <body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-x-hidden">
-    <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
+    <div class="flex items-center gap-4 bg-[#06923E] px-6 py-4 shadow-sm">
         <div class="ml-2">
-            <img src="assets/sd.png" alt="Logo SD" class="w-16 h-16" />
+            <img src="assets/logoBaru.png" alt="Logo SD" class="w-16 h-16" />
         </div>
         <div>
-            <h1 class="text-xl font-semibold text-gray-800">SD MUHAMMADIYAH BAUSASRAN</h1>
-            <p class="text-sm text-gray-600">Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
+            <h1 class="text-xl font-semibold text-gray-100 ">SD MUHAMMADIYAH BAUSASRAN</h1>
+            <p class="text-sm text-gray-300">Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
         </div>
     </div>
     {{-- Header End --}}
 
+    {{-- Section Selamat Datang Start --}}
+    <section class="relative w-full h-[90vh] overflow-hidden">
+        <div class="swiper hero-swiper absolute inset-0 w-full h-full z-0">
+            <div class="swiper-wrapper">
+                @foreach ($slider as $slide)
+                    <div class="swiper-slide">
+                        <img src="{{ asset('storage/' . $slide->gambar) }}" alt="Slide {{ $loop->iteration }}"
+                            class="w-full h-full object-cover" />
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- Overlay & Text --}}
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-10 px-4 text-center">
+            <div class="text-white max-w-3xl" data-aos="fade-down" data-aos-duration="1000">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+                    <span class="text-[#06923E]">Selamat Datang</span> di SD Muhammadiyah <span
+                        class="text-[#06923E]">Bausasran</span>
+                </h1>
+                <p class="text-lg text-white/90">
+                    Sekolah unggulan dengan pendidikan berbasis akhlak mulia, prestasi, dan teknologi.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    {{-- Section Selamat Datang End --}}
+
+    {{-- Statistik Prestasi --}}
+
+    <section class="relative z-10 -mt-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            {{-- Container biru untuk statistik --}}
+            <div id="stats-section" class="bg-green-700 rounded-2xl shadow-xl p-8">
+
+                {{-- Grid untuk 4 item statistik --}}
+                <div
+                    class="grid grid-cols-2 md:grid-cols-4 divide-y-2 md:divide-y-0 md:divide-x-2 divide-green-600/70 text-center">
+
+                    {{-- Item 1: Internasional --}}
+                    <div class="p-4">
+                        <span id="counter-internasional"
+                            class="text-4xl lg:text-5xl font-extrabold text-orange-400 block">0</span>
+                        <p class="mt-1 text-sm lg:text-base text-blue-100/90">Prestasi Internasional</p>
+                    </div>
+
+                    {{-- Item 2: Nasional --}}
+                    <div class="p-4">
+                        <span id="counter-nasional"
+                            class="text-4xl lg:text-5xl font-extrabold text-[#FFC107] block">0</span>
+                        <p class="mt-1 text-sm lg:text-base text-blue-100/90">Prestasi Nasional</p>
+                    </div>
+
+                    {{-- Item 3: Provinsi --}}
+                    <div class="p-4">
+                        <span id="counter-provinsi"
+                            class="text-4xl lg:text-5xl font-extrabold text-[#FF3F33] block">0</span>
+                        <p class="mt-1 text-sm lg:text-base text-blue-100/90">Prestasi Provinsi</p>
+                    </div>
+
+                    {{-- Item 4: Kota --}}
+                    <div class="p-4">
+                        <span id="counter-kota" class="text-4xl lg:text-5xl font-extrabold text-[#B9D4AA] block">0</span>
+                        <p class="mt-1 text-sm lg:text-base text-blue-100/90">Prestasi Kota</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Statistik Prestasi End --}}
 
     {{-- Nav Start --}}
-    <nav class="flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4">
+    <nav id="navbar"
+        class="fixed top-24 z-30 right-0 left-0 flex items-center justify-between bg-gray-100 px-6 py-3 w-[90%] rounded-lg shadow-md mx-auto mt-4 transition-all duration-500">
         <ul class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
             <li><a href="{{ route('home') }}" class="hover:text-green-600 transition-colors duration-200">HOME</a></li>
             <li class="relative">
@@ -49,7 +125,8 @@
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Profile</a>
                     </li>
                     <li><a href="{{ route('tentangkami.visiMisi') }}"
-                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi &
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-t-md">Visi
+                            &
                             Misi</a></li>
                     <li><a href="{{ route('tentangkami.sejarah') }}"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Sejarah</a>
@@ -169,15 +246,6 @@
 
     {{-- Main Start --}}
     <main class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 min-h-screen mt-10">
-        {{-- Section Selamat Datang Start --}}
-        <section class="text-center px-4 md:px-8 lg:px-16">
-            <h1 class="text-3xl md:text-5xl font-bold text-green-700 mb-4">Selamat Datang di SD Muhammadiyah Bausasran
-            </h1>
-            <p class="text-gray-700 max-w-2xl mx-auto text-lg">Sekolah unggulan dengan pendidikan berbasis akhlak mulia,prestasi, dan teknologi.</p>
-            <img src="assets/gedung.png" alt="Gedung Sekolah"
-                class="mt-8 rounded-xl shadow-md w-full max-w-4xl mx-auto object-cover h-64 md:h-96">
-        </section>
-        {{-- Section Selamat Datang End --}}
 
         {{-- Section Sekilas Tentang Kami Start --}}
         <section class="relative py-20 overflow-hidden mt-10">
@@ -192,7 +260,8 @@
                     <div class="order-1 lg:order-2" data-aos="fade-left" data-aos-duration="1000"
                         data-aos-delay="200">
                         <div class="space-y-6 fix-text-clipping">
-                            <h2 class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                            <h2
+                                class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                                 Sekilas Tentang Kami
                             </h2>
                             <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></div>
@@ -237,7 +306,8 @@
                     @foreach ($guru as $index => $gurus)
                         <div class="group" data-aos="fade-up" data-aos-duration="800"
                             data-aos-delay="{{ $index * 100 }}">
-                            <div class="glass-effect rounded-3xl p-6 text-center transform group-hover:scale-105 transition-all duration-500 hover:shadow-2xl">
+                            <div
+                                class="glass-effect rounded-3xl p-6 text-center transform group-hover:scale-105 transition-all duration-500 hover:shadow-2xl">
                                 <div class="relative mb-6">
                                     <img src="{{ asset('storage/' . $gurus->foto) }}" alt="Foto {{ $gurus->nama }}"
                                         class="relative w-24 h-24 mx-auto rounded-full object-cover border-4 border-white shadow-lg">
@@ -255,7 +325,7 @@
 
                 <div class="text-center mt-12" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
                     <a href="#"
-                        class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
                         <span>Lihat Semua Guru</span>
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -274,10 +344,10 @@
             <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
                 <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
                     <h2
-                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-4">
                         Ekstrakurikuler Unggulan
                     </h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-6">
+                    <div class="w-24 h-1 bg-[#06923E] rounded-full mx-auto mb-6">
                     </div>
                     <p class="text-gray-600 text-lg max-w-2xl mx-auto">Berbagai kegiatan untuk mengembangkan bakat dan
                         minat siswa</p>
@@ -314,7 +384,7 @@
             <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
                 <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
                     <h2
-                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-4">
                         Galeri Terbaru
                     </h2>
                     <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-6">
@@ -562,6 +632,97 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        new Swiper('.hero-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            speed: 1000,
+            allowTouchMove: false
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = [{
+                    id: 'counter-internasional',
+                    end: 317,
+                    color: 'text-orange-400'
+                },
+                {
+                    id: 'counter-nasional',
+                    end: 245,
+                    color: 'text-pink-400'
+                },
+                {
+                    id: 'counter-provinsi',
+                    end: 189,
+                    color: 'text-lime-300'
+                },
+                {
+                    id: 'counter-kota',
+                    end: 156,
+                    color: 'text-cyan-300'
+                }
+            ];
+
+            const duration = 3000;
+            const frameRate = 30;
+
+            function animateCounter(element, start, end, duration, colorClass) {
+                const range = end - start;
+                const stepTime = Math.abs(Math.floor(duration / (range / (1000 / frameRate))));
+                let current = start;
+                const counterElement = document.getElementById(element);
+                function formatNumber(num) {
+                    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                }
+
+                const timer = setInterval(function() {
+                    current += Math.ceil(range / (duration / stepTime));
+                    if (current >= end) {
+                        clearInterval(timer);
+                        current = end;
+                    }
+                    counterElement.textContent = formatNumber(current);
+                    counterElement.classList.add('scale-110');
+                    setTimeout(() => {
+                        counterElement.classList.remove('scale-110');
+                    }, 100);
+
+                }, stepTime);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        counters.forEach(counter => {
+                            animateCounter(counter.id, 0, counter.end, duration, counter
+                                .color);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            const statsSection = document.getElementById('stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+
+            if (!('IntersectionObserver' in window)) {
+                setTimeout(() => {
+                    counters.forEach(counter => {
+                        animateCounter(counter.id, 0, counter.end, duration, counter.color);
+                    });
+                }, 1000);
+            }
+        });
+    </script>
 
 
 
