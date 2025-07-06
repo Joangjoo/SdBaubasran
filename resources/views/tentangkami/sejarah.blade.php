@@ -12,13 +12,13 @@
 
 <body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-x-hidden">
 
-    <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
+    <div class="flex items-center gap-4 bg-[#06923E] px-6 py-4 shadow-sm">
         <div class="ml-2">
-            <img src="../assets/sd.png" alt="Logo SD" class="w-16 h-16" />
+            <img src="../assets/logoBaru.png" alt="Logo SD" class="w-16 h-16" />
         </div>
         <div>
-            <h1 class="text-xl font-semibold text-gray-800">SD MUHAMMADIYAH BAUSASRAN</h1>
-            <p class="text-sm text-gray-600">Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
+            <h1 class="text-xl font-semibold text-gray-100 ">SD MUHAMMADIYAH BAUSASRAN</h1>
+            <p class="text-sm text-gray-300">Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
         </div>
     </div>
 
@@ -154,25 +154,25 @@
 
     <section class="py-16 bg-gradient-to-br from-green-50 to-indigo-100">
         <div class="max-w-5xl mx-auto px-4">
-            <h1 class="text-5xl font-extrabold text-center text-blue-900 mb-16 relative" data-aos="fade-down">
-                <span class="block text-2xl font-semibold text-blue-600 mb-2">Jejak Langkah</span>
+            <h1 class="text-5xl font-extrabold text-center text-green-700 mb-16 relative" data-aos="fade-down">
+                <span class="block text-2xl font-semibold text-green-600 mb-2">Jejak Langkah</span>
                 Sejarah & Kepemimpinan SD Baubasran
                 <span
-                    class="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-24 h-1.5 bg-blue-500 rounded-full"></span>
+                    class="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-24 h-1.5 bg-green-500 rounded-full"></span>
             </h1>
-            <div class="bg-white p-10 rounded-3xl shadow-2xl mb-20 flex flex-col md:flex-row items-center gap-10 border border-blue-200 transform transition-transform duration-500 hover:scale-[1.01] hover:shadow-3xl"
+            <div class="bg-white p-10 rounded-3xl shadow-2xl mb-20 flex flex-col md:flex-row items-center gap-10 border border-green-200 transform transition-transform duration-500 hover:scale-[1.01] hover:shadow-3xl"
                 data-aos="fade-up" data-aos-delay="200">
                 <div class="flex-shrink-0 w-full md:w-1/3 max-w-xs md:max-w-none">
                     <img src="{{ asset('storage/' . $sambutan->foto) }}" alt="Foto Kepala Sekolah SD Baubasran"
-                        class="w-full h-auto rounded-xl shadow-lg object-cover border-4 border-blue-100 ring-4 ring-blue-50 ring-offset-2">
-                    <p class="text-center text-xl font-bold text-blue-800 mt-4">{{ $sambutan->nama }}</p>
-                    <p class="text-center text-blue-600 text-sm">{{ $sambutan->jabatan }}</p>
+                        class="w-full h-auto rounded-xl shadow-lg object-cover border-4 border-green-100 ring-4 ring-green-50 ring-offset-2">
+                    <p class="text-center text-xl font-bold text-green-800 mt-4">{{ $sambutan->nama }}</p>
+                    <p class="text-center text-green-600 text-sm">{{ $sambutan->jabatan }}</p>
                 </div>
                 <div class="flex-grow md:w-2/3 text-center md:text-left">
-                    <h2 class="text-3xl font-bold text-blue-800 mb-6 relative">
+                    <h2 class="text-3xl font-bold text-green-800 mb-6 relative">
                         Sambutan Kepala Sekolah
                         <span
-                            class="block w-16 h-1 bg-blue-500 absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 bottom-[-8px] rounded-full"></span>
+                            class="block w-16 h-1 bg-green-500 absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 bottom-[-8px] rounded-full"></span>
                     </h2>
                     <p class="text-gray-700 leading-relaxed text-base mb-4 italic">
                         {{ $sambutan->motivasi }}
@@ -234,8 +234,8 @@
 
             <div class="text-center mt-12">
                 <a href="{{ url('/') }}"
-                    class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full
-                          hover:bg-blue-700 transition duration-300 ease-in-out">
+                    class="inline-block bg-green-600 text-white px-8 py-3 rounded-full
+                          hover:bg-green-700 transition duration-300 ease-in-out">
                     Kembali ke Beranda
                 </a>
             </div>

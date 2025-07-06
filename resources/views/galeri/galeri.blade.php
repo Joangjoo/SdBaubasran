@@ -12,13 +12,13 @@
 </head>
 
 <body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-x-hidden">
-    <div class="flex items-center gap-4 bg-white px-6 py-4 shadow-sm">
+    <div class="flex items-center gap-4 bg-[#06923E] px-6 py-4 shadow-sm">
         <div class="ml-2">
-            <img src="assets/logoBaru.png" alt="Logo SD" class="w-16 h-16" />
+            <img src="../assets/logoBaru.png" alt="Logo SD" class="w-16 h-16" />
         </div>
         <div>
-            <h1 class="text-xl font-semibold text-gray-800">SD MUHAMMADIYAH BAUSASRAN</h1>
-            <p class="text-sm text-gray-600">Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
+            <h1 class="text-xl font-semibold text-gray-100 ">SD MUHAMMADIYAH BAUSASRAN</h1>
+            <p class="text-sm text-gray-300">Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
         </div>
     </div>
 
@@ -154,146 +154,157 @@
         </ul>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
-        <aside class="space-y-6 md:col-span-1">
-            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100" data-aos="fade-right"
-                data-aos-delay="100">
-                <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
-                    <i class="ri-contacts-line mr-2 text-green-600"></i>
-                    KONTAK
-                </h2>
-                <div class="space-y-4 text-sm text-gray-600">
-                    <div class="flex items-start space-x-3">
-                        <i class="ri-home-3-fill text-green-600 mt-1"></i>
-                        <div>
-                            <p class="font-semibold text-gray-700">Alamat:</p>
-                            <p>Jl. Ronodigdayan No.60, Bausasran, Kec. Danurejan, Kota Yogyakarta, 55211</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-3">
-                        <i class="ri-mail-fill text-green-600 mt-1"></i>
-                        <div>
-                            <p class="font-semibold text-gray-700">Email:</p>
-                            <p>123@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-3">
-                        <i class="ri-global-line text-green-600 mt-1"></i>
-                        <div>
-                            <p class="font-semibold text-gray-700">Website:</p>
-                            <p>123.sch.id</p>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="font-semibold text-gray-700 mb-2">Media Sosial:</p>
-                        <div class="flex gap-3">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors">
-                                <i class="ri-facebook-fill text-xl"></i>
-                            </a>
-                            <a href="#" class="text-pink-600 hover:text-pink-800 transition-colors">
-                                <i class="ri-instagram-fill text-xl"></i>
-                            </a>
-                            <a href="#" class="text-red-600 hover:text-red-800 transition-colors">
-                                <i class="ri-youtube-fill text-xl"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100" data-aos="fade-right"
-                data-aos-delay="200">
-                <h2 class="text-xl font-bold mb-4 text-center text-gray-800 flex items-center justify-center">
-                    <i class="ri-calendar-line mr-2 text-green-600"></i>
-                    KALENDER
-                </h2>
-                <p id="calendar-title" class="text-center font-semibold text-lg mb-4 text-green-600">Juni 2025</p>
+    <div class="container mx-auto px-4 py-10">
+        <!-- Header Section -->
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h1 class="text-4xl font-extrabold text-green-600 mb-3">GALERI SEKOLAH</h1>
+            <div class="w-32 h-1 bg-gradient-to-r from-green-500 to-teal-500 mx-auto rounded-full"></div>
+            <p class="text-gray-600 mt-4 text-lg">Dokumentasi kegiatan dan fasilitas sekolah</p>
+        </div>
 
-                <div class="grid grid-cols-7 text-xs text-center font-bold mb-2">
-                    <div class="bg-green-100 text-green-800 py-2 rounded-tl-lg">Min</div>
-                    <div class="bg-green-100 text-green-800 py-2">Sen</div>
-                    <div class="bg-green-100 text-green-800 py-2">Sel</div>
-                    <div class="bg-green-100 text-green-800 py-2">Rab</div>
-                    <div class="bg-green-100 text-green-800 py-2">Kam</div>
-                    <div class="bg-green-100 text-green-800 py-2">Jum</div>
-                    <div class="bg-green-100 text-green-800 py-2 rounded-tr-lg">Sab</div>
-                </div>
-                <div id="calendar-body"
-                    class="grid grid-cols-7 text-xs text-center border border-gray-200 rounded-lg overflow-hidden">
-                </div>
-            </div>
-        </aside>
-        <main class="col-span-2 px-4 md:px-8">
-            <div class="text-center mb-8" data-aos="fade-up">
-                <h1 class="text-4xl font-bold text-green-600 mb-2">GALERI SEKOLAH</h1>
-                <div class="w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 mx-auto rounded-full"></div>
-                <p class="text-gray-600 mt-4">Dokumentasi kegiatan dan fasilitas sekolah</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                @foreach ($galeri as $index => $galeriItem)
-                    <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2"
-                        data-aos="fade-up" data-aos-delay="{{ ($index % 6) * 100 + 100 }}">
-                        <div class="relative overflow-hidden">
-                            <img src="{{ asset('storage/' . $galeriItem->gambar) }}" alt="{{ $galeriItem->judul }}"
-                                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            </div>
-                            <div class="absolute top-4 left-4">
-                                <span
-                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
-                                    <i class="ri-image-line mr-1"></i>Galeri
-                                </span>
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h3
-                                class="font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-green-600 transition-colors duration-300">
-                                {{ $galeriItem->judul }}
-                            </h3>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-
-            <div class="flex justify-center" data-aos="fade-up" data-aos-delay="400">
-                <div class="bg-white rounded-xl shadow-lg px-6 py-3">
-                    {{ $galeri->links('paginationGaleri::tailwind') }}
-                </div>
-            </div>
-        </main>
-
-        <aside
-            class="order-3 lg:col-span-1 bg-white p-6 rounded-xl shadow-lg border border-gray-100 max-h-[700px] overflow-y-auto"
-            data-aos="fade-left" data-aos-delay="300">
-            <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
-                <i class="ri-newspaper-line mr-2 text-green-600"></i>
-                BERITA TERPOPULER
-            </h2>
-            <div class="space-y-6">
-                @foreach ($berita as $index => $item)
-                    <div class="group cursor-pointer" data-aos="fade-left"
-                        data-aos-delay="{{ min($index * 50, 300) }}">
-                        <div
-                            class="bg-gray-50 rounded-xl p-4 hover:bg-green-50 transition-all duration-300 border hover:border-green-200">
-                            <h3
-                                class="font-semibold text-gray-800 mb-3 group-hover:text-green-600 transition-colors duration-300 text-center leading-relaxed">
-                                {{ $item->judul }}
-                            </h3>
-                            <div class="flex justify-center mb-3">
-                                <div class="relative overflow-hidden rounded-lg shadow-md">
-                                    <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}"
-                                        class="w-24 h-24 object-cover group-hover:scale-105 transition-transform duration-300">
+        <!-- Main Content -->
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Gallery Section -->
+            <main class="lg:w-2/3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    @foreach ($galeri as $index => $galeriItem)
+                        <div class="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                            data-aos="fade-up" data-aos-delay="{{ ($index % 6) * 100 + 100 }}">
+                            <div class="relative overflow-hidden">
+                                <img src="{{ asset('storage/' . $galeriItem->gambar) }}"
+                                    alt="{{ $galeriItem->judul }}"
+                                    class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <div class="absolute top-3 left-3">
+                                    <span
+                                        class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+                                        <i class="ri-image-line mr-1"></i>Galeri
+                                    </span>
                                 </div>
                             </div>
-                            <div class="flex items-center justify-center text-xs text-gray-500 space-x-2">
-                                <i class="ri-calendar-line text-green-600"></i>
-                                <span>{{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</span>
+                            <div class="p-4">
+                                <h3
+                                    class="font-bold text-gray-800 text-center line-clamp-2 group-hover:text-green-600 transition-colors duration-300">
+                                    {{ $galeriItem->judul }}
+                                </h3>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="flex justify-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-white rounded-xl shadow-md px-6 py-3">
+                        {{ $galeri->links('paginationGaleri::tailwind') }}
+                    </div>
+                </div>
+            </main>
+
+            <!-- Sidebar -->
+            <aside class="lg:w-1/3 space-y-8">
+                <!-- Contact Section -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100" data-aos="fade-left"
+                    data-aos-delay="100">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="ri-contacts-line mr-2 text-green-600"></i>
+                        KONTAK
+                    </h2>
+                    <div class="space-y-4 text-sm text-gray-600">
+                        <div class="flex items-start space-x-3">
+                            <i class="ri-home-3-fill text-green-600 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-700">Alamat:</p>
+                                <p>Jl. Ronodigdayan No.60, Bausasran, Kec. Danurejan, Kota Yogyakarta, 55211</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="ri-mail-fill text-green-600 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-700">Email:</p>
+                                <p>123@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="ri-global-line text-green-600 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-700">Website:</p>
+                                <p>123.sch.id</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-700 mb-2">Media Sosial:</p>
+                            <div class="flex gap-4">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors">
+                                    <i class="ri-facebook-fill text-xl"></i>
+                                </a>
+                                <a href="#" class="text-pink-600 hover:text-pink-800 transition-colors">
+                                    <i class="ri-instagram-fill text-xl"></i>
+                                </a>
+                                <a href="#" class="text-red-600 hover:text-red-800 transition-colors">
+                                    <i class="ri-youtube-fill text-xl"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
-        </aside>
+                </div>
+
+                <!-- Calendar Section -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100" data-aos="fade-left"
+                    data-aos-delay="200">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 text-center flex items-center justify-center">
+                        <i class="ri-calendar-line mr-2 text-green-600"></i>
+                        KALENDER
+                    </h2>
+                    <p id="calendar-title" class="text-center font-semibold text-lg mb-4 text-green-600">Juni 2025</p>
+                    <div class="grid grid-cols-7 text-xs text-center font-bold mb-2">
+                        <div class="bg-green-100 text-green-800 py-2 rounded-tl-lg">Min</div>
+                        <div class="bg-green-100 text-green-800 py-2">Sen</div>
+                        <div class="bg-green-100 text-green-800 py-2">Sel</div>
+                        <div class="bg-green-100 text-green-800 py-2">Rab</div>
+                        <div class="bg-green-100 text-green-800 py-2">Kam</div>
+                        <div class="bg-green-100 text-green-800 py-2">Jum</div>
+                        <div class="bg-green-100 text-green-800 py-2 rounded-tr-lg">Sab</div>
+                    </div>
+                    <div id="calendar-body"
+                        class="grid grid-cols-7 text-xs text-center border border-gray-200 rounded-lg overflow-hidden">
+                    </div>
+                </div>
+
+                <!-- News Section -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 max-h-[600px] overflow-y-auto"
+                    data-aos="fade-left" data-aos-delay="300">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="ri-newspaper-line mr-2 text-green-600"></i>
+                        BERITA TERPOPULER
+                    </h2>
+                    <div class="space-y-6">
+                        @foreach ($berita as $index => $item)
+                            <div class="group cursor-pointer" data-aos="fade-left"
+                                data-aos-delay="{{ min($index * 50, 300) }}">
+                                <div
+                                    class="bg-gray-50 rounded-xl p-4 hover:bg-green-50 transition-all duration-300 border hover:border-green-200">
+                                    <h3
+                                        class="font-semibold text-gray-800 mb-3 group-hover:text-green-600 transition-colors duration-300 text-center leading-relaxed">
+                                        {{ $item->judul }}
+                                    </h3>
+                                    <div class="flex justify-center mb-3">
+                                        <div class="relative overflow-hidden rounded-lg shadow-md">
+                                            <img src="{{ asset('storage/' . $item->gambar) }}"
+                                                alt="{{ $item->judul }}"
+                                                class="w-24 h-24 object-cover group-hover:scale-105 transition-transform duration-300">
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-center text-xs text-gray-500 space-x-2">
+                                        <i class="ri-calendar-line text-green-600"></i>
+                                        <span>{{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </aside>
+        </div>
     </div>
 
     <footer class="bg-gradient-to-br from-[#ECFAE5] via-[#DDF6D2] to-[#CAE8BD] text-[#537D5D]">
@@ -399,7 +410,6 @@
             once: true,
             offset: window.innerWidth < 768 ? 5 : 50
         });
-
     </script>
 </body>
 
