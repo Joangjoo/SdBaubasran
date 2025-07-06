@@ -245,291 +245,222 @@
 
 
     {{-- Main Start --}}
-    <main class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 min-h-screen mt-10">
-
-        {{-- Section Sekilas Tentang Kami Start --}}
-        <section class="relative py-20 overflow-hidden mt-10">
-            <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 lg:order-1" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="relative">
-                            <img src="assets/tentang.png" alt="Tentang Sekolah"
-                                class="relative rounded-2xl shadow-2xl w-full object-cover h-80 lg:h-96 transform hover:scale-105 transition-all duration-500">
-                        </div>
-                    </div>
-                    <div class="order-1 lg:order-2" data-aos="fade-left" data-aos-duration="1000"
-                        data-aos-delay="200">
-                        <div class="space-y-6 fix-text-clipping">
-                            <h2
-                                class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                                Sekilas Tentang Kami
-                            </h2>
-                            <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></div>
-                            <p class="text-gray-700 text-lg leading-relaxed">
-                                {{ $info->judul ?? 'SD Muhammadiyah Bausasran adalah sekolah dasar unggulan yang berkomitmen untuk memberikan pendidikan berkualitas tinggi dengan pendekatan berbasis akhlak mulia, prestasi, dan teknologi.' }}
-                            </p>
-                            <div class="flex items-center space-x-4 pt-4">
-                                <div
-                                    class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                </div>
-                                <span class="text-gray-600 font-medium">Pendidikan Berkualitas Tinggi</span>
+    <main class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 min-h-screen">
+    <!-- Tentang Kami Section -->
+    <section class="py-16 md:py-20 relative">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 h-full" data-aos="fade-right">
+                    <img src="assets/tentang.png" alt="Tentang Sekolah" class="rounded-xl shadow-xl w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-emerald-600 mb-6">Sekilas Tentang Kami</h2>
+                    <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-teal-500 mb-6"></div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        {{ $info->judul ?? 'SD Muhammadiyah Bausasran adalah sekolah dasar unggulan yang berkomitmen untuk memberikan pendidikan berkualitas tinggi dengan pendekatan berbasis akhlak mulia, prestasi, dan teknologi.' }}
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
                             </div>
+                            <span class="text-gray-700">Pendidikan Berkualitas Tinggi</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-700">Fasilitas Modern</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-700">Guru Berpengalaman</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        {{-- Section Sekilas Tentang Kami End --}}
+        </div>
+    </section>
 
-
-        {{-- Section Guru Start --}}
-        <section id="guru" class="py-20 relative">
-            <div class="absolute inset-0 bg-gradient-to-b from-white/50 to-emerald-50/50"></div>
-            <div class="relative max-w-7xl mx-auto px-4">
-                <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
-                    <h2
-                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
-                        Guru & Tenaga Kependidikan
-                    </h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-6">
-                    </div>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Tim pengajar berpengalaman dan berdedikasi
-                        tinggi untuk masa depan siswa</p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                    @foreach ($guru as $index => $gurus)
-                        <div class="group" data-aos="fade-up" data-aos-duration="800"
-                            data-aos-delay="{{ $index * 100 }}">
-                            <div
-                                class="glass-effect rounded-3xl p-6 text-center transform group-hover:scale-105 transition-all duration-500 hover:shadow-2xl">
-                                <div class="relative mb-6">
-                                    <img src="{{ asset('storage/' . $gurus->foto) }}" alt="Foto {{ $gurus->nama }}"
-                                        class="relative w-24 h-24 mx-auto rounded-full object-cover border-4 border-white shadow-lg">
-                                </div>
-                                <h3 class="text-lg font-bold text-gray-800 mb-2">{{ $gurus->nama }}</h3>
-                                <p class="text-emerald-600 text-sm font-medium">{{ $gurus->jabatan }}</p>
-                                <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <div class="w-full h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-
-                <div class="text-center mt-12" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
-                    <a href="#"
-                        class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                        <span>Lihat Semua Guru</span>
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                    </a>
-                </div>
+    <!-- Guru Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-emerald-600 mb-4">Guru & Tenaga Kependidikan</h2>
+                <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Tim pengajar berpengalaman dan berdedikasi tinggi untuk masa depan siswa</p>
             </div>
-        </section>
-        {{-- Section Guru End --}}
 
-
-        {{-- Section Ekstra Start --}}
-        <section class="py-20 relative">
-            <div class="absolute inset-0 bg-gradient-to-r from-emerald-50/80 to-teal-50/80"></div>
-            <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
-                <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
-                    <h2
-                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-4">
-                        Ekstrakurikuler Unggulan
-                    </h2>
-                    <div class="w-24 h-1 bg-[#06923E] rounded-full mx-auto mb-6">
-                    </div>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Berbagai kegiatan untuk mengembangkan bakat dan
-                        minat siswa</p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    @foreach ($ekstra as $index => $ekskul)
-                        <div class="group" data-aos="fade-up" data-aos-duration="800"
-                            data-aos-delay="{{ $index * 100 }}">
-                            <div
-                                class="glass-effect rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transform group-hover:scale-105 transition-all duration-500">
-                                <div class="relative overflow-hidden">
-                                    <img src="{{ asset('storage/' . $ekskul->gambar) }}" alt="{{ $ekskul->nama }}"
-                                        class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                                    </div>
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="font-bold text-lg text-gray-800 mb-2">{{ $ekskul->nama }}</h3>
-                                    <p class="text-gray-600 text-sm">{{ $ekskul->deskripsi }}</p>
-                                </div>
-                            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                @foreach ($guru as $index => $gurus)
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="{{ $index * 100 }}">
+                    <div class="p-6 text-center">
+                        <div class="relative mx-auto w-32 h-32 rounded-full overflow-hidden border-4 border-emerald-100 mb-4">
+                            <img src="{{ asset('storage/' . $gurus->foto) }}" alt="Foto {{ $gurus->nama }}" class="w-full h-full object-cover">
                         </div>
-                    @endforeach
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">{{ $gurus->nama }}</h3>
+                        <p class="text-emerald-600 font-medium">{{ $gurus->jabatan }}</p>
+                        <div class="mt-4 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 w-1/2 mx-auto"></div>
+                    </div>
                 </div>
+                @endforeach
             </div>
-        </section>
-        {{-- Section Ekstra End --}}
 
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold px-8 py-3 rounded-full hover:from-emerald-600 hover:to-teal-600 transition duration-300 shadow-lg">
+                    Lihat Semua Guru
+                </a>
+            </div>
+        </div>
+    </section>
 
-        {{-- Section Galeri Start --}}
-        <section class="py-20 relative">
-            <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
-                <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
-                    <h2
-                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-4">
-                        Galeri Terbaru
-                    </h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-6">
+    <!-- Ekstrakurikuler Section -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-emerald-600 mb-4">Ekstrakurikuler Unggulan</h2>
+                <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Berbagai kegiatan untuk mengembangkan bakat dan minat siswa</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                @foreach ($ekstra as $index => $ekskul)
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="{{ $index * 100 }}">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="{{ asset('storage/' . $ekskul->gambar) }}" alt="{{ $ekskul->nama }}" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                     </div>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Dokumentasi kegiatan dan fasilitas sekolah</p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $ekskul->nama }}</h3>
+                        <p class="text-gray-600 text-sm">{{ Str::limit($ekskul->deskripsi, 100) }}</p>
+                        <a href="#" class="mt-4 inline-block text-emerald-600 font-medium text-sm hover:text-emerald-700 transition duration-300">
+                            Selengkapnya →
+                        </a>
+                    </div>
                 </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
-                <div class="max-w-5xl mx-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="swiper-container galeri-swiper relative">
-                        <div class="swiper-wrapper">
-                            @foreach ($galeriTerbaru as $index => $galeri)
-                                <div class="swiper-slide">
-                                    <div
-                                        class="rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-300 hover:scale-105">
-                                        <div class="relative">
-                                            <img src="{{ asset('storage/' . $galeri->gambar) }}"
-                                                alt="{{ $galeri->judul }}" class="w-full h-72 object-cover">
-                                            <div
-                                                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent">
-                                            </div>
-                                        </div>
-                                        <div class="glass-effect p-6 text-center">
-                                            <h3 class="text-lg font-bold text-gray-800">{{ $galeri->judul }}</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+    <!-- Galeri Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-emerald-600 mb-4">Galeri Terbaru</h2>
+                <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Dokumentasi kegiatan dan fasilitas sekolah</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                @foreach ($galeriTerbaru as $index => $galeri)
+                <div class="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="{{ $index * 100 }}">
+                    <img src="{{ asset('storage/' . $galeri->gambar) }}" alt="{{ $galeri->judul }}" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-white font-bold text-lg">{{ $galeri->judul }}</h3>
+                            <div class="h-1 w-12 bg-emerald-400 mt-2"></div>
                         </div>
                     </div>
+                </div>
+                @endforeach
+            </div>
 
-                    <div class="flex justify-center items-center mt-12 space-x-6" data-aos="fade-up"
-                        data-aos-delay="400">
-                        <div class="swiper-button-prev"></div>
-                        <a href="{{ route('galeri.index') }}"
-                            class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                            <span>Lihat Semua Galeri</span>
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            <div class="text-center mt-12">
+                <a href="{{ route('galeri.index') }}" class="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold px-8 py-3 rounded-full hover:from-emerald-600 hover:to-teal-600 transition duration-300 shadow-lg">
+                    Lihat Semua Galeri
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita Section -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-teal-50 to-emerald-50">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-emerald-600 mb-4">Berita Terbaru</h2>
+                <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Informasi dan kegiatan terkini dari sekolah</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @foreach ($beritaTerbaru as $index => $berita)
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="{{ $index * 100 }}">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold">TERBARU</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 hover:text-emerald-600 transition duration-300">{{ $berita->judul }}</h3>
+                        <p class="text-gray-600 text-sm mb-4">{{ Str::limit(strip_tags($berita->konten), 120) }}</p>
+                        <a href="#" class="text-emerald-600 font-medium text-sm hover:text-emerald-700 transition duration-300 flex items-center">
+                            Baca selengkapnya
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
                         </a>
-                        <div class="swiper-button-next"></div>
                     </div>
                 </div>
+                @endforeach
             </div>
-        </section>
-        {{-- Section Galeri End --}}
+        </div>
+    </section>
 
+    <!-- Testimoni Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-emerald-600 mb-4">Apa Kata Wali Murid</h2>
+                <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Testimoni dari para wali murid tentang pengalaman pendidikan di sekolah kami</p>
+            </div>
 
-        {{-- Section Berita Start --}}
-        <section class="py-20 relative">
-            <div class="absolute inset-0 bg-gradient-to-r from-emerald-50/80 to-teal-50/80"></div>
-            <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
-                <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
-                    <h2
-                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
-                        Berita Terbaru
-                    </h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @foreach ($testimoni as $index => $testi)
+                <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300 relative" data-aos="fade-up" data-aos-delay="{{ $index * 100 }}">
+                    <div class="absolute top-0 left-8 -translate-y-1/2 bg-emerald-500 w-10 h-10 rounded-full flex items-center justify-center text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+                            <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+                        </svg>
                     </div>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Informasi dan kegiatan terkini dari sekolah</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    @foreach ($beritaTerbaru as $index => $berita)
-                        <div class="group" data-aos="fade-up" data-aos-duration="800"
-                            data-aos-delay="{{ $index * 100 }}">
-                            <div
-                                class="glass-effect rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transform group-hover:scale-105 transition-all duration-500">
-                                <div class="relative overflow-hidden">
-                                    <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}"
-                                        class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
-                                    <div class="absolute top-4 left-4">
-                                        <span
-                                            class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-3 py-1 rounded-full text-xs font-semibold">TERBARU</span>
-                                    </div>
-                                </div>
-                                <div class="p-6">
-                                    <h3
-                                        class="text-lg font-bold text-gray-800 mb-3 group-hover:text-emerald-600 transition-colors">
-                                        {{ $berita->judul }}</h3>
-                                    <p class="text-gray-600 text-sm line-clamp-3 mb-4">{{ $berita->konten }}</p>
-                                    <a href="#"
-                                        class="inline-flex items-center text-emerald-600 font-semibold text-sm hover:text-emerald-700 transition-colors">
-                                        <span>Baca selengkapnya</span>
-                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-        {{-- Section Berita End --}}
-
-
-        {{-- Section Testimoni Start --}}
-        <section class="py-20 relative">
-            <div class="absolute inset-0 bg-gradient-to-b from-white/50 to-emerald-50/50"></div>
-            <div class="relative container mx-auto px-4 md:px-8 lg:px-16">
-                <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
-                    <h2
-                        class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
-                        Apa Kata Wali Murid
-                    </h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-6">
+                    <p class="text-gray-700 italic mb-6">"{{ $testi->pesan }}"</p>
+                    <div class="border-t border-gray-200 pt-4">
+                        <h4 class="font-bold text-emerald-600">{{ $testi->nama }}</h4>
+                        <p class="text-gray-500 text-sm">{{ $testi->status }}</p>
                     </div>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Testimoni dari para wali murid tentang
-                        pengalaman pendidikan di sekolah kami</p>
                 </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    @foreach ($testimoni as $index => $testi)
-                        <div class="group" data-aos="fade-up" data-aos-duration="800"
-                            data-aos-delay="{{ $index * 100 }}">
-                            <div
-                                class="glass-effect rounded-2xl p-8 shadow-lg group-hover:shadow-2xl transform group-hover:scale-105 transition-all duration-500 relative">
-                                <div class="absolute -top-4 left-8">
-                                    <div
-                                        class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
-                                        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                            <path
-                                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <p class="italic text-gray-700 mb-6 leading-relaxed">"{{ $testi->pesan }}"</p>
-                                <div class="border-t border-gray-200 pt-4">
-                                    <div class="font-bold text-emerald-700 mb-1">— {{ $testi->nama }}</div>
-                                    <p class="text-gray-600 text-sm italic">{{ $testi->status }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
+                @endforeach
             </div>
-        </section>
-        {{-- Section Testimoni End --}}
+        </div>
+    </section>
 
-    </main>
+    <!-- CTA Section -->
+    <section class="py-16 md:py-20 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Siap Bergabung Dengan Kami?</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Daftarkan putra/putri Anda sekarang untuk mendapatkan pendidikan terbaik</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-white text-emerald-600 font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">
+                    Pendaftaran Online
+                </a>
+                <a href="#" class="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition duration-300">
+                    Kunjungi Sekolah
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
     {{-- Main End --}}
 
 
