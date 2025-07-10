@@ -18,7 +18,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Forms\Components\Hidden; 
+use Filament\Forms\Components\Hidden;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Filament\Forms\Set;
 
@@ -49,13 +49,24 @@ class CapaianPembelajaranResource extends Resource
                     $set('nama_file_asli', $state->getClientOriginalName());
                 })
                 ->columnSpanFull(),
-                Hidden::make('nama_file_asli'), 
-                Textarea::make('deskripsi')
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
-                TextInput::make('mata_pelajaran')
-                    ->required()
-                    ->maxLength(100),
+                Hidden::make('nama_file_asli'),
+                Select::make('mata_pelajaran')
+                    ->label('Mata Pelajaran')
+                    ->options([
+                        'PAI' => 'PAI',
+                        'PENDIDIKAN PANCASILA' => 'PENDIDIKAN PANCASILA',
+                        'BAHASA INDONESIA' => 'BAHASA INDONESIA',
+                        'MATEMATIKA' => 'MATEMATIKA',
+                        'IPAS' => 'IPAS',
+                        'SENI RUPA' => 'SENI RUPA',
+                        'PJOK' => 'PJOK',
+                        'KEMUHAMMADIYAHAN' => 'KEMUHAMMADIYAHAN',
+                        'BAHASA ARAB' => 'BAHASA ARAB',
+                        'BAHASA JAWA' => 'BAHASA JAWA',
+                        'BAHASA INGGRIS' => 'BAHASA INGGRIS',
+                        'SENI MEMBATIK' => '6',
+                    ])
+                    ->required(),
                 Select::make('tingkat_kelas')
                     ->label('kelas')
                     ->options([
@@ -71,9 +82,6 @@ class CapaianPembelajaranResource extends Resource
                     ->required()
                     ->maxLength(50)
                     ->placeholder('Contoh: 2024/2025'),
-                TextInput::make('nama_pengunggah')
-                    ->required()
-                    ->maxLength(255),
             ]);
     }
 

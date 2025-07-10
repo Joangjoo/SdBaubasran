@@ -2,9 +2,12 @@
 
 namespace App\Filament\AdminAdministrasi\Resources;
 
-use App\Filament\AdminAdministrasi\Resources\LatihanSoalResource\Pages;
-use App\Filament\AdminAdministrasi\Resources\LatihanSoalResource\RelationManagers;
-use App\Models\LatihanSoal;
+use App\Filament\AdminAdministrasi\Resources\SoalKenaikanKelasResource\Pages;
+use App\Filament\AdminAdministrasi\Resources\SoalKenaikanKelasResource\RelationManagers;
+use App\Filament\AdminAdministrasi\Resources\TugasMuridResource\Pages\CreateTugasMurid;
+use App\Filament\AdminAdministrasi\Resources\TugasMuridResource\Pages\EditTugasMurid;
+use App\Filament\AdminAdministrasi\Resources\TugasMuridResource\Pages\ListTugasMurid;
+use App\Models\SoalKenaikanKelas;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
@@ -21,13 +24,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Filament\Forms\Set;
 
-class LatihanSoalResource extends Resource
+class TugasMuridResource extends Resource
 {
-    protected static ?string $model = LatihanSoal::class;
+    protected static ?string $model = SoalKenaikanKelas::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
-    protected static ?string $navigationLabel = 'Latihan Soal';
-    protected static ?string $modelLabel = 'Latihan Soal';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
+    protected static ?string $navigationLabel = 'Tugas Murid';
+    protected static ?string $modelLabel = 'Tugas Murid';
 
     public static function form(Form $form): Form
     {
@@ -38,17 +41,17 @@ class LatihanSoalResource extends Resource
                     ->maxLength(255)
                     ->columnSpanFull(),
                 FileUpload::make('file_path')
-                ->label('Upload File Latihan Soal')
-                ->directory('latihan-soal')
-                ->required()
-                ->afterStateUpdated(function (Set $set, ?TemporaryUploadedFile $state) {
-                    if (! $state) {
-                        return;
-                    }
-                    $set('nama_file_asli', $state->getClientOriginalName());
-                })
-                ->columnSpanFull(),
-                Hidden::make('nama_file_asli'), 
+                    ->label('Upload File Soal Kenaikan Kelas')
+                    ->directory('soal-kenaikan-kelas')
+                    ->required()
+                    ->afterStateUpdated(function (Set $set, ?TemporaryUploadedFile $state) {
+                        if (! $state) {
+                            return;
+                        }
+                        $set('nama_file_asli', $state->getClientOriginalName());
+                    })
+                    ->columnSpanFull(),
+                Hidden::make('nama_file_asli'),
                 Textarea::make('deskripsi')
                     ->maxLength(65535)
                     ->columnSpanFull(),
@@ -56,7 +59,7 @@ class LatihanSoalResource extends Resource
                     ->required()
                     ->maxLength(100),
                 Select::make('tingkat_kelas')
-                    ->label('kelas')
+                    ->label('Kelas')
                     ->options([
                         '1' => '1',
                         '2' => '2',
@@ -64,12 +67,6 @@ class LatihanSoalResource extends Resource
                         '4' => '4',
                         '5' => '5',
                         '6' => '6',
-                    ])
-                    ->required(),
-                Select::make('semester')
-                    ->options([
-                        'ganjil' => 'Ganjil',
-                        'genap' => 'Genap',
                     ])
                     ->required(),
                 TextInput::make('tahun_ajaran')
@@ -92,14 +89,12 @@ class LatihanSoalResource extends Resource
                 TextColumn::make('mata_pelajaran')
                     ->searchable(),
                 TextColumn::make('tingkat_kelas'),
-                TextColumn::make('semester')
-                    ->badge(),
                 TextColumn::make('tahun_ajaran'),
                 TextColumn::make('nama_pengunggah')
                     ->searchable(),
                 TextColumn::make('nama_file_asli')
-                ->label('Nama File')
-                ->searchable(),
+                    ->label('Nama File')
+                    ->searchable(),
             ])
             ->filters([
                 //
@@ -109,7 +104,7 @@ class LatihanSoalResource extends Resource
                 Tables\Actions\Action::make('download')
                     ->label('Download')
                     ->icon('heroicon-o-arrow-down-tray')
-                    ->url(fn(LatihanSoal $record): string => url('storage/' . $record->file_path), shouldOpenInNewTab: true),
+                    ->url(fn(SoalKenaikanKelas $record): string => url('storage/' . $record->file_path), shouldOpenInNewTab: true),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -128,9 +123,9 @@ class LatihanSoalResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListLatihanSoals::route('/'),
-            'create' => Pages\CreateLatihanSoal::route('/create'),
-            'edit' => Pages\EditLatihanSoal::route('/{record}/edit'),
+            'index' => ListTugasMurid::route('/'),
+            'create' => CreateTugasMurid::route('/create'),
+            'edit' => EditTugasMurid::route('/{record}/edit'),
         ];
     }
 }

@@ -4,17 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ModulAjar extends Model
+class ProgramSemester extends Model
 {
-    protected $table = 'modul_ajar';
+    protected $table = 'program_semester';
 
     protected $fillable = [
-        'judul',
-        'file_path',
-        'nama_file_asli',
+        'tahun_ajaran',
         'mata_pelajaran',
         'tingkat_kelas',
         'semester',
-        'tahun_ajaran',
     ];
 }

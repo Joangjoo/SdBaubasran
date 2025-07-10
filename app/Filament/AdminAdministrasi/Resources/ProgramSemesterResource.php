@@ -2,16 +2,16 @@
 
 namespace App\Filament\AdminAdministrasi\Resources;
 
-use App\Filament\AdminAdministrasi\Resources\ModulAjarResource\Pages;
-use App\Filament\AdminAdministrasi\Resources\ModulAjarResource\RelationManagers;
-use App\Models\ModulAjar;
+use App\Filament\AdminAdministrasi\Resources\ProgramSemesterResource\Pages;
+use App\Filament\AdminAdministrasi\Resources\ProgramSemesterResource\RelationManagers;
+use App\Models\ProgramSemester;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -19,35 +19,23 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
-use Filament\Forms\Set;
 
-class ModulAjarResource extends Resource
+class ProgramSemesterResource extends Resource
 {
-    protected static ?string $model = ModulAjar::class;
+    protected static ?string $model = ProgramSemester::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-book-open';
-    protected static ?string $navigationLabel = 'Modul Ajar';
-    protected static ?string $modelLabel = 'Modul Ajar';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Program Semester';
+    protected static ?string $modelLabel = 'Program Semester';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('judul')
+                TextInput::make('tahun_ajaran')
                     ->required()
-                    ->maxLength(255)
-                    ->columnSpanFull(),
-                FileUpload::make('file_path')
-                    ->label('Upload File Modul Ajar')
-                    ->directory('modul-ajar')
-                    ->required()
-                    ->afterStateUpdated(function (Set $set, ?TemporaryUploadedFile $state) {
-                        if (! $state) {
-                            return;
-                        }
-                        $set('nama_file_asli', $state->getClientOriginalName());
-                    })
-                    ->columnSpanFull(),
-                Hidden::make('nama_file_asli'),
+                    ->maxLength(50)
+                    ->placeholder('Contoh: 2024/2025'),
                 Select::make('mata_pelajaran')
                     ->label('Mata Pelajaran')
                     ->options([
@@ -76,19 +64,12 @@ class ModulAjarResource extends Resource
                         '6' => '6',
                     ])
                     ->required(),
-                Select::make('semester')
+                    Select::make('semester')
                     ->options([
                         'ganjil' => 'Ganjil',
                         'genap' => 'Genap',
                     ])
                     ->required(),
-                TextInput::make('tahun_ajaran')
-                    ->required()
-                    ->maxLength(50)
-                    ->placeholder('Contoh: 2024/2025'),
-                TextInput::make('nama_pengunggah')
-                    ->required()
-                    ->maxLength(255),
             ]);
     }
 
@@ -96,17 +77,21 @@ class ModulAjarResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('judul')
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('mata_pelajaran')
+                TextColumn::make('tahun_ajaran')
+                    ->label('Tahun Ajaran')
+                    ->sortable()
                     ->searchable(),
-                TextColumn::make('tingkat_kelas'),
+                TextColumn::make('mata_pelajaran')
+                    ->label('Mata Pelajaran')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('tingkat_kelas')
+                    ->label('Kelas')
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('semester')
-                    ->badge(),
-                TextColumn::make('tahun_ajaran'),
-                TextColumn::make('nama_file_asli')
-                    ->label('Nama File')
+                    ->label('Semester')
+                    ->sortable()
                     ->searchable(),
             ])
             ->filters([
@@ -114,10 +99,6 @@ class ModulAjarResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\Action::make('download')
-                    ->label('Download')
-                    ->icon('heroicon-o-arrow-down-tray')
-                    ->url(fn(ModulAjar $record): string => url('storage/' . $record->file_path), shouldOpenInNewTab: true),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -136,9 +117,9 @@ class ModulAjarResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListModulAjars::route('/'),
-            'create' => Pages\CreateModulAjar::route('/create'),
-            'edit' => Pages\EditModulAjar::route('/{record}/edit'),
+            'index' => Pages\ListProgramSemesters::route('/'),
+            'create' => Pages\CreateProgramSemester::route('/create'),
+            'edit' => Pages\EditProgramSemester::route('/{record}/edit'),
         ];
     }
 }

@@ -2,9 +2,12 @@
 
 namespace App\Filament\AdminAdministrasi\Resources;
 
-use App\Filament\AdminAdministrasi\Resources\RppResource\Pages;
-use App\Filament\AdminAdministrasi\Resources\RppResource\RelationManagers;
-use App\Models\Rpp;
+use App\Filament\AdminAdministrasi\Resources\BankSoalResource\Pages\CreateBankSoal;
+use App\Filament\AdminAdministrasi\Resources\BankSoalResource\Pages\EditBankSoal;
+use App\Filament\AdminAdministrasi\Resources\BankSoalResource\Pages\ListBankSoal;
+use App\Filament\AdminAdministrasi\Resources\LatihanSoalResource\Pages;
+use App\Filament\AdminAdministrasi\Resources\LatihanSoalResource\RelationManagers;
+use App\Models\BankSoal;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
@@ -21,40 +24,57 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Filament\Forms\Set;
 
-class RppResource extends Resource
+class BankSoalResource extends Resource
 {
-    protected static ?string $model = Rpp::class;
+    protected static ?string $model = BankSoal::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
-    protected static ?string $navigationLabel = 'RPP';
-    protected static ?string $modelLabel = 'RPP';
+    protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
+    protected static ?string $navigationLabel = 'Bank Soal';
+    protected static ?string $modelLabel = 'Bank Soal';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('judul')
-                    ->required()
-                    ->maxLength(255)
-                    ->columnSpanFull(),
+                Select::make('nama_soal')
+                    ->label('Nama Soal')
+                    ->options([
+                        'SUMATIF' => 'SUMATIF',
+                        'STS 1' => 'STS 1',
+                        'STS 2' => 'STS 2',
+                        'SAS' => 'SAS',
+                        'SAT' => 'SAT',
+                    ])
+                    ->required(),
                 FileUpload::make('file_path')
-                    ->label('Upload File RPP')
-                    ->directory('rpp')
-                    ->required()
-                    ->afterStateUpdated(function (Set $set, ?TemporaryUploadedFile $state) {
-                        if (! $state) {
-                            return;
-                        }
-                        $set('nama_file_asli', $state->getClientOriginalName());
-                    })
-                    ->columnSpanFull(),
+                ->label('Upload File Latihan Soal')
+                ->directory('latihan-soal')
+                ->required()
+                ->afterStateUpdated(function (Set $set, ?TemporaryUploadedFile $state) {
+                    if (! $state) {
+                        return;
+                    }
+                    $set('nama_file_asli', $state->getClientOriginalName());
+                })
+                ->columnSpanFull(),
                 Hidden::make('nama_file_asli'),
-                Textarea::make('deskripsi')
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
-                TextInput::make('mata_pelajaran')
-                    ->required()
-                    ->maxLength(100),
+                Select::make('mata_pelajaran')
+                    ->label('Mata Pelajaran')
+                    ->options([
+                        'PAI' => 'PAI',
+                        'PENDIDIKAN PANCASILA' => 'PENDIDIKAN PANCASILA',
+                        'BAHASA INDONESIA' => 'BAHASA INDONESIA',
+                        'MATEMATIKA' => 'MATEMATIKA',
+                        'IPAS' => 'IPAS',
+                        'SENI RUPA' => 'SENI RUPA',
+                        'PJOK' => 'PJOK',
+                        'KEMUHAMMADIYAHAN' => 'KEMUHAMMADIYAHAN',
+                        'BAHASA ARAB' => 'BAHASA ARAB',
+                        'BAHASA JAWA' => 'BAHASA JAWA',
+                        'BAHASA INGGRIS' => 'BAHASA INGGRIS',
+                        'SENI MEMBATIK' => '6',
+                    ])
+                    ->required(),
                 Select::make('tingkat_kelas')
                     ->label('kelas')
                     ->options([
@@ -76,9 +96,6 @@ class RppResource extends Resource
                     ->required()
                     ->maxLength(50)
                     ->placeholder('Contoh: 2024/2025'),
-                TextInput::make('nama_pengunggah')
-                    ->required()
-                    ->maxLength(255),
             ]);
     }
 
@@ -98,8 +115,8 @@ class RppResource extends Resource
                 TextColumn::make('nama_pengunggah')
                     ->searchable(),
                 TextColumn::make('nama_file_asli')
-                    ->label('Nama File')
-                    ->searchable(),
+                ->label('Nama File')
+                ->searchable(),
             ])
             ->filters([
                 //
@@ -109,7 +126,7 @@ class RppResource extends Resource
                 Tables\Actions\Action::make('download')
                     ->label('Download')
                     ->icon('heroicon-o-arrow-down-tray')
-                    ->url(fn(Rpp $record): string => url('storage/' . $record->file_path), shouldOpenInNewTab: true),
+                    ->url(fn(BankSoal $record): string => url('storage/' . $record->file_path), shouldOpenInNewTab: true),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -128,9 +145,9 @@ class RppResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListRpps::route('/'),
-            'create' => Pages\CreateRpp::route('/create'),
-            'edit' => Pages\EditRpp::route('/{record}/edit'),
+            'index' => ListBankSoal::route('/'),
+            'create' => CreateBankSoal::route('/create'),
+            'edit' => EditBankSoal::route('/{record}/edit'),
         ];
     }
 }

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $tables = ['capaian_pembelajaran', 'rpp', 'modul_ajar', 'latihan_soal', 'soal_kenaikan_kelas'];
+        $tables = [ 'modul_ajar', 'bank_soal', 'tugas_murid','proposal', 'lpj'];
         foreach ($tables as $tableName) {
             Schema::table($tableName, function (Blueprint $table) {
                 $table->string('nama_file_asli')->nullable()->after('file_path');
@@ -24,7 +24,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('administration_tables', function (Blueprint $table) {
+        Schema::table('administrasi_tables', function (Blueprint $table) {
             //
         });
     }

@@ -10,12 +10,10 @@ class CapaianPembelajaran extends Model
 
     protected $fillable = [
         'judul',
-        'deskripsi',
         'file_path',
         'nama_file_asli',
         'mata_pelajaran',
         'tingkat_kelas',
         'tahun_ajaran',
-        'nama_pengunggah',
     ];
 }
