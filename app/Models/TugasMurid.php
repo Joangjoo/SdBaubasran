@@ -4,18 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SoalKenaikanKelas extends Model
+class TugasMurid extends Model
 {
-    protected $table = 'soal_kenaikan_kelas';
+    protected $table = 'tugas_murid';
 
     protected $fillable = [
-        'judul',
-        'deskripsi',
+        'nama_tugas',
         'file_path',
         'nama_file_asli',
         'mata_pelajaran',
         'tingkat_kelas',
         'tahun_ajaran',
-        'nama_pengunggah',
+        'semester',
     ];
 }

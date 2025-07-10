@@ -30,7 +30,7 @@ class MisiResource extends Resource
                     ->required()
                     ->maxLength(5000)
                     ->columnSpanFull(),
-            
+
             ]);
     }
 

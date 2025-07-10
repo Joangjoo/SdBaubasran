@@ -54,7 +54,7 @@ class GuruResource extends Resource
                     ->label('Nama Lengkap')
                     ->sortable()
                     ->searchable(),
-                    
+
                     Tables\Columns\TextColumn::make('jabatan')
                         ->label('Jabatan')
                         ->sortable()

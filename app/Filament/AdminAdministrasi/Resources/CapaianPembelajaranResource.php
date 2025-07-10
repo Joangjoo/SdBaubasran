@@ -64,7 +64,7 @@ class CapaianPembelajaranResource extends Resource
                         'BAHASA ARAB' => 'BAHASA ARAB',
                         'BAHASA JAWA' => 'BAHASA JAWA',
                         'BAHASA INGGRIS' => 'BAHASA INGGRIS',
-                        'SENI MEMBATIK' => '6',
+                        'SENI MEMBATIK' => 'SENI MEMBATIK',
                     ])
                     ->required(),
                 Select::make('tingkat_kelas')
@@ -96,8 +96,6 @@ class CapaianPembelajaranResource extends Resource
                     ->searchable(),
                 TextColumn::make('tingkat_kelas'),
                 TextColumn::make('tahun_ajaran'),
-                TextColumn::make('nama_pengunggah')
-                    ->searchable(),
                 TextColumn::make('nama_file_asli')
                 ->label('Nama File')
                 ->searchable(),

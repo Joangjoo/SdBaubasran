@@ -34,7 +34,7 @@ class ProposalResource extends Resource
             ->schema([
                 FileUpload::make('file_path')
                     ->label('Upload File Soal Kenaikan Kelas')
-                    ->directory('soal-kenaikan-kelas')
+                    ->directory('proposal')
                     ->required()
                     ->afterStateUpdated(function (Set $set, ?TemporaryUploadedFile $state) {
                         if (! $state) {

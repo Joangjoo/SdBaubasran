@@ -8,6 +8,7 @@ use App\Filament\AdminAdministrasi\Resources\TugasMuridResource\Pages\CreateTuga
 use App\Filament\AdminAdministrasi\Resources\TugasMuridResource\Pages\EditTugasMurid;
 use App\Filament\AdminAdministrasi\Resources\TugasMuridResource\Pages\ListTugasMurid;
 use App\Models\SoalKenaikanKelas;
+use App\Models\TugasMurid;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
@@ -26,7 +27,7 @@ use Filament\Forms\Set;
 
 class TugasMuridResource extends Resource
 {
-    protected static ?string $model = SoalKenaikanKelas::class;
+    protected static ?string $model = TugasMurid::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
     protected static ?string $navigationLabel = 'Tugas Murid';
@@ -36,13 +37,13 @@ class TugasMuridResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('judul')
+                TextInput::make('nama_tugas')
                     ->required()
                     ->maxLength(255)
                     ->columnSpanFull(),
                 FileUpload::make('file_path')
                     ->label('Upload File Soal Kenaikan Kelas')
-                    ->directory('soal-kenaikan-kelas')
+                    ->directory('tugas-murid')
                     ->required()
                     ->afterStateUpdated(function (Set $set, ?TemporaryUploadedFile $state) {
                         if (! $state) {
@@ -83,15 +84,13 @@ class TugasMuridResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('judul')
+                TextColumn::make('nama_tugas')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('mata_pelajaran')
                     ->searchable(),
                 TextColumn::make('tingkat_kelas'),
                 TextColumn::make('tahun_ajaran'),
-                TextColumn::make('nama_pengunggah')
-                    ->searchable(),
                 TextColumn::make('nama_file_asli')
                     ->label('Nama File')
                     ->searchable(),
@@ -104,7 +103,7 @@ class TugasMuridResource extends Resource
                 Tables\Actions\Action::make('download')
                     ->label('Download')
                     ->icon('heroicon-o-arrow-down-tray')
-                    ->url(fn(SoalKenaikanKelas $record): string => url('storage/' . $record->file_path), shouldOpenInNewTab: true),
+                    ->url(fn(TugasMurid $record): string => url('storage/' . $record->file_path), shouldOpenInNewTab: true),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -34,7 +34,7 @@ class LpjResource extends Resource
             ->schema([
                 FileUpload::make('file_path')
                     ->label('Upload File Soal Kenaikan Kelas')
-                    ->directory('soal-kenaikan-kelas')
+                    ->directory('lpj')
                     ->required()
                     ->afterStateUpdated(function (Set $set, ?TemporaryUploadedFile $state) {
                         if (! $state) {
