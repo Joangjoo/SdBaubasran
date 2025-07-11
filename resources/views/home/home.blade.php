@@ -56,7 +56,6 @@
             </div>
         </div>
     </section>
-
     {{-- Section Selamat Datang End --}}
 
     {{-- Statistik Prestasi --}}
@@ -131,6 +130,15 @@
                             Misi</a></li>
                     <li><a href="{{ route('tentangkami.sejarah') }}"
                             class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Sejarah</a>
+                    </li>
+                    <li><a href="{{ route('struktur.organisasi') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Struktur Organisasi</a>
+                    </li>
+                    <li><a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">GTK</a>
+                    </li>
+                    <li><a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200 rounded-b-md">Fasilitas</a>
                     </li>
                 </ul>
             </li>

@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             ProposalSeeder::class,
             LpjSeeder::class,
             TugasMuridSeeder::class,
+            StrukturOrganisasiSeeder::class,
         ]);
     }
 }
