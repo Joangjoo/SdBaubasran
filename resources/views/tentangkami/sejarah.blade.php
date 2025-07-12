@@ -28,6 +28,23 @@
     <x-navbar />
     {{-- Nav End--}}
 
+    {{-- Section Gambar --}}
+    <section class="relative w-full h-[80vh] overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="swiper hero-swiper absolute inset-0 w-full h-full z-0 ">
+            <div class="swiper-wrapper">
+                @foreach ($slider as $slide)
+                    <div class="swiper-slide">
+                        <img src="{{ asset('storage/' . $slide->gambar) }}" alt="Slide {{ $loop->iteration }}"
+                            class="w-full h-full object-cover" />
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+    </section>
+    {{-- Section Gambar End --}}
+
     {{-- Section --}}
     <section class="py-16 bg-gradient-to-br from-green-50 to-indigo-100">
         <div class="max-w-5xl mx-auto px-4">
@@ -37,35 +54,48 @@
                 <span
                     class="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-24 h-1.5 bg-green-500 rounded-full"></span>
             </h1>
-            <div class="bg-white p-10 rounded-3xl shadow-2xl mb-20 flex flex-col md:flex-row items-center gap-10 border border-green-200 transform transition-transform duration-500 hover:scale-[1.01] hover:shadow-3xl"
-                data-aos="fade-up" data-aos-delay="200">
-                <div class="flex-shrink-0 w-full md:w-1/3 max-w-xs md:max-w-none">
-                    <img src="{{ asset('storage/' . $sambutan->foto) }}" alt="Foto Kepala Sekolah SD Baubasran"
-                        class="w-full h-auto rounded-xl shadow-lg object-cover border-4 border-green-100 ring-4 ring-green-50 ring-offset-2">
-                    <p class="text-center text-xl font-bold text-green-800 mt-4">{{ $sambutan->nama }}</p>
-                    <p class="text-center text-green-600 text-sm">{{ $sambutan->jabatan }}</p>
-                </div>
-                <div class="flex-grow md:w-2/3 text-center md:text-left">
-                    <h2 class="text-3xl font-bold text-green-800 mb-6 relative">
-                        Sambutan Kepala Sekolah
-                        <span
-                            class="block w-16 h-1 bg-green-500 absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 bottom-[-8px] rounded-full"></span>
-                    </h2>
-                    <p class="text-gray-700 leading-relaxed text-base mb-4 italic">
-                        {{ $sambutan->motivasi }}
-                    </p>
-                    <p class="text-gray-700 leading-relaxed text-base mb-4">
-                        Assalamualaikum Warahmatullahi Wabarakatuh,
-                    </p>
-                    <p class="text-gray-700 leading-relaxed text-base mb-4">
-                        {{ $sambutan->sambutan }}
-                    </p>
+            <div class="bg-white p-6 md:p-10 rounded-3xl shadow-2xl mb-20 flex flex-col items-center border border-green-200 transform transition-transform duration-500 hover:scale-[1.01] hover:shadow-3xl"
+     data-aos="fade-up" data-aos-delay="200">
+     
+    <!-- Foto Kepala Sekolah - Diperbesar -->
+    <div class="w-full text-center mb-8">
+        <div class="relative inline-block w-64 h-64 md:w-80 md:h-80">
+            <img src="{{ asset('storage/' . $sambutan->foto) }}" 
+                 alt="Foto Kepala Sekolah SD Baubasran"
+                 class="w-full h-full rounded-xl shadow-lg object-cover border-4 border-green-100 ring-4 ring-green-50 ring-offset-2 mx-auto">
+        </div>
+        <div class="mt-4">
+            <p class="text-2xl font-bold text-green-800">{{ $sambutan->nama }}</p>
+            <p class="text-green-600 text-base mt-2">{{ $sambutan->jabatan }}</p>
+        </div>
+    </div>
 
-                    <p class="text-gray-700 leading-relaxed text-base font-semibold mt-6">
-                        Wassalamualaikum Warahmatullahi Wabarakatuh.
-                    </p>
-                </div>
-            </div>
+    <!-- Sambutan - Teks dijustify -->
+    <div class="w-full">
+        <h2 class="text-3xl font-bold text-green-800 mb-6 text-center relative">
+            Sambutan Kepala Sekolah
+            <span class="block w-16 h-1 bg-green-500 mx-auto mt-2 rounded-full"></span>
+        </h2>
+        
+        <div class="text-gray-700 leading-relaxed text-base md:text-lg space-y-4 text-justify">
+            <p class="italic text-green-700 text-center">
+                "{{ $sambutan->motivasi }}"
+            </p>
+            
+            <p class="text-center">
+                Assalamualaikum Warahmatullahi Wabarakatuh,
+            </p>
+            
+            <p>
+                {{ $sambutan->sambutan }}
+            </p>
+
+            <p class="font-semibold text-center mt-6">
+                Wassalamualaikum Warahmatullahi Wabarakatuh.
+            </p>
+        </div>
+    </div>
+</div>
             <h2 class="text-4xl font-extrabold text-center text-green-800 mb-12 relative" data-aos="fade-down"
                 data-aos-delay="400">
                 <span class="block text-2xl font-semibold text-green-600 mb-2">Linimasa Perjalanan</span>

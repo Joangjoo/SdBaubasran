@@ -26,9 +26,25 @@
     <x-navbar />
     {{-- Nav End--}}
 
+    {{-- Section Gambar --}}
+    <section class="relative w-full h-[80vh] overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="swiper hero-swiper absolute inset-0 w-full h-full z-0 ">
+            <div class="swiper-wrapper">
+                @foreach ($slider as $slide)
+                    <div class="swiper-slide">
+                        <img src="{{ asset('storage/' . $slide->gambar) }}" alt="Slide {{ $loop->iteration }}"
+                            class="w-full h-full object-cover" />
+                    </div>
+                @endforeach
+            </div>
+        </div>
 
-    <div class="container mx-auto px-4">
-        <!-- Header Section -->
+    </section>
+    {{-- Section Gambar End --}}
+
+
+    <div class="container mx-auto px-4 mt-12">
         <div class="flex justify-center items-center mt-10">
             <div class="bg-gradient-to-r from-green-600 to-teal-500 px-16 py-6 rounded-xl shadow-xl">
                 <span class="text-white text-3xl font-extrabold tracking-tight">PROFIL SEKOLAH</span>

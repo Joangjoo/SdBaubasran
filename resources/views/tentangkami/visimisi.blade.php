@@ -27,6 +27,23 @@
     </div>
     {{-- Header End --}}
 
+    {{-- Section Gambar --}}
+    <section class="relative w-full h-[80vh] overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="swiper hero-swiper absolute inset-0 w-full h-full z-0 ">
+            <div class="swiper-wrapper">
+                @foreach ($slider as $slide)
+                    <div class="swiper-slide">
+                        <img src="{{ asset('storage/' . $slide->gambar) }}" alt="Slide {{ $loop->iteration }}"
+                            class="w-full h-full object-cover" />
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+    </section>
+    {{-- Section Gambar End --}}
+
     {{-- Nav --}}
     <x-navbar />
     {{-- Nav End--}}

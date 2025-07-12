@@ -25,7 +25,8 @@
     {{-- Header End --}}
 
     {{-- Section Gambar --}}
-    <section class="relative w-full h-[90vh] overflow-hidden">
+    <section class="relative w-full h-[80vh] overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
         <div class="swiper hero-swiper absolute inset-0 w-full h-full z-0 ">
             <div class="swiper-wrapper">
                 @foreach ($slider as $slide)
@@ -346,7 +347,7 @@
     {{-- Footer --}}
     <x-footer/>
     {{-- Footer End --}}
-    
+
     <script src="../js/nav.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
     <script src="../js/struktur.js"></script>

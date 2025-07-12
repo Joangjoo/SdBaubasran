@@ -1,92 +1,81 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const triggers = document.querySelectorAll('.dropdown-trigger'); 
+document.addEventListener('DOMContentLoaded', () => {
+    // Desktop Dropdown
+    const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+    dropdownTriggers.forEach(trigger => {
+        const dropdownId = trigger.getAttribute('data-dropdown');
+        const dropdown = document.getElementById(dropdownId);
 
-    
-    triggers.forEach(trigger => {
-        trigger.addEventListener('click', function (e) {
-            e.preventDefault(); 
-            const dropdownId = this.getAttribute('data-dropdown');
-            const dropdown = document.getElementById(dropdownId);
-            const arrow = this.querySelector('svg');
-
-            const isOpen = dropdown.classList.contains('opacity-100');
-
-            triggers.forEach(otherTrigger => {
-                const otherDropdownId = otherTrigger.getAttribute('data-dropdown');
-                const otherDropdown = document.getElementById(otherDropdownId);
-                const otherArrow = otherTrigger.querySelector('svg');
-
-                if (otherDropdown !== dropdown) { 
-                    otherDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
-                    otherDropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
-                    otherArrow.classList.remove('rotate-180');
-                }
+        trigger.addEventListener('click', () => {
+            const isOpen = !dropdown.classList.contains('invisible');
+            document.querySelectorAll('.dropdown-trigger + ul').forEach(menu => {
+                menu.classList.add('invisible', 'opacity-0', 'scale-y-90');
+                menu.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
             });
 
             if (!isOpen) {
-                dropdown.classList.remove('opacity-0', 'invisible', '-translate-y-2');
-                dropdown.classList.add('opacity-100', 'visible', 'translate-y-0');
-                arrow.classList.add('rotate-180');
-            } else {
-                dropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
-                dropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
-                arrow.classList.remove('rotate-180');
+                dropdown.classList.remove('invisible', 'opacity-0', 'scale-y-90');
+                dropdown.classList.add('opacity-100', 'scale-y-100');
+                trigger.querySelector('svg').classList.add('rotate-180');
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!trigger.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.add('invisible', 'opacity-0', 'scale-y-90');
+                trigger.querySelector('svg').classList.remove('rotate-180');
             }
         });
     });
 
-    document.addEventListener('click', function (e) {
-        if (!e.target.closest('.dropdown-trigger') && !e.target.closest('ul.absolute')) {
-            triggers.forEach(trigger => {
-                const dropdownId = trigger.getAttribute('data-dropdown');
-                const dropdown = document.getElementById(dropdownId);
-                const arrow = trigger.querySelector('svg');
-
-                dropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
-                dropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
-                arrow.classList.remove('rotate-180');
-            });
-        }
-    });
-
-    const menuToggle = document.getElementById('menu-toggle');
+    // Mobile Menu Toggle
+     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
+    const menuClose = document.getElementById('menu-close');
 
     menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        triggers.forEach(trigger => {
-            const dropdownId = trigger.getAttribute('data-dropdown');
-            const dropdown = document.getElementById(dropdownId);
-            const arrow = trigger.querySelector('svg');
-
-            dropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
-            dropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
-            arrow.classList.remove('rotate-180');
-        });
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
     });
 
-    document.querySelectorAll('.dropdown-mobile-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const dropdown = button.nextElementSibling;
-            dropdown.classList.toggle('hidden');
-            const arrow = button.querySelector('svg');
-            arrow.classList.toggle('rotate-180');
-        });
+    // Mobile Menu CLOSE
+    menuClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('flex');
+        mobileMenu.classList.add('hidden');
     });
 
-});
+    // Dropdown logic mobile
+    document.querySelectorAll('.dropdown-mobile-btn').forEach(btn => {
+        const targetId = btn.getAttribute('data-dropdown');
+        const dropdown = document.getElementById(targetId);
+        btn.addEventListener('click', () => {
+            const isOpen = !dropdown.classList.contains('hidden');
 
-document.addEventListener('DOMContentLoaded', function () {
-        const navbar = document.getElementById('navbar');
-        const scrollThreshold = 100; // scroll Y > 100px akan ubah posisi top
+            // Tutup semua dropdown lainnya
+            document.querySelectorAll('.dropdown-mobile-menu').forEach(menu => {
+                menu.classList.add('hidden');
+                menu.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+            });
 
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > scrollThreshold) {
-                navbar.classList.remove('top-24');
-                navbar.classList.add('top-5');
-            } else {
-                navbar.classList.remove('top-5');
-                navbar.classList.add('top-24');
+            // Buka yang diklik
+            if (!isOpen) {
+                dropdown.classList.remove('hidden');
+                btn.querySelector('svg').classList.add('rotate-180');
             }
         });
     });
+
+
+
+    // Scroll Effect for Navbar
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            navbar.classList.remove('top-24');
+            navbar.classList.add('top-4');
+        } else {
+            navbar.classList.remove('top-4');
+            navbar.classList.add('top-24');
+        }
+    });
+});
