@@ -20,7 +20,7 @@ class GambarResource extends Resource
     protected static ?string $model = Gambar::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Galeri dan Media';
+    protected static ?string $navigationGroup = 'Konten Slider';
 
 
     public static function form(Form $form): Form

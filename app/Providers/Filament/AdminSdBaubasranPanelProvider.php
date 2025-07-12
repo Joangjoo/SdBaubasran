@@ -28,6 +28,7 @@ class AdminSdBaubasranPanelProvider extends PanelProvider
             ->path('adminSdBaubasran')
             ->brandName('SD Baubasran')
             ->login()
+            ->registration()
             ->colors([
                 'primary' => Color::Green,
             ])
