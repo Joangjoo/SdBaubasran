@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Desktop Dropdown
     const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
     dropdownTriggers.forEach(trigger => {
         const dropdownId = trigger.getAttribute('data-dropdown');
@@ -18,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 trigger.querySelector('svg').classList.add('rotate-180');
             }
         });
-
-        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (!trigger.contains(e.target) && !dropdown.contains(e.target)) {
                 dropdown.classList.add('invisible', 'opacity-0', 'scale-y-90');
@@ -28,8 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile Menu Toggle
-     const menuToggle = document.getElementById('menu-toggle');
+    const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuClose = document.getElementById('menu-close');
 
@@ -38,26 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.add('flex');
     });
 
-    // Mobile Menu CLOSE
     menuClose.addEventListener('click', () => {
         mobileMenu.classList.remove('flex');
         mobileMenu.classList.add('hidden');
     });
 
-    // Dropdown logic mobile
     document.querySelectorAll('.dropdown-mobile-btn').forEach(btn => {
         const targetId = btn.getAttribute('data-dropdown');
         const dropdown = document.getElementById(targetId);
         btn.addEventListener('click', () => {
             const isOpen = !dropdown.classList.contains('hidden');
-
-            // Tutup semua dropdown lainnya
             document.querySelectorAll('.dropdown-mobile-menu').forEach(menu => {
                 menu.classList.add('hidden');
                 menu.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
             });
-
-            // Buka yang diklik
             if (!isOpen) {
                 dropdown.classList.remove('hidden');
                 btn.querySelector('svg').classList.add('rotate-180');
@@ -67,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // Scroll Effect for Navbar
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {

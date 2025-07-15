@@ -22,8 +22,8 @@
                     <li><a href="{{ route('tentangkami.sejarah') }}" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">Sejarah</a></li>
                     <li><a href="{{ route('struktur.organisasi') }}" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">Struktur Organisasi</a></li>
                     <li><a href="{{ route('struktur.gtk') }}" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">GTK</a></li>
-                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">Fasilitas</a></li>
-                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200 rounded-b-lg">Ekstrakurikuler</a></li>
+                    <li><a href="{{route('tentangkami.fasilitas')}}" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200">Fasilitas</a></li>
+                    <li><a href="{{ route('tentangkami.ekstra') }}" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200 rounded-b-lg">Ekstrakurikuler</a></li>
                 </ul>
             </li>
             <li class="relative">
@@ -35,7 +35,7 @@
                 </button>
                 <ul id="galeri" class="absolute left-0 mt-3 w-48 bg-white shadow-xl rounded-lg border border-gray-100 opacity-0 invisible transform scale-y-90 transition-all duration-300 z-50">
                     <li><a href="{{ route('galeri.index') }}" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200 rounded-t-lg">Galeri</a></li>
-                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200 rounded-b-lg">Video</a></li>
+                    <li><a href="{{ route('videos.index') }}" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200 rounded-b-lg">Video</a></li>
                 </ul>
             </li>
             <li class="relative">
@@ -47,7 +47,7 @@
                 </button>
                 <ul id="informasi" class="absolute left-0 mt-3 w-48 bg-white shadow-xl rounded-lg border border-gray-100 opacity-0 invisible transform scale-y-90 transition-all duration-300 z-50">
                     <li><a href="{{ route('informasi.berita') }}" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200 rounded-t-lg">Berita</a></li>
-                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200 rounded-b-lg">Pengumuman</a></li>
+                    <li><a href="{{ route('kelas.index') }}" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200 rounded-b-lg">Kelas</a></li>
                 </ul>
             </li>
             <li>
@@ -58,7 +58,7 @@
             </li>
         </ul>
 
-        
+
 
         <!-- Mobile Menu Toggle -->
         <div class="lg:hidden flex items-center">

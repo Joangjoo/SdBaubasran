@@ -27,6 +27,8 @@ class DatabaseSeeder extends Seeder
             LpjSeeder::class,
             TugasMuridSeeder::class,
             StrukturOrganisasiSeeder::class,
+            FasilitasSeeder::class,
+            VideoSeeder::class,
         ]);
     }
 }
