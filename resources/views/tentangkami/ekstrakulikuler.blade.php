@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ekstrakurikuler</title>
     @vite('resources/css/app.css')
 </head>
+
 <body class="bg-gray-100 font-sans">
     <!-- Navbar -->
     <x-navbar />
 
-    <!-- Header Section -->
-    <div class="flex items-center gap-4 bg-[#06923E] px-6 py-6 shadow-sm">
-        <div class="ml-2">
-            <img src="../assets/logoBaru.png" alt="Logo SD" class="w-16 h-16" />
+    <x-header />
+
+    {{-- Section Gambar --}}
+    <section class="relative w-full h-[90vh] overflow-hidden">
+        <div class="swiper hero-swiper absolute inset-0 w-full h-full z-0 ">
+            <div class="swiper-wrapper">
+                @foreach ($slider as $slide)
+                    <div class="swiper-slide">
+                        <img src="{{ asset('storage/' . $slide->gambar) }}" alt="Slide {{ $loop->iteration }}"
+                            class="w-full h-full object-cover" />
+                    </div>
+                @endforeach
+            </div>
         </div>
-        <div>
-            <h1 class="text-xl font-semibold text-gray-100">SD MUHAMMADIYAH BAUSASRAN</h1>
-            <p class="text-sm text-gray-300">Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
-        </div>
-    </div>
+
+    </section>
+    {{-- Section Gambar End --}}
 
     <!-- Hero Section -->
-    <section class="bg-[#06923E] text-white py-20">
+    <section class="bg-gradient-to-r from-blue-600 to-sky-600 text-white py-20">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Ekstrakurikuler Terbaik untuk Anda</h1>
-            <p class="text-lg md:text-xl mb-6">Kami menawarkan berbagai kegiatan ekstrakurikuler untuk pengembangan bakat Anda</p>
-            <a href="#extracurricular" class="bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition duration-300">Lihat Ekstrakurikuler</a>
+            <p class="text-lg md:text-xl mb-6">Kami menawarkan berbagai kegiatan ekstrakurikuler untuk pengembangan
+                bakat Anda</p>
+            <a href="#extracurricular"
+                class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition duration-300 shadow-md hover:shadow-lg">
+                Lihat Ekstrakurikuler
+            </a>
         </div>
     </section>
 
@@ -37,11 +50,16 @@
             <p class="text-gray-600 mt-2">Jelajahi kegiatan unggulan kami yang mendukung minat dan bakat Anda</p>
         </header>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            @foreach($ekstra as $activity)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <img src="{{ asset('storage/' . $activity->gambar) }}" alt="{{ $activity->nama }}" class="w-full h-48 object-cover">
+            @foreach ($ekstra as $activity)
+                <div
+                    class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-blue-50">
+                    <img src="{{ asset('storage/' . $activity->gambar) }}" alt="{{ $activity->nama }}"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ $activity->nama }}</h3>
+                        <h3
+                            class="text-xl font-semibold text-gray-800 mb-2 hover:text-blue-600 transition-colors duration-300">
+                            {{ $activity->nama }}
+                        </h3>
                         <p class="text-gray-600">{{ $activity->deskripsi }}</p>
                     </div>
                 </div>
@@ -53,4 +71,5 @@
     <x-footer />
     <script src="../js/nav.js"></script>
 </body>
+
 </html>
