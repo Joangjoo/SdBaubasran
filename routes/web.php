@@ -35,3 +35,6 @@ Route::get('/dokumentasi/videos', [VideoController::class, 'index'])->name('vide
 Route::get('/informasi/berita', [BeritaController::class, 'index'])->name('informasi.berita');
 Route::get('/informasi/kelas', [KelasController::class, 'index'])->name('kelas.index');
 
+// --- PPDB ---
+Route::view('/ppdb', 'ppdb.ppdb');
+
