@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             StrukturOrganisasiSeeder::class,
             FasilitasSeeder::class,
             VideoSeeder::class,
+            ProfilSekolahSeeder::class,
         ]);
     }
 }
