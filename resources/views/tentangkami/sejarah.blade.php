@@ -10,14 +10,14 @@
     <title>Sejarah</title>
 </head>
 
-<body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-x-hidden">
+<body class="">
 
     <x-header />
 
     
 
     {{-- Section Gambar --}}
-    <section class="relative w-full h-[80vh] overflow-hidden">
+    <section class="relative w-full h-[80vh] overflow-x-hidden">
         <div class="absolute inset-0 bg-black/40 z-10"></div>
         <div class="absolute inset-0 w-full h-full z-0">
             @if ($gambarHeader)
@@ -39,7 +39,7 @@
     {{-- Nav End --}}
 
     <!-- Section -->
-    <section class="py-16 bg-gradient-to-br from-sky-50 to-blue-100">
+    <section class="py-16 bg-gradient-to-br from-sky-50 to-blue-100 ">
         <div class="max-w-5xl mx-auto px-4">
             <h1 class="text-5xl font-extrabold text-center text-blue-800 mb-16 relative" data-aos="fade-down">
                 <span class="block text-2xl font-semibold text-blue-600 mb-2">Jejak Langkah</span>

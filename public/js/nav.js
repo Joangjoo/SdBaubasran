@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close desktop dropdowns when clicking outside
-    document.addEventListener('click', () => {
+    document.addEventListener('click', (e) => {
         document.querySelectorAll('.dropdown-trigger + ul').forEach(menu => {
             menu.classList.add('invisible', 'opacity-0', 'scale-y-90');
             const svg = menu.previousElementSibling.querySelector('svg');
@@ -67,13 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             mobileMenu.classList.add('hidden');
             mobileMenu.classList.remove('flex');
+            // Close any open submenus when the main menu closes
+            document.querySelectorAll('.dropdown-mobile-menu.submenu-open').forEach(openMenu => {
+                openMenu.classList.remove('submenu-open');
+                openMenu.style.maxHeight = null;
+                const otherSvg = openMenu.previousElementSibling.querySelector('svg');
+                if (otherSvg) otherSvg.classList.remove('rotate-180');
+            });
         }, 300);
     };
 
     if (menuToggle) menuToggle.addEventListener('click', openMobileMenu);
     if (menuClose) menuClose.addEventListener('click', closeMobileMenu);
 
-    // --- Mobile Dropdown Handling (LOGIKA BARU YANG LEBIH SEDERHANA DAN ANDAL) ---
+    // --- Mobile Dropdown Handling (LOGIKA BARU YANG LEBIH ANDAL) ---
     const mobileDropdownButtons = document.querySelectorAll('.dropdown-mobile-btn');
 
     mobileDropdownButtons.forEach(button => {
@@ -82,40 +89,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const svg = button.querySelector('svg');
 
         button.addEventListener('click', (e) => {
-            e.preventDefault(); // Mencegah aksi default dari tombol
+            e.stopPropagation(); // Mencegah klik menyebar ke elemen lain
 
-            // Toggle a class to handle visibility and animation with CSS
-            const isOpen = dropdownMenu.classList.contains('open');
+            const isOpen = dropdownMenu.classList.contains('submenu-open');
 
-            // Close all other dropdowns first
-            document.querySelectorAll('.dropdown-mobile-menu.open').forEach(openMenu => {
+            // Tutup semua submenu lain terlebih dahulu
+            document.querySelectorAll('.dropdown-mobile-menu.submenu-open').forEach(openMenu => {
                 if (openMenu !== dropdownMenu) {
-                    openMenu.classList.remove('open');
+                    openMenu.classList.remove('submenu-open');
                     openMenu.style.maxHeight = null;
                     const otherSvg = openMenu.previousElementSibling.querySelector('svg');
                     if (otherSvg) otherSvg.classList.remove('rotate-180');
                 }
             });
 
-            // Toggle the current dropdown
+            // Toggle submenu yang diklik
             if (isOpen) {
-                dropdownMenu.classList.remove('open');
+                // Jika sedang terbuka, tutup
+                dropdownMenu.classList.remove('submenu-open');
                 dropdownMenu.style.maxHeight = null;
                 if (svg) svg.classList.remove('rotate-180');
             } else {
-                dropdownMenu.classList.remove('hidden'); // Ensure it's not hidden before calculating height
-                dropdownMenu.classList.add('open');
+                // Jika sedang tertutup, buka
+                dropdownMenu.classList.remove('hidden'); // HAPUS 'hidden' SEBELUM ANIMASI
+                dropdownMenu.classList.add('submenu-open');
                 dropdownMenu.style.maxHeight = dropdownMenu.scrollHeight + "px";
                 if (svg) svg.classList.add('rotate-180');
             }
-        });
-    });
-
-    // Ensure menu closes when a direct link (not a dropdown button) is clicked
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            // We don't prevent default here, we just close the menu
-            closeMobileMenu();
         });
     });
 });

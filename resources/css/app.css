@@ -12,11 +12,11 @@
 }
 
 .dropdown-mobile-menu {
-    transition: max-height 0.3s ease-in-out;
     max-height: 0;
     overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.dropdown-mobile-menu.open {
-    /* max-height akan diatur oleh JavaScript */
+.dropdown-mobile-menu.submenu-open {
+    max-height: 500px; /* Atur angka yang cukup besar untuk menampung semua item */
 }

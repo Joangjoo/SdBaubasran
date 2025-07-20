@@ -15,7 +15,7 @@
     {{-- Header end --}}
 
     {{-- Section Gambar --}}
-    <section class="relative w-full h-[80vh] overflow-hidden">
+    <section class="relative w-full h-[80vh] overflow-x-hidden">
         <div class="absolute inset-0 bg-black/40 z-10"></div>
         <div class="absolute inset-0 w-full h-full z-0">
             @if ($gambarHeader)
