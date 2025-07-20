@@ -15,7 +15,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/slider.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js"></script>
-
+    
 
 </head>
 
@@ -768,7 +768,7 @@
     {{-- Footer End --}}
 
     <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
-    <script src="js/nav.js"></script>
+    <script src="{{ asset('js/nav.js') }}"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

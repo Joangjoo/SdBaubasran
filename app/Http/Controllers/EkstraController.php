@@ -10,7 +10,7 @@ class EkstraController extends Controller
 {
     public function index(){
         $ekstra = Ekstra::all();
-        $slider = Gambar::latest()->take(5)->get();
-        return view('tentangkami.ekstrakulikuler',compact('ekstra','slider'));
+        $gambarHeader = Gambar::latest()->first();
+        return view('tentangkami.ekstrakulikuler',compact('ekstra','gambarHeader'));
     }
 }

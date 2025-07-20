@@ -11,8 +11,8 @@ class StrukturOrganisasiController extends Controller
     public function index()
     {
         $strukturs = StrukturOrganisasi::orderBy('id', 'asc')->get();
-        $slider = Gambar::latest()->take(1)->get();
+        $gambarHeader = Gambar::latest()->first();
 
-        return view('tentangkami.struktur-organisasi', compact('strukturs','slider'));
+        return view('tentangkami.struktur-organisasi', compact('strukturs','gambarHeader'));
     }
 }

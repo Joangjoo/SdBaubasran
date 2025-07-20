@@ -14,23 +14,30 @@
 <body class="bg-gradient-to-br from-blue-50 via-sky-50 to-blue-100 overflow-x-hidden">
     <x-header/>
 
+
+    {{-- Section Gambar --}}
+    <section class="relative w-full h-[80vh] overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="absolute inset-0 w-full h-full z-0">
+            @if ($gambarHeader)
+                <img src="{{ asset('storage/' . $gambarHeader->gambar) }}" alt="Header Halaman"
+                    class="w-full h-full object-cover" />
+            @else
+                <img src="{{ asset('assets/default-header.jpg') }}" alt="Header Halaman Default"
+                    class="w-full h-full object-cover" />
+            @endif
+        </div>
+
+
+
+    </section>
+    {{-- Section Gambar End --}}
+
     {{-- Nav Start --}}
     <x-navbar />
     {{-- Nav End --}}
 
-    <section class="relative w-full h-[90vh] overflow-hidden">
-        <div class="swiper hero-swiper absolute inset-0 w-full h-full z-0 ">
-            <div class="swiper-wrapper">
-                @foreach ($slider as $slide)
-                    <div class="swiper-slide">
-                        <img src="{{ asset('storage/' . $slide->gambar) }}" alt="Slide {{ $loop->iteration }}"
-                            class="w-full h-full object-cover" />
-                    </div>
-                @endforeach
-            </div>
-        </div>
-
-    </section>
+    
 
     {{-- Main Content --}}
     <div class="container mx-auto px-4 py-10 mt-8">
@@ -241,7 +248,7 @@
 
     <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
     <script src="../js/kalender.js"></script>
-    <script src="../js/nav.js"></script>
+    <script src="{{ asset('js/nav.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({

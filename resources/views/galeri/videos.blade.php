@@ -11,6 +11,25 @@
 
 <body>
     <x-header />
+
+    {{-- Section Gambar --}}
+    <section class="relative w-full h-[80vh] overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="absolute inset-0 w-full h-full z-0">
+            @if ($gambarHeader)
+                <img src="{{ asset('storage/' . $gambarHeader->gambar) }}" alt="Header Halaman"
+                    class="w-full h-full object-cover" />
+            @else
+                <img src="{{ asset('assets/default-header.jpg') }}" alt="Header Halaman Default"
+                    class="w-full h-full object-cover" />
+            @endif
+        </div>
+
+
+
+    </section>
+    {{-- Section Gambar End --}}
+
     <x-navbar />
 
     <section class="relative bg-gradient-to-r from-blue-600 to-sky-600 text-white py-28 overflow-hidden">
@@ -120,7 +139,6 @@
 
 
     <script>
-        // Video Modal functionality
         const videoCards = document.querySelectorAll('[data-video-url]');
         const videoModal = document.getElementById('videoModal');
         const modalVideoIframe = document.getElementById('modalVideoIframe');
@@ -165,7 +183,7 @@
             }
         });
     </script>
-    <script src="../js/nav.js"></script>
+    <script src="{{ asset('js/nav.js') }}"></script>
 </body>
 
 </html>

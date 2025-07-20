@@ -13,7 +13,7 @@ class SejarahController extends Controller
     {
         $sambutan = Sambutan::first();
         $linimasa = Linimasa::all();
-        $slider = Gambar::latest()->take(1)->get();
-        return view('tentangkami.sejarah', compact('sambutan','linimasa', 'slider'));
+        $gambarHeader = Gambar::latest()->first();
+        return view('tentangkami.sejarah', compact('sambutan','linimasa', 'gambarHeader'));
     }
 }

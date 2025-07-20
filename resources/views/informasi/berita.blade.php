@@ -16,23 +16,29 @@
     <x-header />
     {{-- Header end --}}
 
+    
+    {{-- Section Gambar --}}
+    <section class="relative w-full h-[80vh] overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="absolute inset-0 w-full h-full z-0">
+            @if ($gambarHeader)
+                <img src="{{ asset('storage/' . $gambarHeader->gambar) }}" alt="Header Halaman"
+                    class="w-full h-full object-cover" />
+            @else
+                <img src="{{ asset('assets/default-header.jpg') }}" alt="Header Halaman Default"
+                    class="w-full h-full object-cover" />
+            @endif
+        </div>
+
+
+
+    </section>
+    {{-- Section Gambar End --}}
+
     {{-- Nav Start --}}
     <x-navbar />
     {{-- Nav End --}}
 
-    <section class="relative w-full h-[90vh] overflow-hidden">
-        <div class="swiper hero-swiper absolute inset-0 w-full h-full z-0 ">
-            <div class="swiper-wrapper">
-                @foreach ($slider as $slide)
-                    <div class="swiper-slide">
-                        <img src="{{ asset('storage/' . $slide->gambar) }}" alt="Slide {{ $loop->iteration }}"
-                            class="w-full h-full object-cover" />
-                    </div>
-                @endforeach
-            </div>
-        </div>
-
-    </section>
 
     {{-- Hero Section --}}
     <section class="relative py-24 overflow-hidden">
@@ -230,7 +236,7 @@
     <x-footer />
     {{-- Footer end --}}
 
-    <script src="../js/nav.js"></script>
+    <script src="{{ asset('js/nav.js') }}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({

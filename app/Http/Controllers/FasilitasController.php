@@ -10,7 +10,7 @@ class FasilitasController extends Controller
 {
     public function index(){
         $fasilitas = Fasilitas::all();
-        $slider = Gambar::latest()->take(5)->get();
-        return view('tentangkami.fasilitas',compact('fasilitas','slider'));
+        $gambarHeader = Gambar::latest()->first();
+        return view('tentangkami.fasilitas',compact('fasilitas','gambarHeader'));
     }
 }

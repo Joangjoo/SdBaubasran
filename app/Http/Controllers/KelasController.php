@@ -12,7 +12,7 @@ class KelasController extends Controller
     {
         $selectedKelas = $request->query('kelas');
         $query = StrukturOrganisasi::whereNotNull('kelas_mengajar');
-        $slider = Gambar::latest()->take(5)->get();
+        $gambarHeader = Gambar::latest()->first();
         if ($selectedKelas) {
             $query->where('kelas_mengajar', 'like', '%' . $selectedKelas . '%');
         }
@@ -21,7 +21,7 @@ class KelasController extends Controller
         return view('informasi.kelas', [
             'guru' => $guru,
             'selectedKelas' => $selectedKelas,
-            'gambar'=>$slider
+            'gambarHeader'=>$gambarHeader
         ]);
     }
 }

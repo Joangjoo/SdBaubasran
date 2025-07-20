@@ -11,8 +11,8 @@ class GtkController extends Controller
     public function index()
     {
         $gtk = StrukturOrganisasi::orderBy('id', 'asc')->get();
-        $slider = Gambar::latest()->take(1)->get();
+        $gambarHeader = Gambar::latest()->first();
 
-        return view('tentangkami.gtk', compact('gtk','slider'));
+        return view('tentangkami.gtk', compact('gtk','gambarHeader'));
     }
 }

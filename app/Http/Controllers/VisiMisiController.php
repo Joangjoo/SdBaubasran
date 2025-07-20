@@ -13,8 +13,8 @@ class VisiMisiController extends Controller
     {
         $visi = Visi::first();
         $misis = Misi::all();
-        $slider = Gambar::latest()->take(1)->get();
+        $gambarHeader = Gambar::latest()->first();
 
-        return view('tentangkami.visimisi', compact('visi', 'misis','slider'));
+        return view('tentangkami.visimisi', compact('visi', 'misis','gambarHeader'));
     }
 }

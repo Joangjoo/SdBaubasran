@@ -12,29 +12,32 @@
 <body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-x-hidden">
     <x-header />
 
-    {{-- Nav --}}
-    <x-navbar />
-    {{-- Nav End --}}
+
 
     {{-- Section Gambar --}}
-    <section class="relative w-full h-[80vh] overflow-hidden">
+    <section class="relative w-full h-[80vh] overflow-x-hidden">
         <div class="absolute inset-0 bg-black/40 z-10"></div>
-        <div class="swiper hero-swiper absolute inset-0 w-full h-full z-0 ">
-            <div class="swiper-wrapper">
-                @foreach ($slider as $slide)
-                    <div class="swiper-slide">
-                        <img src="{{ asset('storage/' . $slide->gambar) }}" alt="Slide {{ $loop->iteration }}"
-                            class="w-full h-full object-cover" />
-                    </div>
-                @endforeach
-            </div>
+        <div class="absolute inset-0 w-full h-full z-0">
+            @if ($gambarHeader)
+                <img src="{{ asset('storage/' . $gambarHeader->gambar) }}" alt="Header Halaman"
+                    class="w-full h-full object-cover" />
+            @else
+                <img src="{{ asset('assets/default-header.jpg') }}" alt="Header Halaman Default"
+                    class="w-full h-full object-cover" />
+            @endif
         </div>
+
+
 
     </section>
     {{-- Section Gambar End --}}
 
+    {{-- Nav --}}
+    <x-navbar />
+    {{-- Nav End --}}
+
     {{-- Main --}}
-    <div class="relative bg-gradient-to-br from-blue-50 to-white py-12 px-4 sm:px-6 lg:px-8">
+    <div class="relative bg-gradient-to-br from-blue-50 to-white py-12 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div
                 class="absolute top-20 left-10 w-40 h-40 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float-slow">
@@ -342,8 +345,8 @@
 
     <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
     <script src="js/kalender.js"></script>
-    <script src="js/nav.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="{{ asset('js/nav.js') }}"></script>
     <script>
         AOS.init({
             duration: 800,

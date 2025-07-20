@@ -18,16 +18,17 @@
     {{-- Section Gambar --}}
     <section class="relative w-full h-[80vh] overflow-hidden">
         <div class="absolute inset-0 bg-black/40 z-10"></div>
-        <div class="swiper hero-swiper absolute inset-0 w-full h-full z-0 ">
-            <div class="swiper-wrapper">
-                @foreach ($slider as $slide)
-                    <div class="swiper-slide">
-                        <img src="{{ asset('storage/' . $slide->gambar) }}" alt="Slide {{ $loop->iteration }}"
-                            class="w-full h-full object-cover" />
-                    </div>
-                @endforeach
-            </div>
+        <div class="absolute inset-0 w-full h-full z-0">
+            @if ($gambarHeader)
+                <img src="{{ asset('storage/' . $gambarHeader->gambar) }}" alt="Header Halaman"
+                    class="w-full h-full object-cover" />
+            @else
+                <img src="{{ asset('assets/default-header.jpg') }}" alt="Header Halaman Default"
+                    class="w-full h-full object-cover" />
+            @endif
         </div>
+
+
 
     </section>
     {{-- Section Gambar End --}}
@@ -142,7 +143,7 @@
     <x-footer />
     {{-- Footer End --}}
 
-    <script src="../js/nav.js"></script>
+    <script src="{{ asset('js/nav.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
     <script src="../js/struktur.js"></script>
 </body>
