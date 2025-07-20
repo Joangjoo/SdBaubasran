@@ -8,6 +8,7 @@ use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\GtkController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\PpdbController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\StrukturOrganisasiController;
@@ -36,5 +37,5 @@ Route::get('/informasi/berita', [BeritaController::class, 'index'])->name('infor
 Route::get('/informasi/kelas', [KelasController::class, 'index'])->name('kelas.index');
 
 // --- PPDB ---
-Route::view('/ppdb', 'ppdb.ppdb');
+Route::get('/ppdb/alur-pendaftaran', [PpdbController::class, 'index'])->name('ppdb.ppdb');
 

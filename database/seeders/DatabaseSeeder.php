@@ -13,12 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
 
         $this->call([
             ModulAjarSeeder::class,
@@ -30,6 +24,7 @@ class DatabaseSeeder extends Seeder
             FasilitasSeeder::class,
             VideoSeeder::class,
             ProfilSekolahSeeder::class,
+            PpdbSeeder::class,
         ]);
     }
 }

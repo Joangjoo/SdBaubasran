@@ -51,9 +51,9 @@
                 </ul>
             </li>
             <li>
-                <a href="#" class="relative px-2 py-1 hover:text-blue-600 transition-colors duration-300 group">
+                <a href="{{ route('ppdb.ppdb') }}" class="relative px-2 py-1 hover:text-blue-600 transition-colors duration-300 group">
                     PPDB SD
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
             </li>
         </ul>
