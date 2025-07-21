@@ -46,10 +46,9 @@ class StrukturOrganisasiResource extends Resource
                     ->placeholder('Contoh: 2024-2026')
                     ->maxLength(50),
 
-                // Mengganti TextInput dengan Select untuk kemudahan input
                 Select::make('kelas_mengajar')
                     ->label('Kelas yang Diajar')
-                    ->multiple() // Mengizinkan pemilihan lebih dari satu kelas
+                    ->multiple() 
                     ->options([
                         '1' => 'Kelas 1',
                         '2' => 'Kelas 2',
@@ -62,7 +61,7 @@ class StrukturOrganisasiResource extends Resource
 
                 Select::make('mapel_mengajar')
                     ->label('Mata Pelajaran yang Diajar')
-                    ->multiple() // Mengizinkan pemilihan lebih dari satu mata pelajaran
+                    ->multiple()
                     ->options([
                         'Wali Kelas' => 'Wali Kelas',
                         'Pendidikan Agama Islam' => 'Pendidikan Agama Islam',

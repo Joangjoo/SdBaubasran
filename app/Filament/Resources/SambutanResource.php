@@ -11,6 +11,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -60,27 +62,27 @@ class SambutanResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('motivasi')
+                TextColumn::make('motivasi')
                     ->label('Kata Motivasi')
                     ->limit(50)
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('sambutan')
+                TextColumn::make('sambutan')
                     ->label('Sambutan')
                     ->limit(50)
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('nama')
+                TextColumn::make('nama')
                     ->label('Nama')
                     ->limit(50)
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('jabatan')
+                TextColumn::make('jabatan')
                     ->label('Jabatan')
                     ->limit(50)
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\ImageColumn::make('foto')
+                ImageColumn::make('foto')
                     ->label('Gambar Kepala Sekolah')
                     ->disk('public')
                     ->visibility('public'),

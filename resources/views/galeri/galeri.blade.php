@@ -37,7 +37,7 @@
     <x-navbar />
     {{-- Nav End --}}
 
-    
+
 
     {{-- Main Content --}}
     <div class="container mx-auto px-4 py-10 mt-8">
@@ -163,7 +163,6 @@
                     </div>
                 </div>
 
-                <!-- Calendar Section -->
                 <!-- Calendar Section -->
                     <div class="bg-white p-6 rounded-2xl shadow-xl border border-blue-50" data-aos="fade-left"
                         data-aos-delay="100">

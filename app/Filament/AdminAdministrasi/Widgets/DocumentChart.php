@@ -18,7 +18,7 @@ class DocumentChart extends ChartWidget
     protected function getData(): array
     {
         return [
-             'datasets' => [
+            'datasets' => [
                 [
                     'label' => 'Jumlah Dokumen',
                     'data' => [
@@ -29,7 +29,7 @@ class DocumentChart extends ChartWidget
                     'backgroundColor' => ['#36A2EB', '#FFCE56', '#FF6384', '#4BC0C0'],
                 ],
             ],
-            'labels' => ['Capaian Pembelajaran', 'Modul Ajar', 'Bank Soal' ],
+            'labels' => ['Capaian Pembelajaran', 'Modul Ajar', 'Bank Soal'],
         ];
     }
 

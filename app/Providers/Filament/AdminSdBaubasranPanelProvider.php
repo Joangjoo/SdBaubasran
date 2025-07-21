@@ -24,13 +24,13 @@ class AdminSdBaubasranPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
-            ->id('adminSdBaubasran')
-            ->path('adminSdBaubasran')
-            ->brandName('SD Baubasran')
+            ->id('adminSdMuhBausasran')
+            ->path('adminSdMuhBausasran')
+            ->brandName('SDM Bausasran')
             ->login()
             ->registration()
             ->colors([
-                'primary' => Color::Green,
+                'primary' => Color::Blue,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')

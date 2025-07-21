@@ -99,8 +99,6 @@
                                 allowfullscreen>
                             </iframe>
                         </div>
-
-                        <!-- Video Info -->
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2 text-gray-800">{{ $video->judul }}</h3>
                             <div class="flex items-center text-sm text-gray-500 mb-3">

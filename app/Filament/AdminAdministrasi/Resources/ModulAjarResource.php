@@ -62,7 +62,7 @@ class ModulAjarResource extends Resource
                         'BAHASA ARAB' => 'BAHASA ARAB',
                         'BAHASA JAWA' => 'BAHASA JAWA',
                         'BAHASA INGGRIS' => 'BAHASA INGGRIS',
-                        'SENI MEMBATIK' => '6',
+                        'SENI MEMBATIK' => 'SENI MEMBATIK',
                     ])
                     ->required(),
                 Select::make('tingkat_kelas')
@@ -86,9 +86,6 @@ class ModulAjarResource extends Resource
                     ->required()
                     ->maxLength(50)
                     ->placeholder('Contoh: 2024/2025'),
-                TextInput::make('nama_pengunggah')
-                    ->required()
-                    ->maxLength(255),
             ]);
     }
 

@@ -74,9 +74,6 @@ class TugasMuridResource extends Resource
                     ->required()
                     ->maxLength(50)
                     ->placeholder('Contoh: 2024/2025'),
-                TextInput::make('nama_pengunggah')
-                    ->required()
-                    ->maxLength(255),
             ]);
     }
 

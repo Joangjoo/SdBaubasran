@@ -85,7 +85,7 @@ class PrestasiResource extends Resource
 
                 Tables\Columns\TextColumn::make('lingkup')
                     ->label('Lingkup')
-                    ->badge() // Mengubah tampilan menjadi lencana/badge
+                    ->badge() 
                     ->color(fn(string $state): string => match ($state) {
                         'Internasional' => 'danger',
                         'Nasional' => 'warning',

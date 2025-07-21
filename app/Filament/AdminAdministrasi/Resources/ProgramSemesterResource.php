@@ -50,7 +50,7 @@ class ProgramSemesterResource extends Resource
                         'BAHASA ARAB' => 'BAHASA ARAB',
                         'BAHASA JAWA' => 'BAHASA JAWA',
                         'BAHASA INGGRIS' => 'BAHASA INGGRIS',
-                        'SENI MEMBATIK' => '6',
+                        'SENI MEMBATIK' => 'SENI MEMBATIK',
                     ])
                     ->required(),
                 Select::make('tingkat_kelas')
