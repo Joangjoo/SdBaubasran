@@ -28,7 +28,6 @@ class AdminAdministrasiPanelProvider extends PanelProvider
             ->path('adminAdministrasi')
             ->brandName('Admin Administrasi')
             ->login()
-            ->registration()
             ->colors([
                 'primary' => Color::Blue,
             ])

@@ -18,7 +18,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
-class AdminSdBaubasranPanelProvider extends PanelProvider
+class AdminSdBausasranPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
@@ -28,7 +28,6 @@ class AdminSdBaubasranPanelProvider extends PanelProvider
             ->path('adminSdMuhBausasran')
             ->brandName('SDM Bausasran')
             ->login()
-            ->registration()
             ->colors([
                 'primary' => Color::Blue,
             ])
